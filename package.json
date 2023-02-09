@@ -1,0 +1,23 @@
+{
+  "name": "studium-spatium",
+  "version": "1.0.0",
+  "description": "Studium Spatium project (studiumspatium.com)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/aleksandr-kramer/Studium-Spatium.git"
+  },
+  "keywords": [
+    "studium",
+    "spatium"
+  ],
+  "author": "Alexandr Krahmer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aleksandr-kramer/Studium-Spatium/issues"
+  },
+  "homepage": "https://github.com/aleksandr-kramer/Studium-Spatium#readme"
+}
