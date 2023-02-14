@@ -14,7 +14,10 @@ export default function OrderChildrenImageText({
             alt={Title}
             height={54}
             width={54}
-            priority
+            style={{
+              maxWidth: "100%",
+              height: "auto",
+            }}
           />
         </div>
         <p className={styles.OrderChildrenImageText__itemtitle}>{Title}</p>

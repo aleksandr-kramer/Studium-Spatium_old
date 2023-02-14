@@ -43,6 +43,10 @@ export default function FirstScreenVideo({
           alt={altimage}
           height={547}
           width={489}
+          style={{
+            maxWidth: "100%",
+            height: "auto",
+          }}
           priority
         />
         <div className={styles.FirstScreenVideo__PatternImage}></div>

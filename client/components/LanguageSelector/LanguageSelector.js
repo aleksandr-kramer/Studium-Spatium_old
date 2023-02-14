@@ -70,6 +70,10 @@ export default function LanguageSelector() {
             alt="Language Selector"
             width={14}
             height={11}
+            style={{
+              maxWidth: "100%",
+              height: "auto",
+            }}
           />
         </div>
 

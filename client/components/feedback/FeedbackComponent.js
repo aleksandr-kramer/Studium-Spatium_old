@@ -23,7 +23,10 @@ export default function FeedbackComponent({
             alt={Title}
             height={40}
             width={40}
-            priority
+            style={{
+              maxWidth: "100%",
+              height: "auto",
+            }}
           />
         </div>
         <p className={styles.FeedbackComponent__icontitle}>{Title}</p>

@@ -20,7 +20,10 @@ export default function FirstScreenImage({
           alt={altimage}
           height={588}
           width={588}
-          priority
+          style={{
+            maxWidth: "100%",
+            height: "auto",
+          }}
         />
       </div>
       <div className={styles.FirstScreenImage__SocialNetwork}>

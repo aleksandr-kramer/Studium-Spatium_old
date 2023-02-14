@@ -11,7 +11,10 @@ export default function ListOfTopic({ listoftopicdata }) {
             alt={Title}
             height={200}
             width={260}
-            priority
+            style={{
+              maxWidth: "100%",
+              height: "auto",
+            }}
           />
         </div>
         <p className={styles.ListOfTopic__title}>{Title}</p>
