@@ -3,7 +3,6 @@ import Logo from "../Logo/Logo";
 import selectTranslate from "../../utils/selectTranslate";
 import MenuLinks from "../MenuLinks/MenuLinks";
 import { menulinkswhitetheme } from "../../constants/stylesconstants";
-import Link from "next/link";
 import SocialNetworkFooter from "../SocialNetworkFooter/SocialNetworkFooter";
 
 export default function Footer() {

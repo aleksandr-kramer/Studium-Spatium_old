@@ -1,0 +1,47 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/constants.scss";
+
+.SubMenuTitles {
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0 0 20px;
+  border: 1px solid rgba(0, 100, 114, 1);
+  vertical-align: middle;
+  max-width: 98%;
+  padding: 10px 20px;
+  text-align: center;
+  white-space: nowrap;
+  @include d1440px {
+    margin: 0 0 18px;
+    padding: 9px 18px;
+  }
+  @include p1150px {
+    margin: 0 0 16px;
+    padding: 8px 16px;
+  }
+  @include p920px {
+    margin: 0 0 15px;
+    padding: 6px 12px;
+  }
+
+  &__Text {
+    font-family: $font-family-base;
+    color: $font-color-greenish;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+    margin: 0;
+    @include d1440px {
+      font-size: 16px;
+      line-height: 16px;
+    }
+    @include p1150px {
+      font-size: 14px;
+      line-height: 14px;
+    }
+    @include p920px {
+      font-size: 13px;
+      line-height: 13px;
+    }
+  }
+}

@@ -1,0 +1,153 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/constants.scss";
+
+.LanguageSelector {
+  font-family: $font-family-base;
+  position: relative;
+  z-index: 2;
+  @include p920px {
+  }
+
+  &__open {
+    .LanguageSelector__dropdown {
+      display: block;
+    }
+    .LanguageSelector__backdrop {
+      display: block;
+    }
+  }
+
+  &__select {
+    height: 36px;
+    width: 126px;
+    background-color: $bg-color-white;
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    @include d1440px {
+      height: 34px;
+      width: 116px;
+    }
+    @include p1150px {
+      height: 32px;
+      width: 102px;
+    }
+  }
+
+  &__backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: -1;
+  }
+
+  &__selectimg {
+    padding-right: 8px;
+    @include d1440px {
+      padding-right: 7px;
+    }
+    @include p1150px {
+      padding-right: 6px;
+    }
+  }
+
+  &__selecttext {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 20px;
+    color: $font-color-base;
+    @include d1440px {
+      font-size: 16px;
+      line-height: 18px;
+    }
+    @include p1150px {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+
+  &__dropdown {
+    display: none;
+    position: absolute;
+    width: 192px;
+    max-height: 260px;
+    overflow-y: auto;
+    margin-left: -66px;
+    margin-top: 1px;
+    background-color: $bg-color-white;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.18);
+    @include d1440px {
+      width: 180px;
+      margin-left: -64px;
+    }
+    @include p1150px {
+      width: 170px;
+      margin-left: -68px;
+    }
+  }
+
+  &__items {
+    @include list-style-none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 27px;
+    margin-bottom: 31px;
+    @include d1440px {
+      margin-bottom: 26px;
+    }
+    @include p1150px {
+      margin-top: 26px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 20px;
+    color: $font-color-base;
+    padding-bottom: 30px;
+    cursor: pointer;
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:after {
+      display: block;
+      position: absolute;
+      content: "";
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: $font-color-base;
+      transition: width 0.3s ease-out;
+    }
+    &:hover:after,
+    &:focus:after {
+      width: 100%;
+      opacity: 0.8;
+    }
+
+    @include d1440px {
+      font-size: 16px;
+      line-height: 17px;
+      padding-bottom: 24px;
+    }
+    @include p1150px {
+      font-size: 14px;
+      line-height: 15px;
+      padding-bottom: 18px;
+    }
+  }
+}

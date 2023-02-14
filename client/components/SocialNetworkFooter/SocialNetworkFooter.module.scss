@@ -1,0 +1,157 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/constants.scss";
+
+.SocialNetworkFooter {
+  @include list-style-none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__item {
+    padding-right: 30px;
+    &:last-of-type {
+      padding-right: 0;
+    }
+    @include d1440px {
+      padding-right: 25px;
+    }
+    @include m680px {
+      padding-right: 20px;
+    }
+  }
+
+  &__youtubeactive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/youtube-greenish.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
+  &__youtubepassive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/youtube-white.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  &__instagramactive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/instagram-greenish.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
+  &__instagrampassive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/instagram-white.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  &__facebookactive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/facebook-greenish.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
+  &__facebookpassive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/facebook-white.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  &__linkedinactive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/linkedin-greenish.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
+  &__linkedinpassive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/linkedin-white.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  &__telegramactive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/telegram-greenish.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
+  &__telegrampassive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/telegram-white.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
+}

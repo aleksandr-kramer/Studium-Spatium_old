@@ -1,0 +1,22 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/constants.scss";
+
+.LandingMenu {
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0;
+  border: 1px solid #313131;
+  padding: 30px 30px 20px 30px;
+  @include d1440px {
+    padding: 28px 26px 18px 26px;
+  }
+  @include p1150px {
+    padding: 26px 22px 18px 22px;
+  }
+  @include p920px {
+    padding: 24px 20px 16px 20px;
+  }
+  @include m680px {
+    width: 328px;
+  }
+}

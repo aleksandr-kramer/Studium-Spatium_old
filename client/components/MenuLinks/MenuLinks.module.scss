@@ -1,0 +1,75 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/constants.scss";
+
+.MenuLinks {
+  font-family: $font-family-base;
+  &__items {
+    @include list-style-none;
+    display: flex;
+    @include m680px {
+      flex-direction: column;
+      margin: 0 0 15px;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    padding-right: 40px;
+    &:last-of-type {
+      padding-right: 0;
+    }
+    @include d1440px {
+      padding-right: 25px;
+    }
+    @include p1150px {
+      padding-right: 18px;
+    }
+    @include m680px {
+      padding: 10px 0;
+    }
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 15px;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.75;
+    }
+    @include d1440px {
+      font-size: 14px;
+      line-height: 14px;
+    }
+    @include p1150px {
+      font-size: 13px;
+      line-height: 13px;
+    }
+
+    &:after {
+      display: block;
+      position: absolute;
+      content: "";
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: $font-color-base;
+      transition: width 0.3s ease-out;
+    }
+    &:hover:after,
+    &:focus:after {
+      width: 100%;
+      opacity: 0.75;
+    }
+  }
+
+  &__link_dark {
+    color: $font-color-base;
+  }
+
+  &__link_white {
+    color: $font-color-white;
+  }
+}
