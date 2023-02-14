@@ -1,0 +1,80 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/constants.scss";
+
+.H1Titles {
+  color: $font-color-base;
+  width: 640px;
+  text-align: left;
+  @include d1440px {
+    width: unset;
+    max-width: 508px;
+  }
+  @include p1150px {
+    width: unset;
+    max-width: 380px;
+  }
+  @include p920px {
+    width: unset;
+    max-width: 540px;
+    text-align: center;
+  }
+  @include m680px {
+    width: unset;
+    max-width: 320px;
+    text-align: center;
+  }
+  &__Title {
+    margin: 0;
+    padding: 0 0 40px 0;
+    font-family: $font-family-headline;
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 84px;
+    letter-spacing: 0.03em;
+    @include d1440px {
+      padding: 0 0 30px 0;
+      font-size: 50px;
+      line-height: 70px;
+    }
+    @include p1150px {
+      font-size: 40px;
+      line-height: 49px;
+      padding: 0 0 27px 0;
+    }
+    @include p920px {
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 63px;
+    }
+    @include m680px {
+      font-size: 30px;
+      line-height: 37px;
+      padding: 0 0 25px 0;
+    }
+  }
+  &__SubTitle {
+    margin: 0;
+    padding: 0;
+    font-family: $font-family-base;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.03em;
+    @include d1440px {
+      font-size: 17px;
+      line-height: 21px;
+    }
+    @include p1150px {
+      font-size: 15px;
+      line-height: 21px;
+    }
+    @include p920px {
+      font-size: 16px;
+      line-height: 22px;
+    }
+    @include m680px {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}

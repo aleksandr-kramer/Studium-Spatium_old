@@ -1,0 +1,98 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/constants.scss";
+
+.LinkText {
+  height: 78px;
+  cursor: pointer;
+  display: inline-grid;
+  grid-template: 1fr / auto 1fr;
+  align-items: center;
+  text-decoration: none;
+  @include d1440px {
+    height: 60px;
+  }
+
+  &__content {
+    font-family: $font-family-headline;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 27px;
+    padding-right: 22px;
+    @include d1440px {
+      font-size: 20px;
+      line-height: 24px;
+    }
+    @include m680px {
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+    }
+  }
+  &__content_greenish {
+    color: $font-color-greenish;
+  }
+  &__content_white {
+    color: $font-color-white;
+  }
+
+  &__button {
+    display: flex;
+    width: 78px;
+    height: 78px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    @include d1440px {
+      width: 60px;
+      height: 60px;
+    }
+    @include m680px {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  &__button_bordertransporentgreenish {
+    border: 2px solid $bg-color-greenish;
+    background-color: transparent;
+  }
+  &__button_bordergreenishgreenish {
+    border: 2px solid $bg-color-greenish;
+    background-color: $bg-color-greenish;
+  }
+  &__button__bordertransporentwhite {
+    border: 2px solid $bg-color-white;
+    background-color: transparent;
+  }
+  &__button_borderwhitewhite {
+    border: 2px solid $bg-color-white;
+    background-color: $bg-color-white;
+  }
+
+  &__image {
+    width: 40px;
+    height: 14px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-bottom: 8px;
+    @include d1440px {
+      width: 30px;
+      height: 11px;
+      margin-bottom: 7px;
+    }
+    @include m680px {
+      width: 26px;
+      height: 9px;
+      margin-bottom: 5px;
+    }
+  }
+  &__image_vectorgreenish {
+    background-image: url(../../public/uipictures/vectorgreenish.png);
+  }
+  &__image_vectorwhite {
+    background-image: url(../../public/uipictures/vectorwhite.png);
+  }
+  &__image_vectorblack {
+    background-image: url(../../public/uipictures/vectorblack.png);
+  }
+}

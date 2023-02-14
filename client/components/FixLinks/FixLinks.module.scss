@@ -1,0 +1,77 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/constants.scss";
+
+.FixLinks {
+  position: fixed;
+  right: 2px;
+  top: 240px;
+  width: 24px;
+  height: 389px;
+  @include d1440px {
+    top: 180px;
+  }
+  @include p1150px {
+    top: 150px;
+    right: 1px;
+    width: 22px;
+    height: 300px;
+  }
+  @include p920px {
+    top: 180px;
+  }
+  @include m680px {
+    display: none;
+  }
+
+  &__items {
+    @include list-style-none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__item {
+    padding-bottom: 15px;
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+    @include p1150px {
+      padding-bottom: 10px;
+    }
+  }
+  &__link {
+    text-decoration: none;
+  }
+  &__button {
+    box-sizing: border-box;
+    padding: 15px 10px;
+    width: 24px;
+    border-radius: 4px;
+    background: rgba(192, 125, 83, 1);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      background-color: $bg-color-greenish;
+      transition-duration: 0.5s;
+    }
+    @include p1150px {
+      width: 22px;
+    }
+  }
+  &__text {
+    margin: 0;
+    padding: 0;
+    writing-mode: vertical-rl;
+    font-family: $font-family-base;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0.04em;
+    color: $font-color-light;
+    @include p1150px {
+      font-size: 14px;
+      line-height: 15px;
+    }
+  }
+}

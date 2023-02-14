@@ -1,0 +1,48 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/constants.scss";
+
+.H2Component {
+  @include block-padding-top-bottom;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &_bordertrue {
+    border: 2px solid rgba(0, 0, 0, 0.3);
+  }
+  &_borderfalse {
+    border: none;
+  }
+  &_bgthemewhite {
+    background-color: $bg-color-white;
+    color: $font-color-base;
+  }
+  &_bgthemeblack {
+    background-color: $bg-color-dark;
+    color: $font-color-white;
+  }
+  &_bgthemesmoky {
+    background-color: $bg-color-smoky;
+    color: $font-color-base;
+  }
+
+  &__H2Title {
+    @include h2-style;
+    text-align: center;
+    color: inherit;
+  }
+
+  &__H2SubtitleItems {
+    @include list-style-none;
+  }
+  &__H2SubtitleItem {
+    @include paragraph-item-padding-bottom;
+  }
+  &__H2Paragraph {
+    @include text-style;
+    margin: 0;
+    text-align: center;
+    color: inherit;
+  }
+}

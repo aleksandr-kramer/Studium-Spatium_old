@@ -12,11 +12,11 @@
     height: 60px;
     width: 238px;
     @include d1440px {
-      height: 44px;
+      height: 50px;
       width: 175px;
     }
     @include p1150px {
-      height: 38px;
+      height: 43px;
       width: 151px;
     }
     @include p920px {

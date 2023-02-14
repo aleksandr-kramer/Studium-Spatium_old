@@ -1,0 +1,24 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/constants.scss";
+
+.FormChildrenRequestPresentation {
+  @include form-children-direction;
+  &__input {
+    @include input-text;
+  }
+  &__textarea {
+    @include textarea;
+  }
+  &__attachfile {
+    @include block-attach-file;
+  }
+  &__attachfilebutton {
+    @include button-attach-file;
+  }
+  &__attachfilename {
+    @include text-attach-file-name;
+  }
+  &__sendbutton {
+    @include form-send-button;
+  }
+}

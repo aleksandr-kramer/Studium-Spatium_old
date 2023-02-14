@@ -7,8 +7,12 @@ export default function Logo({ ImgName, ImgAlt }) {
       <Image
         src={`/logo/${ImgName}`}
         alt={ImgAlt}
-        height={60}
+        height={68}
         width={238}
+        style={{
+          maxWidth: "100%",
+          height: "auto",
+        }}
         priority
       />
     </Link>

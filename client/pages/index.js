@@ -7,7 +7,7 @@ export default function Index() {
       title={selectTranslate().Pages.index.Meta.title}
       keywords={selectTranslate().Pages.index.Meta.keywords}
     >
-      <div>123</div>
+      <div>1213</div>
     </MainLayout>
   );
 }

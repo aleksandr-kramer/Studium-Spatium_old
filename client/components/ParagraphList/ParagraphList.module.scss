@@ -1,0 +1,37 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/constants.scss";
+
+.ParagraphList {
+  @include list-style-none;
+
+  &__paragraphitem {
+    @include paragraph-item-padding-bottom;
+  }
+  &__paragraphtext {
+    @include text-style;
+    margin: 0;
+    padding: 0;
+  }
+  &__paragraphtext_colorbaseleft {
+    color: $font-color-base;
+    text-align: left;
+    @include m680px {
+      text-align: center;
+    }
+  }
+  &__paragraphtext_colorbasecenter {
+    color: $font-color-base;
+    text-align: center;
+  }
+  &__paragraphtext_colorwhiteleft {
+    color: $font-color-white;
+    text-align: left;
+    @include m680px {
+      text-align: center;
+    }
+  }
+  &__paragraphtext_colorwhitecenter {
+    color: $font-color-white;
+    text-align: center;
+  }
+}

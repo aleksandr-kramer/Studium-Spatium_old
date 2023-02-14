@@ -1,0 +1,117 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/constants.scss";
+
+.Page404 {
+  display: grid;
+  grid-template: auto auto 1fr / 1fr 1fr;
+  column-gap: 60px;
+  @include d1440px {
+    column-gap: 40px;
+  }
+  @include p1150px {
+    column-gap: 30px;
+  }
+  @include p920px {
+    grid-template: auto auto auto 1fr / 1fr;
+    column-gap: unset;
+  }
+  &__image {
+    grid-row: 1 / 4;
+    grid-column: 1;
+    margin: auto;
+    height: 400px;
+    width: 675px;
+    @include d1440px {
+      height: 295px;
+      width: 497px;
+    }
+    @include p1150px {
+      height: 238px;
+      width: 402px;
+    }
+    @include p920px {
+      grid-row: 1;
+      grid-column: 1;
+
+      height: 350px;
+      width: 590px;
+      padding-bottom: 46px;
+    }
+    @include m680px {
+      height: 180px;
+      width: 303px;
+      padding-bottom: 36px;
+    }
+  }
+  &__title {
+    margin: 0;
+    grid-row: 1;
+    grid-column: 2;
+    color: $font-color-base;
+    font-family: $font-family-headline;
+    font-size: 100px;
+    font-weight: 800;
+    line-height: 140px;
+    letter-spacing: 0.02em;
+    padding-bottom: 20px;
+    @include d1440px {
+      font-size: 90px;
+      line-height: 130px;
+      padding-bottom: 19px;
+    }
+    @include p1150px {
+      font-size: 80px;
+      line-height: 115px;
+      padding-bottom: 18px;
+    }
+    @include p920px {
+      grid-row: 2;
+      grid-column: 1;
+      font-size: 70px;
+      line-height: 100px;
+      padding-bottom: 18px;
+      text-align: center;
+    }
+    @include m680px {
+      font-size: 60px;
+      line-height: 88px;
+      padding-bottom: 17px;
+    }
+  }
+  &__subtitle {
+    @include h2-style-without-width;
+    color: $font-color-base;
+    padding-bottom: 40px;
+    grid-row: 2;
+    grid-column: 2;
+    @include d1440px {
+      padding-bottom: 34px;
+    }
+    @include p1150px {
+      padding-bottom: 30px;
+    }
+    @include p920px {
+      grid-row: 3;
+      grid-column: 1;
+      padding-bottom: 22px;
+      text-align: center;
+    }
+    @include m680px {
+      padding-bottom: 20px;
+    }
+  }
+  &__text {
+    grid-row: 3;
+    grid-column: 2;
+    @include p920px {
+      grid-row: 4;
+      grid-column: 1;
+      text-align: center;
+    }
+  }
+  &__paragraph {
+    @include text-style-without-width;
+    @include paragraph-item-padding-bottom;
+    color: $font-color-base;
+  }
+}

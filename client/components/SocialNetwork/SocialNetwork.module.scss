@@ -1,0 +1,198 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/constants.scss";
+
+.SocialNetwork {
+  height: 460px;
+  width: 27px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  @include d1440px {
+    height: 394px;
+  }
+  @include m680px {
+    height: 350px;
+    width: 22px;
+  }
+  &__text {
+    margin: 0;
+    padding: 0;
+    font-family: $font-family-base;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 20px;
+    color: $font-color-base;
+    writing-mode: vertical-rl;
+    @include m680px {
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+  &__line {
+    border-left: 1px solid rgba(0, 0, 0, 0.4);
+    height: 97px;
+    @include d1440px {
+      height: 47px;
+    }
+    @include m680px {
+      height: 40px;
+    }
+  }
+  &__items {
+    @include list-style-none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__item {
+    padding-bottom: 30px;
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+    @include d1440px {
+      padding-bottom: 25px;
+    }
+    @include m680px {
+      padding-bottom: 20px;
+    }
+  }
+  &__link {
+  }
+
+  &__youtubeactive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/youtube-greenish.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
+  &__youtubepassive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/youtube.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  &__instagramactive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/instagram-greenish.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
+  &__instagrampassive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/instagram.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  &__facebookactive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/facebook-greenish.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
+  &__facebookpassive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/facebook.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  &__linkedinactive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/linkedin-greenish.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
+  &__linkedinpassive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/linkedin.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  &__telegramactive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/telegram-greenish.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
+  &__telegrampassive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/telegram.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
+}

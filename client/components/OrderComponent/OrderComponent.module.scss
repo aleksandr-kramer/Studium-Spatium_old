@@ -1,0 +1,273 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/constants.scss";
+
+.OrderComponent {
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  width: 100%;
+  display: grid;
+  grid-template: 1fr / 2fr 1fr;
+  @include p1150px {
+    grid-template: 1fr / 1.7fr 1fr;
+  }
+  @include p920px {
+    grid-template: 1fr / 1.3fr 1fr;
+  }
+  @include m680px {
+    grid-template: auto 1fr / 1fr;
+  }
+  &__childrencontent {
+    grid-row: 1;
+    grid-column: 1;
+    padding: 70px 75px 70px;
+    @include d1440px {
+      padding: 60px 61px 60px;
+    }
+    @include p1150px {
+      padding: 50px 46px 50px;
+    }
+    @include p920px {
+      padding: 40px 35px 40px;
+    }
+    @include m680px {
+      padding: 30px 18px 30px;
+    }
+  }
+  &__blank {
+    grid-row: 1;
+    grid-column: 2;
+    border-left: 2px solid rgba(0, 0, 0, 0.3);
+    background-color: $bg-color-smoky;
+    @include m680px {
+      grid-row: 2;
+      grid-column: 1;
+      border-left: unset;
+      border-top: 2px solid rgba(0, 0, 0, 0.3);
+    }
+  }
+  &__blankinfoitems {
+    @include list-style-none;
+    padding: 70px 50px 40px;
+    @include d1440px {
+      padding: 60px 36px 32px;
+    }
+    @include p1150px {
+      padding: 50px 28px 24px;
+    }
+    @include p920px {
+      padding: 40px 22px 22px;
+    }
+    @include m680px {
+      padding: 30px 18px 20px;
+    }
+  }
+  &__blankinfoitem {
+    display: flex;
+    align-items: center;
+    padding-bottom: 22px;
+    @include d1440px {
+      padding-bottom: 20px;
+    }
+    @include p1150px {
+      padding-bottom: 18px;
+    }
+    @include p920px {
+      padding-bottom: 17px;
+    }
+    @include m680px {
+      padding-bottom: 16px;
+    }
+  }
+  &__blankinfoitem:last-child {
+    padding-bottom: 0;
+  }
+  &__blankinfoimage {
+    padding-right: 14px;
+    @include d1440px {
+      padding-right: 13px;
+    }
+    @include p1150px {
+      padding-right: 12px;
+    }
+    @include p920px {
+      padding-right: 10px;
+    }
+    @include m680px {
+      padding-right: 12px;
+    }
+  }
+  &__blankinfotext {
+    margin: 0;
+    font-family: $font-family-base;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.03em;
+    color: $font-color-base;
+    @include d1440px {
+      font-size: 18px;
+      line-height: 26px;
+    }
+    @include p1150px {
+      font-size: 16px;
+      line-height: 23px;
+    }
+    @include p920px {
+      font-size: 15px;
+      line-height: 21px;
+    }
+    @include m680px {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+  &__blankinfoborder {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  &__fees {
+    margin: 0;
+    padding: 40px 50px 40px;
+    font-family: $font-family-base;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 0.03em;
+    color: $font-color-greenish;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    @include d1440px {
+      padding: 32px 36px 32px;
+      font-size: 18px;
+      line-height: 30px;
+    }
+    @include p1150px {
+      padding: 24px 28px 24px;
+      font-size: 17px;
+      line-height: 28x;
+    }
+    @include p920px {
+      padding: 22px 22px 22px;
+      font-size: 16px;
+      line-height: 26px;
+    }
+    @include m680px {
+      text-align: center;
+      padding: 20px 18px 20px;
+      line-height: 24px;
+    }
+  }
+  &__price {
+    font-family: $font-family-base;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 35px;
+    letter-spacing: 0.03em;
+    color: $font-color-greenish;
+    @include d1440px {
+      font-size: 23px;
+      line-height: 32px;
+    }
+    @include p1150px {
+      font-size: 21px;
+      line-height: 30px;
+    }
+    @include p920px {
+      font-size: 18px;
+      line-height: 26px;
+    }
+    @include m680px {
+      font-size: 16px;
+      line-height: 23px;
+    }
+  }
+  &__buttonitems {
+    @include list-style-none;
+    padding: 40px 50px 70px;
+    @include d1440px {
+      padding: 32px 36px 60px;
+    }
+    @include p1150px {
+      padding: 24px 28px 50px;
+    }
+    @include p920px {
+      padding: 22px 22px 40px;
+    }
+    @include m680px {
+      padding: 20px 18px 30px;
+    }
+  }
+  &__buttonitem {
+    padding-bottom: 25px;
+    &:last-child {
+      padding-bottom: 0;
+    }
+    @include d1440px {
+      padding-bottom: 24px;
+    }
+    @include p1150px {
+      padding-bottom: 23px;
+    }
+    @include p920px {
+      padding-bottom: 22px;
+    }
+    @include m680px {
+      padding-bottom: 21px;
+    }
+  }
+  &__buttonlink {
+    text-decoration: none;
+  }
+  &__button {
+    width: 100%;
+    min-height: 53px;
+    border: 1px solid rgba(0, 100, 114, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 11px, 0;
+    color: $font-color-greenish;
+    @include d1440px {
+      min-height: 50px;
+      padding: 9px, 0;
+    }
+    @include p1150px {
+      min-height: 46px;
+      padding: 8px, 0;
+    }
+    @include p920px {
+      min-height: 42px;
+      padding: 7px, 0;
+    }
+    @include m680px {
+      min-height: 40px;
+      padding: 6px, 0;
+    }
+    &:hover {
+      background-color: $bg-color-greenish;
+      color: $font-color-white;
+      transition-duration: 0.5s;
+    }
+  }
+  &__buttontext {
+    margin: 0;
+    text-align: center;
+    font-family: $font-family-base;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 31px;
+    @include d1440px {
+      font-size: 20px;
+      line-height: 29px;
+    }
+    @include p1150px {
+      font-size: 18px;
+      line-height: 27px;
+    }
+    @include p920px {
+      font-size: 15px;
+      line-height: 25px;
+    }
+    @include m680px {
+      font-size: 14px;
+      line-height: 23px;
+    }
+  }
+}

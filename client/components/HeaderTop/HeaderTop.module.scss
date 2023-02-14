@@ -22,11 +22,11 @@
     display: none;
     @include p920px {
       display: block;
-      height: 44px;
+      height: 50px;
       width: 175px;
     }
     @include m680px {
-      height: 33px;
+      height: 37px;
       width: 131px;
     }
   }

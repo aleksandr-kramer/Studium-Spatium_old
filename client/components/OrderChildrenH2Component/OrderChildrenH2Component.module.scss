@@ -1,0 +1,50 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/constants.scss";
+
+.OrderChildrenH2Component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+
+  &__paragraph {
+    p {
+      width: 732px;
+    }
+    @include d1440px {
+      p {
+        width: 567px;
+      }
+    }
+    @include p1150px {
+      p {
+        width: 433px;
+      }
+    }
+    @include p920px {
+      p {
+        width: 265px;
+      }
+    }
+
+    @include m680px {
+      p {
+        width: 294px;
+      }
+    }
+  }
+
+  &__title {
+    @include h2-style;
+    text-align: center;
+    @include p1150px {
+      width: 433px;
+    }
+    @include p920px {
+      width: 265px;
+    }
+    @include m680px {
+      width: 294px;
+    }
+  }
+}
