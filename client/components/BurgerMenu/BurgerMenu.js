@@ -38,7 +38,7 @@ export default function BurgerMenu() {
     )
   );
 
-  const [activeBurger, setActiveBurger] = useState < boolean > false;
+  const [activeBurger, setActiveBurger] = useState(false);
   useEffect(() => {
     const keyDownHandler = (e) =>
       e.code === "Escape" && activeBurger

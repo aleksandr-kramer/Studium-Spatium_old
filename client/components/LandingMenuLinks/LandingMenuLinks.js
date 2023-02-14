@@ -5,12 +5,10 @@ export default function LandingMenuLinks({ LandingMenuItems }) {
   const listLandingMenuLinks = LandingMenuItems.map(
     ({ id, TitleLandingMenu, TextLandingMenu, UrlLandingMenu }) => (
       <li key={id} className={styles.LandingMenuLinks__Item}>
-        <Link href={UrlLandingMenu}>
-          <a className={styles.LandingMenuLinks__Link}>
-            <div className={styles.LandingMenuLinks__TextLink}>
-              {TitleLandingMenu}
-            </div>
-          </a>
+        <Link href={UrlLandingMenu} className={styles.LandingMenuLinks__Link}>
+          <div className={styles.LandingMenuLinks__TextLink}>
+            {TitleLandingMenu}
+          </div>
         </Link>
         {TextLandingMenu ? (
           <p className={styles.LandingMenuLinks__AboutLink}>

@@ -8,18 +8,20 @@ export default function SocialNetworkFooter() {
   const socialnetworklist = selectTranslate().SocialNetwork.map(
     ({ id, url, networkname }) => (
       <li key={id} className={styles.SocialNetworkFooter__item}>
-        <Link href={url}>
-          <a target="_blank" className={styles.SocialNetworkFooter__link}>
-            <div
-              onMouseEnter={() => SetSocialNetworkIcon(id)}
-              onMouseLeave={() => SetSocialNetworkIcon(0)}
-              className={
-                socialnetworkicon === id
-                  ? styles[`SocialNetworkFooter__${networkname}active`]
-                  : styles[`SocialNetworkFooter__${networkname}passive`]
-              }
-            ></div>
-          </a>
+        <Link
+          href={url}
+          target="_blank"
+          className={styles.SocialNetworkFooter__link}
+        >
+          <div
+            onMouseEnter={() => SetSocialNetworkIcon(id)}
+            onMouseLeave={() => SetSocialNetworkIcon(0)}
+            className={
+              socialnetworkicon === id
+                ? styles[`SocialNetworkFooter__${networkname}active`]
+                : styles[`SocialNetworkFooter__${networkname}passive`]
+            }
+          ></div>
         </Link>
       </li>
     )

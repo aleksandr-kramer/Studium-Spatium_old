@@ -21,8 +21,7 @@ function DeterminingInitialLanguage() {
 
 export default function LanguageSelector() {
   const router = useRouter();
-  const [activeLanguagePopUp, setActiveLanguagePopUp] =
-    useState < boolean > false;
+  const [activeLanguagePopUp, setActiveLanguagePopUp] = useState(false);
   const [activeLanguage, setActiveLanguage] = useState(
     DeterminingInitialLanguage()
   );
