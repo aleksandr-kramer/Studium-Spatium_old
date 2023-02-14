@@ -33,7 +33,10 @@ export default function OrderComponent({
             alt={OrderText}
             height={24}
             width={24}
-            priority
+            style={{
+              maxWidth: "100%",
+              height: "auto",
+            }}
           />
         </div>
         <p className={styles.OrderComponent__blankinfotext}>{OrderText}</p>

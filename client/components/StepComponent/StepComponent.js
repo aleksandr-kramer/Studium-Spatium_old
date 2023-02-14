@@ -19,7 +19,10 @@ export default function StepComponent({
             alt={Title}
             height={150}
             width={167}
-            priority
+            style={{
+              maxWidth: "100%",
+              height: "auto",
+            }}
           />
         </div>
         <div className={styles.StepComponent__line}></div>

@@ -20,7 +20,10 @@ export default function Page404({
           alt={H2Title}
           height={400}
           width={675}
-          priority
+          style={{
+            maxWidth: "100%",
+            height: "auto",
+          }}
         />
       </div>
       <h1 className={styles.Page404__title}>{H1Title}</h1>

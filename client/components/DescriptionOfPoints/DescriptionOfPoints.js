@@ -13,7 +13,10 @@ export default function DescriptionOfPoints({ Name, descriptionofpointsdata }) {
               alt="duration"
               height={24}
               width={24}
-              priority
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+              }}
             />
           </div>
           <p className={styles.DescriptionOfPoints__durationtext}>{Duration}</p>
