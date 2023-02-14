@@ -1,0 +1,80 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/constants.scss";
+
+.LandingMenuLinks {
+  @include list-style-none;
+  font-family: $font-family-base;
+  &__Item:not(:last-child):after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    @include d1440px {
+      margin-bottom: 18px;
+    }
+  }
+
+  &__Link {
+    text-decoration: none;
+    color: $font-color-white;
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    @include d1440px {
+      font-size: 14px;
+      line-height: 16px;
+    }
+    @include p1150px {
+      font-size: 13px;
+      line-height: 15px;
+    }
+
+    :hover {
+      background-color: $bg-color-white;
+      color: $font-color-greenish;
+    }
+  }
+
+  &__TextLink {
+    box-sizing: border-box;
+    display: inline-block;
+    background-color: rgb(0, 100, 114, 0.75);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.18);
+    height: 28px;
+    vertical-align: middle;
+    padding: 5px 10px;
+    white-space: nowrap;
+    margin-bottom: 25px;
+    @include d1440px {
+      box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.18);
+      height: 26px;
+      padding: 4px 8px;
+      margin-bottom: 20px;
+    }
+    @include p1150px {
+      height: 24px;
+      padding: 4px 6px;
+      margin-bottom: 14px;
+    }
+  }
+
+  &__AboutLink {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    padding-bottom: 20px;
+    @include d1440px {
+      font-size: 14px;
+      line-height: 18px;
+      padding-bottom: 18px;
+    }
+    @include p1150px {
+      font-size: 13px;
+      line-height: 16px;
+    }
+  }
+}

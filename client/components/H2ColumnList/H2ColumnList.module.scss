@@ -1,0 +1,125 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/constants.scss";
+
+.H2ColumnList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include block-padding-top-bottom;
+  &__title {
+    @include h2-style;
+    text-align: center;
+    color: $font-color-white;
+  }
+  &__items {
+    @include list-style-none;
+    column-count: 2;
+    column-gap: 60px;
+    @include d1440px {
+      column-gap: 44px;
+    }
+    @include p1150px {
+      column-gap: 30px;
+    }
+    @include p920px {
+      column-count: 1;
+      column-gap: unset;
+    }
+  }
+  &__item {
+    position: relative;
+    padding: 0 10px 36px 22px;
+    break-inside: avoid;
+    @include d1440px {
+      padding: 0 15px 32px 17px;
+    }
+    @include p1150px {
+      padding: 0 13px 30px 16px;
+    }
+    @include p920px {
+      padding: 0 12px 30px 16px;
+    }
+    @include m680px {
+      padding: 0 10px 28px 14px;
+    }
+  }
+
+  &__item::before {
+    content: "";
+    position: absolute;
+    top: 11px;
+    left: 1px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $bg-color-brown;
+    @include d1440px {
+      top: 12px;
+      width: 7px;
+      height: 7px;
+    }
+    @include p1150px {
+      top: 11px;
+      width: 6px;
+      height: 6px;
+    }
+    @include m680px {
+      top: 8px;
+      width: 5px;
+      height: 5px;
+    }
+  }
+  &__item:last-child {
+    padding-bottom: 0;
+  }
+  &__itemtext {
+    margin: 0;
+    width: 100%;
+    color: $font-color-white;
+    font-family: $font-family-base;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 32px;
+    text-align: justify;
+    @include d1440px {
+      font-size: 20px;
+      line-height: 30px;
+    }
+    @include p1150px {
+      font-size: 18px;
+      line-height: 28px;
+    }
+    @include p920px {
+      font-size: 16px;
+      line-height: 26px;
+    }
+    @include m680px {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+  &__itemtitle {
+    font-family: $font-family-base;
+    color: $font-color-brown;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: left;
+    @include d1440px {
+      font-size: 22px;
+      line-height: 30px;
+    }
+    @include p1150px {
+      font-size: 20px;
+      line-height: 28px;
+    }
+    @include p920px {
+      font-size: 18px;
+      line-height: 26px;
+    }
+    @include m680px {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/constants.scss";
+
+.HeaderNavMenu {
+  @include page-container;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__logo {
+    opacity: 0.8;
+    position: relative;
+    height: 60px;
+    width: 238px;
+    @include d1440px {
+      height: 50px;
+      width: 175px;
+    }
+    @include p1150px {
+      height: 43px;
+      width: 151px;
+    }
+    @include p920px {
+      display: none;
+    }
+  }
+}

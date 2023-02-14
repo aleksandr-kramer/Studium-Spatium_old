@@ -1,0 +1,153 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/constants.scss";
+
+.FeedbackComponent {
+  display: grid;
+  grid-template: auto auto 1fr / 1fr 1fr;
+  column-gap: 60px;
+  @include d1440px {
+    column-gap: 36px;
+  }
+  @include p1150px {
+    column-gap: 30px;
+  }
+  @include p920px {
+    column-gap: 18px;
+    grid-template: auto auto 1fr / 1fr 1.2fr;
+  }
+  @include m680px {
+    grid-template: auto auto auto 1fr / 1fr;
+    column-gap: unset;
+  }
+  &__title {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    @include h2-style-without-width;
+    font-weight: 800;
+    color: $font-color-base;
+    @include m680px {
+      text-align: center;
+    }
+  }
+  &__text {
+    grid-column: 1;
+    grid-row: 2;
+    padding-bottom: 70px;
+    @include d1440px {
+      padding-bottom: 66px;
+    }
+    @include p1150px {
+      padding-bottom: 64px;
+    }
+    @include p920px {
+      padding-bottom: 58px;
+    }
+    @include m680px {
+      padding-bottom: 40px;
+    }
+  }
+  &__paragraph {
+    @include text-style-without-width;
+    @include paragraph-item-padding-bottom;
+    color: $font-color-base;
+    @include m680px {
+      text-align: center;
+    }
+  }
+  &__aboutitems {
+    @include list-style-none;
+    grid-column: 1;
+    grid-row: 3;
+  }
+  &__aboutitem {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    padding-bottom: 30px;
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+    @include d1440px {
+      padding-bottom: 26px;
+    }
+    @include p1150px {
+      padding-bottom: 23px;
+    }
+    @include p920px {
+      padding-bottom: 20px;
+    }
+    @include m680px {
+      padding-bottom: 17px;
+      &:last-of-type {
+        padding-bottom: 40px;
+      }
+    }
+  }
+  &__icon {
+    width: 40px;
+    height: 40px;
+    padding-right: 16px;
+    @include d1440px {
+      width: 37px;
+      height: 37px;
+      padding-right: 15px;
+    }
+    @include p1150px {
+      width: 35px;
+      height: 35px;
+      padding-right: 14px;
+    }
+    @include p920px {
+      width: 28px;
+      height: 28px;
+      padding-right: 13px;
+    }
+  }
+  &__icontitle {
+    margin: 0;
+    font-family: $font-family-base;
+    color: $font-color-base;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30px;
+    @include d1440px {
+      font-size: 22px;
+      line-height: 26px;
+    }
+    @include p1150px {
+      font-size: 20px;
+      line-height: 24px;
+    }
+    @include p920px {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+  &__formblock {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    align-self: flex-start;
+    background-color: rgba(229, 226, 213, 0.87);
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.18);
+    padding: 40px 45px;
+    @include d1440px {
+      padding: 37px 38px;
+    }
+    @include p1150px {
+      padding: 35px 30px;
+    }
+    @include p920px {
+      padding: 32px 20px;
+    }
+    @include m680px {
+      grid-column: 1;
+      grid-row: 4;
+      padding: 30px 13px;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+}

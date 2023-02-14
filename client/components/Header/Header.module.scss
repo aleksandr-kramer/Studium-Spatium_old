@@ -1,0 +1,15 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/constants.scss";
+
+.Header {
+  margin-bottom: 87px;
+  @include d1440px {
+    margin-bottom: 60px;
+  }
+  @include p1150px {
+    margin-bottom: 46px;
+  }
+  @include m680px {
+    margin-bottom: 28px;
+  }
+}

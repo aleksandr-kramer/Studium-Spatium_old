@@ -1,0 +1,50 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/constants.scss";
+
+.HeaderTop {
+  background-color: $bg-color-smoky;
+  &__Content {
+    @include page-container;
+    min-height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include p920px {
+      min-height: 86px;
+    }
+    @include m680px {
+      min-height: 76px;
+    }
+  }
+  &__logo {
+    opacity: 0.8;
+    position: relative;
+    display: none;
+    @include p920px {
+      display: block;
+      height: 50px;
+      width: 175px;
+    }
+    @include m680px {
+      height: 37px;
+      width: 131px;
+    }
+  }
+  &__SubDomainLink {
+    flex-grow: 3;
+    @include p920px {
+      display: none;
+    }
+  }
+  &__DomainLink {
+    flex-grow: 1;
+    @include p920px {
+      display: none;
+    }
+  }
+  &__LanguageSelector {
+    @include p920px {
+      display: none;
+    }
+  }
+}

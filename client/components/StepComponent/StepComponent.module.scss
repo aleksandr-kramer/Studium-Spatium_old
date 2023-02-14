@@ -1,0 +1,307 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/constants.scss";
+
+.StepComponent {
+  @include list-style-none;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: row;
+  grid-auto-rows: 1fr;
+  row-gap: 40px;
+  @include d1440px {
+    row-gap: 36px;
+  }
+  @include p1150px {
+    row-gap: 32px;
+  }
+  @include p920px {
+    row-gap: 30px;
+  }
+  @include m680px {
+    row-gap: 25px;
+    grid-auto-rows: unset;
+  }
+
+  &__item {
+    display: grid;
+    grid-template: 1fr auto / auto auto 1fr;
+    background-color: $bg-color-gray;
+    padding: 0 48px;
+    @include d1440px {
+      padding: 0 38px;
+    }
+    @include p1150px {
+      padding: 0 30px;
+    }
+    @include p920px {
+      padding: 0 20px;
+    }
+    @include m680px {
+      grid-template: auto 1fr auto / auto 1fr;
+      padding: 25px 25px 0 25px;
+    }
+  }
+  &__steppoint {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    margin: auto;
+    padding: 0 24px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    @include d1440px {
+      padding: 0 22px;
+    }
+    @include p1150px {
+      padding: 0 20px;
+    }
+    @include p920px {
+      padding: 0 18px;
+    }
+    @include m680px {
+      grid-row: 1;
+      padding: 0;
+    }
+  }
+  &__stepkey {
+    margin: 0;
+    padding-bottom: 23px;
+    text-transform: uppercase;
+    font-family: $font-family-headline;
+    color: $font-color-base;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 40px;
+    @include d1440px {
+      padding-bottom: 20px;
+      font-size: 30px;
+      line-height: 36px;
+    }
+    @include p1150px {
+      padding-bottom: 18px;
+      font-size: 26px;
+      line-height: 32px;
+    }
+    @include p920px {
+      padding-bottom: 16px;
+      font-size: 24px;
+      line-height: 30px;
+    }
+    @include m680px {
+      padding-bottom: 8px;
+      font-size: 22px;
+      line-height: 28px;
+    }
+  }
+  &__stepid {
+    margin: 0;
+    font-family: $font-family-base;
+    color: $font-color-base;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 30px;
+    @include d1440px {
+      font-size: 23px;
+      line-height: 27px;
+    }
+    @include p1150px {
+      font-size: 21px;
+      line-height: 25px;
+    }
+    @include p920px {
+      font-size: 19px;
+      line-height: 23px;
+    }
+    @include m680px {
+      font-size: 17px;
+      line-height: 22px;
+    }
+  }
+  &__image {
+    z-index: 1;
+    width: 167px;
+    height: 150px;
+    margin: auto;
+    grid-column: 2;
+    grid-row: 1 / 3;
+    box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.18);
+    @include d1440px {
+      width: 145px;
+      height: 130px;
+    }
+    @include p1150px {
+      width: 122px;
+      height: 110px;
+    }
+    @include p920px {
+      width: 111px;
+      height: 100px;
+    }
+    @include m680px {
+      grid-row: 1;
+      margin: unset;
+      width: 102px;
+      height: 92px;
+      margin-left: 28px;
+    }
+  }
+  &__line {
+    z-index: 0;
+    grid-column: 2;
+    grid-row: 1 / 3;
+    margin: auto;
+    width: 20px;
+    height: 100%;
+    background-color: $bg-color-darkgray;
+    @include d1440px {
+      width: 18px;
+    }
+    @include p1150px {
+      width: 16px;
+    }
+    @include p920px {
+      width: 14px;
+    }
+    @include m680px {
+      display: none;
+    }
+  }
+  &__stepcontent {
+    padding: 40px 0 40px 106px;
+    grid-column: 3;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @include d1440px {
+      padding: 34px 0 34px 90px;
+    }
+    @include p1150px {
+      padding: 30px 0 30px 70px;
+    }
+    @include p920px {
+      padding: 26px 0 26px 36px;
+    }
+    @include m680px {
+      grid-column: 1 / 3;
+      grid-row: 2;
+      padding: 28px 0 28px 0;
+    }
+  }
+  &__title {
+    margin: 0;
+    padding-bottom: 40px;
+    color: $font-color-base;
+    font-family: $font-family-base;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30px;
+    @include d1440px {
+      padding-bottom: 36px;
+      font-size: 23px;
+      line-height: 28px;
+    }
+    @include p1150px {
+      padding-bottom: 34px;
+      font-size: 21px;
+      line-height: 26px;
+    }
+    @include p920px {
+      padding-bottom: 32px;
+      font-size: 19px;
+      line-height: 24px;
+    }
+    @include m680px {
+      padding-bottom: 22px;
+      font-size: 17px;
+      line-height: 20px;
+    }
+  }
+  &__text {
+    @include text-style;
+    color: $font-color-base;
+    @include d1440px {
+      width: 598px;
+    }
+    @include p1150px {
+      width: 473px;
+    }
+    @include p920px {
+      width: 305px;
+    }
+    @include m680px {
+      width: 280px;
+      text-align: justify;
+    }
+  }
+  &__linkbutton {
+    padding: 0 0 40px 106px;
+    grid-column: 3;
+    grid-row: 2;
+    display: inline-block;
+    @include d1440px {
+      padding: 0 0 34px 90px;
+    }
+    @include p1150px {
+      padding: 0 0 30px 70px;
+    }
+    @include p920px {
+      padding: 0 0 26px 36px;
+    }
+    @include m680px {
+      grid-column: 1 / 3;
+      grid-row: 3;
+      padding: 0 0 28px 0;
+    }
+  }
+  &__link {
+    text-decoration: none;
+  }
+  &__button {
+    box-sizing: border-box;
+    width: fit-content;
+    border-radius: 4px;
+    background: rgba(192, 125, 83, 1);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: $bg-color-greenish;
+      transition-duration: 0.5s;
+    }
+  }
+  &__linktext {
+    color: $font-color-light;
+    margin: 0;
+    font-family: $font-family-base;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    padding: 6px 20px;
+
+    @include d1440px {
+      font-size: 18px;
+      line-height: 24px;
+      padding: 5px 20px;
+    }
+    @include p1150px {
+      font-size: 17px;
+      line-height: 23px;
+      padding: 5px 18px;
+    }
+    @include p920px {
+      font-size: 16px;
+      line-height: 22px;
+      padding: 5px 16px;
+    }
+    @include m680px {
+      font-size: 15px;
+      line-height: 21px;
+      padding: 5px 14px;
+    }
+  }
+}

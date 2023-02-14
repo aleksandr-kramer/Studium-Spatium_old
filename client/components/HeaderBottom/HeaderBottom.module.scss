@@ -1,0 +1,24 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/constants.scss";
+
+.HeaderBottom {
+  position: relative;
+  z-index: 1;
+
+  &__HeaderNavMenu {
+    height: 136px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    @include d1440px {
+      height: 87px;
+    }
+    @include p1150px {
+      height: 70px;
+    }
+    @include p920px {
+      height: 60px;
+    }
+    @include m680px {
+      display: none;
+    }
+  }
+}
