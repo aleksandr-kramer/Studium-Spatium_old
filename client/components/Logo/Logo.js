@@ -13,7 +13,6 @@ export default function Logo({ ImgName, ImgAlt }) {
           maxWidth: "100%",
           height: "auto",
         }}
-        priority
       />
     </Link>
   );
