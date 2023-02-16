@@ -18,7 +18,7 @@ import {
   landingmonolinkbgcolorsmoky,
 } from "../constants/stylesconstants";
 
-export default function Index() {
+export default function Index({ data }) {
   return (
     <MainLayout
       title={selectTranslate().Pages.index.Meta.title}
@@ -27,7 +27,8 @@ export default function Index() {
       <section className={styles.main__firstscreenvideo}>
         <div className={styles.main__firstscreenvideo__container}>
           <FirstScreenVideo
-            h1title={selectTranslate().Pages.index.FirstScreenVideo.H1Title}
+            // h1title={selectTranslate().Pages.index.FirstScreenVideo.H1Title}
+            h1title={data.FirstScreenVideo.H1Title}
             h1subtitle={
               selectTranslate().Pages.index.FirstScreenVideo.H1SubTitle
             }
@@ -161,4 +162,10 @@ export default function Index() {
       ) : null}
     </MainLayout>
   );
+}
+
+export async function getServerSideProps() {
+  const res = await fetch(`http://localhost:5000`);
+  const data = await res.json();
+  return { props: { data } };
 }

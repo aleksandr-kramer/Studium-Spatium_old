@@ -1,5 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const Page_en = require("./models/Page");
+
 mongoose.set("strictQuery", false);
 const app = express();
 app.use(express.json({ extended: true }));
@@ -13,6 +15,11 @@ mongoose
   .then(() => console.log("Connect to MongoDB"))
   .catch((err) => console.log(`MongoDB connection error: ${err}`));
 
-app.get("/", (req, res) => {
-  res.send("<h1>Hellow Studium Spatium!</h1>");
+app.get("/", async (req, res) => {
+  try {
+    const indexpagedata = await Page_en.findOne({ name: "index" });
+    res.json(indexpagedata);
+  } catch (error) {
+    console.log(error);
+  }
 });
