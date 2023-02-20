@@ -42,7 +42,15 @@ const pageSchema = new Schema({
     AltImage: String,
     NameImage: String,
   },
+  LandingMonoLink: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: `LandingMonoLink_en`,
+    },
+  ],
 });
 
 const Page_en = mongoose.model("Page_en", pageSchema, "page_en");
-module.exports = Page_en;
+const Page_es = mongoose.model("Page_es", pageSchema, "page_es");
+const Page_ru = mongoose.model("Page_ru", pageSchema, "page_ru");
+module.exports = { Page_en, Page_es, Page_ru };

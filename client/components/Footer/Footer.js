@@ -5,7 +5,7 @@ import MenuLinks from "../MenuLinks/MenuLinks";
 import { menulinkswhitetheme } from "../../constants/stylesconstants";
 import SocialNetworkFooter from "../SocialNetworkFooter/SocialNetworkFooter";
 
-export default function Footer() {
+export default function Footer({ data }) {
   return (
     <footer className={styles.Footer}>
       <div className={styles.Footer__top}>
