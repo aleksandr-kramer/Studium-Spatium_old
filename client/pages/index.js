@@ -18,7 +18,7 @@ import {
   landingmonolinkbgcolorsmoky,
 } from "../constants/stylesconstants";
 
-export default function Index() {
+export default function Index({ data }) {
   return (
     <MainLayout
       title={selectTranslate().Pages.index.Meta.title}
@@ -27,7 +27,8 @@ export default function Index() {
       <section className={styles.main__firstscreenvideo}>
         <div className={styles.main__firstscreenvideo__container}>
           <FirstScreenVideo
-            h1title={selectTranslate().Pages.index.FirstScreenVideo.H1Title}
+            // h1title={selectTranslate().Pages.index.FirstScreenVideo.H1Title}
+            h1title={data.indexpagedata.FirstScreenVideo.H1Title}
             h1subtitle={
               selectTranslate().Pages.index.FirstScreenVideo.H1SubTitle
             }
@@ -43,7 +44,8 @@ export default function Index() {
       <section className={styles.main__h2component}>
         <div className={styles.main__h2component__container}>
           <H2Component
-            H2Title={selectTranslate().Pages.index.H2Compoonent.H2Title}
+            // H2Title={selectTranslate().Pages.index.H2Compoonent.H2Title}
+            H2Title={data.aboutstspdata.title}
             H2ComponentSubtitle={
               selectTranslate().Pages.index.H2Compoonent.H2SubTitle
             }
@@ -161,4 +163,11 @@ export default function Index() {
       ) : null}
     </MainLayout>
   );
+}
+
+export async function getServerSideProps({ locale }) {
+  const lang = locale;
+  const res = await fetch(`http://localhost:5000/api/index_${lang}`);
+  const data = await res.json();
+  return { props: { data } };
 }
