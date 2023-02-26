@@ -23,6 +23,7 @@
   "homepage": "https://github.com/aleksandr-kramer/Studium-Spatium#readme",
   "dependencies": {
     "concurrently": "^7.6.0",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^6.9.1",
     "nodemon": "^2.0.20"
