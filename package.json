@@ -4,9 +4,11 @@
   "description": "Studium Spatium project (studiumspatium.com)",
   "main": "index.js",
   "scripts": {
-    "client": "npm run dev --prefix client",
+    "client:dev": "npm run dev --prefix client",
+    "client:start": "npm run start --prefix client",
     "server": "nodemon index.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client:dev\"",
+    "start": "concurrently \"npm run server\" \"npm run client:start\""
   },
   "repository": {
     "type": "git",
@@ -16,7 +18,7 @@
     "studium spatium"
   ],
   "author": "Alexandr Krahmer",
-  "license": "ISC",
+  "license": "",
   "bugs": {
     "url": "https://github.com/aleksandr-kramer/Studium-Spatium/issues"
   },
