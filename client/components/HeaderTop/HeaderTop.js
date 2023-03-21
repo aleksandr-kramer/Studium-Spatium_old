@@ -6,7 +6,7 @@ import { menulinksdarktheme } from "../../constants/stylesconstants";
 import Logo from "../Logo/Logo";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
-export default function HeaderTop() {
+export default function HeaderTop({ ImgLogoHeaderTop, AltLogoHeaderTop }) {
   const SubDomainLink = selectTranslate().Header.SubDomainLink;
   const DomainLink = selectTranslate().Header.DomainLink;
   return (
@@ -14,8 +14,10 @@ export default function HeaderTop() {
       <div className={styles.HeaderTop__Content}>
         <div className={styles.HeaderTop__logo}>
           <Logo
-            ImgName={selectTranslate().Logo.LogoHeader.ImgName}
-            ImgAlt={selectTranslate().Logo.LogoHeader.ImgAlt}
+            ImgLogo={ImgLogoHeaderTop}
+            AltLogo={AltLogoHeaderTop}
+            // ImgName={selectTranslate().Logo.LogoHeader.ImgName}
+            // ImgAlt={selectTranslate().Logo.LogoHeader.ImgAlt}
           />
         </div>
         <div className={styles.HeaderTop__SubDomainLink}>

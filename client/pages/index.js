@@ -23,15 +23,22 @@ export default function Index({ data }) {
     <MainLayout
       title={selectTranslate().Pages.index.Meta.title}
       keywords={selectTranslate().Pages.index.Meta.keywords}
+      AltLogoFooter={data.logodata.img_alt}
+      AltLogoHeaderTop={data.logodata.img_alt}
+      AltLogoHeaderBottom={data.logodata.img_alt}
+      ImgLogoHeaderBottom={data.logodata.img_name_header}
+      ImgLogoHeaderTop={data.logodata.img_name_header}
+      ImgLogoFooter={data.logodata.img_name_footer}
     >
       <section className={styles.main__firstscreenvideo}>
         <div className={styles.main__firstscreenvideo__container}>
           <FirstScreenVideo
             // h1title={selectTranslate().Pages.index.FirstScreenVideo.H1Title}
             h1title={data.indexpagedata.FirstScreenVideo.H1Title}
-            h1subtitle={
-              selectTranslate().Pages.index.FirstScreenVideo.H1SubTitle
-            }
+            // h1subtitle={
+            //   selectTranslate().Pages.index.FirstScreenVideo.H1SubTitle
+            // }
+            h1subtitle={data.logodata.img_name_header}
             altimage={selectTranslate().Pages.index.FirstScreenVideo.AltImage}
             nameimage={selectTranslate().Pages.index.FirstScreenVideo.NameImage}
             urlvideo={selectTranslate().Pages.index.FirstScreenVideo.UrlVideo}
@@ -169,5 +176,6 @@ export async function getServerSideProps({ locale }) {
   const lang = locale;
   const res = await fetch(`http://localhost:5000/api/index_${lang}`);
   const data = await res.json();
+  console.log(data);
   return { props: { data } };
 }

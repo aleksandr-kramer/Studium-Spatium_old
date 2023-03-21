@@ -5,15 +5,17 @@ import MenuLinks from "../MenuLinks/MenuLinks";
 import { menulinkswhitetheme } from "../../constants/stylesconstants";
 import SocialNetworkFooter from "../SocialNetworkFooter/SocialNetworkFooter";
 
-export default function Footer({ data }) {
+export default function Footer({ ImgLogoFooter, AltLogoFooter }) {
   return (
     <footer className={styles.Footer}>
       <div className={styles.Footer__top}>
         <div className={styles.Footer__content}>
           <div className={styles.Footer__logo}>
             <Logo
-              ImgName={selectTranslate().Logo.LogoFooter.ImgName}
-              ImgAlt={selectTranslate().Logo.LogoFooter.ImgAlt}
+              ImgLogo={ImgLogoFooter}
+              AltLogo={AltLogoFooter}
+              // ImgLogo={selectTranslate().Logo.LogoFooter.ImgName}
+              // AltLogo={selectTranslate().Logo.LogoFooter.ImgAlt}
             />
           </div>
           <p className={styles.Footer__text}>

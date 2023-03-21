@@ -154,4 +154,58 @@
       width: 20px;
     }
   }
+
+  &__twitteractive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/twitter-greenish.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
+  &__twitterpassive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/twitter-white.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  &__vkactive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/vk-greenish.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
+  &__vkpassive {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../public/uipictures/vk-white.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @include m680px {
+      height: 20px;
+      width: 20px;
+    }
+  }
 }
