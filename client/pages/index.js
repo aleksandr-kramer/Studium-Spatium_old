@@ -29,6 +29,7 @@ export default function Index({ data }) {
       ImgLogoHeaderBottom={data.logodata.img_name_header}
       ImgLogoHeaderTop={data.logodata.img_name_header}
       ImgLogoFooter={data.logodata.img_name_footer}
+      socialnetworkdata={data.socialnetworkdata}
     >
       <section className={styles.main__firstscreenvideo}>
         <div className={styles.main__firstscreenvideo__container}>

@@ -13,6 +13,7 @@ export default function MainLayout({
   ImgLogoHeaderBottom,
   AltLogoHeaderBottom,
   AltLogoFooter,
+  socialnetworkdata,
 }) {
   return (
     <>
@@ -27,7 +28,11 @@ export default function MainLayout({
         AltLogoHeaderBottom={AltLogoHeaderBottom}
       />
       <main className={styles.Main}>{children}</main>
-      <Footer ImgLogoFooter={ImgLogoFooter} AltLogoFooter={AltLogoFooter} />
+      <Footer
+        ImgLogoFooter={ImgLogoFooter}
+        AltLogoFooter={AltLogoFooter}
+        socialnetworkdata={socialnetworkdata}
+      />
     </>
   );
 }

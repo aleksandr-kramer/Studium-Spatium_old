@@ -3,21 +3,21 @@ import Link from "next/link";
 import { useState } from "react";
 import selectTranslate from "../../utils/selectTranslate";
 
-export default function SocialNetworkFooter() {
+export default function SocialNetworkFooter({ socialnetwork }) {
   const [socialnetworkicon, SetSocialNetworkIcon] = useState(0);
-  const socialnetworklist = selectTranslate().SocialNetwork.map(
-    ({ id, url, networkname }) => (
-      <li key={id} className={styles.SocialNetworkFooter__item}>
+  const socialnetworklist = socialnetwork.map(
+    ({ _id, networkname, networkurl }) => (
+      <li key={_id} className={styles.SocialNetworkFooter__item}>
         <Link
-          href={url}
+          href={networkurl}
           target="_blank"
           className={styles.SocialNetworkFooter__link}
         >
           <div
-            onMouseEnter={() => SetSocialNetworkIcon(id)}
+            onMouseEnter={() => SetSocialNetworkIcon(_id)}
             onMouseLeave={() => SetSocialNetworkIcon(0)}
             className={
-              socialnetworkicon === id
+              socialnetworkicon === _id
                 ? styles[`SocialNetworkFooter__${networkname}active`]
                 : styles[`SocialNetworkFooter__${networkname}passive`]
             }

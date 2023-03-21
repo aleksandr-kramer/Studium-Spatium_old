@@ -5,7 +5,11 @@ import MenuLinks from "../MenuLinks/MenuLinks";
 import { menulinkswhitetheme } from "../../constants/stylesconstants";
 import SocialNetworkFooter from "../SocialNetworkFooter/SocialNetworkFooter";
 
-export default function Footer({ ImgLogoFooter, AltLogoFooter }) {
+export default function Footer({
+  ImgLogoFooter,
+  AltLogoFooter,
+  socialnetworkdata,
+}) {
   return (
     <footer className={styles.Footer}>
       <div className={styles.Footer__top}>
@@ -32,7 +36,7 @@ export default function Footer({ ImgLogoFooter, AltLogoFooter }) {
             />
           </div>
           <div className={styles.Footer__socialnetworkfooter}>
-            <SocialNetworkFooter />
+            <SocialNetworkFooter socialnetwork={socialnetworkdata} />
           </div>
           <p className={styles.Footer__contacttext}>
             {selectTranslate().Footer.TitleContact}
@@ -41,7 +45,7 @@ export default function Footer({ ImgLogoFooter, AltLogoFooter }) {
             className={styles.Footer__contactemail}
             href={`mailto: ${selectTranslate().Footer.ContactEmail}`}
           >
-            info@email.ru
+            info@studiumspatium.com
           </a>
         </div>
       </div>
