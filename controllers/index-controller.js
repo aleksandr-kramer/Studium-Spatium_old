@@ -42,7 +42,9 @@ const getPageIndexEs = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
-    const navigationdata = await Navigation_es.find();
+    const navigationdata = await Navigation_es.findOne({
+      _id: "641a283568c667addfdb882f",
+    });
     const indexpagedata = await Page_es.findOne({ name: "index" }).populate(
       "LandingMonoLink"
     );
@@ -65,7 +67,9 @@ const getPageIndexRu = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "ru" });
-    const navigationdata = await Navigation_ru.find();
+    const navigationdata = await Navigation_ru.findOne({
+      _id: "641a283568c667addfdb882f",
+    });
     const indexpagedata = await Page_ru.findOne({ name: "index" }).populate(
       "LandingMonoLink"
     );
