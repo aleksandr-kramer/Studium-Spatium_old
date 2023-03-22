@@ -6,9 +6,14 @@ import { menulinksdarktheme } from "../../constants/stylesconstants";
 import Logo from "../Logo/Logo";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
-export default function HeaderTop({ ImgLogoHeaderTop, AltLogoHeaderTop }) {
-  const SubDomainLink = selectTranslate().Header.SubDomainLink;
-  const DomainLink = selectTranslate().Header.DomainLink;
+export default function HeaderTop({
+  ImgLogoHeaderTop,
+  AltLogoHeaderTop,
+  menulinksdomain,
+  menulinkssubdomain,
+}) {
+  // const SubDomainLink = selectTranslate().Header.SubDomainLink;
+  // const DomainLink = selectTranslate().Header.DomainLink;
   return (
     <section className={styles.HeaderTop}>
       <div className={styles.HeaderTop__Content}>
@@ -22,17 +27,23 @@ export default function HeaderTop({ ImgLogoHeaderTop, AltLogoHeaderTop }) {
         </div>
         <div className={styles.HeaderTop__SubDomainLink}>
           <MenuLinks
-            LinksItems={SubDomainLink}
+            LinksItems={menulinkssubdomain}
             LinkTheme={menulinksdarktheme}
           />
         </div>
         <div className={styles.HeaderTop__DomainLink}>
-          <MenuLinks LinksItems={DomainLink} LinkTheme={menulinksdarktheme} />
+          <MenuLinks
+            LinksItems={menulinksdomain}
+            LinkTheme={menulinksdarktheme}
+          />
         </div>
         <div className={styles.HeaderTop__LanguageSelector}>
           <LanguageSelector />
         </div>
-        <BurgerMenu />
+        <BurgerMenu
+          menulinksdomain={menulinksdomain}
+          menulinkssubdomain={menulinkssubdomain}
+        />
       </div>
     </section>
   );

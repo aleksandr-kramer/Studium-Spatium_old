@@ -5,15 +5,15 @@ const navigationSchema = new Schema({
   subdomainlink: [
     {
       id: Number,
-      subdomainname: String,
-      subdomainurl: String,
+      textlink: String,
+      url: String,
     },
   ],
   domainlink: [
     {
       id: Number,
-      domainname: String,
-      domainurl: String,
+      textlink: String,
+      url: String,
     },
   ],
   navmenu: [

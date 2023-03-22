@@ -9,6 +9,7 @@ export default function Footer({
   ImgLogoFooter,
   AltLogoFooter,
   socialnetworkdata,
+  menulinksdomain,
 }) {
   return (
     <footer className={styles.Footer}>
@@ -31,7 +32,7 @@ export default function Footer({
           </p>
           <div className={styles.Footer__links}>
             <MenuLinks
-              LinksItems={selectTranslate().Header.DomainLink}
+              LinksItems={menulinksdomain}
               LinkTheme={menulinkswhitetheme}
             />
           </div>

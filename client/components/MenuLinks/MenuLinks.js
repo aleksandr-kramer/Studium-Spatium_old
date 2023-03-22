@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "./MenuLinks.module.scss";
 
 export default function MenuLinks({ LinksItems, LinkTheme }) {
-  const listItems = LinksItems.map(({ id, url, text }) => (
+  const listItems = LinksItems.map(({ id, textlink, url }) => (
     <li key={id} className={styles.MenuLinks__item}>
       <Link
         href={url}
@@ -10,7 +10,7 @@ export default function MenuLinks({ LinksItems, LinkTheme }) {
           styles[`MenuLinks__link${LinkTheme}`]
         }`}
       >
-        {text}
+        {textlink}
       </Link>
     </li>
   ));

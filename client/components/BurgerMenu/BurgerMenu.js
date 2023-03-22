@@ -6,9 +6,9 @@ import { menulinksdarktheme } from "../../constants/stylesconstants";
 import LanguageSelector from "../LanguageSelector/LanguageSelector";
 import HeaderNavSubMenu from "../HeaderNavSubMenu/HeaderNavSubMenu";
 
-export default function BurgerMenu() {
-  const SubDomainLink = selectTranslate().Header.SubDomainLink;
-  const DomainLink = selectTranslate().Header.DomainLink;
+export default function BurgerMenu({ menulinksdomain, menulinkssubdomain }) {
+  // const SubDomainLink = selectTranslate().Header.SubDomainLink;
+  // const DomainLink = selectTranslate().Header.DomainLink;
 
   function ListNavMenuItems(id) {
     return selectTranslate().Header.NavMenu[id - 1].SubMenu;
@@ -82,7 +82,7 @@ export default function BurgerMenu() {
               className={styles.BurgerMenu__SubDomainLink}
             >
               <MenuLinks
-                LinksItems={SubDomainLink}
+                LinksItems={menulinkssubdomain}
                 LinkTheme={menulinksdarktheme}
               />
             </div>
@@ -91,7 +91,7 @@ export default function BurgerMenu() {
               className={styles.BurgerMenu__DomainLink}
             >
               <MenuLinks
-                LinksItems={DomainLink}
+                LinksItems={menulinksdomain}
                 LinkTheme={menulinksdarktheme}
               />
             </div>

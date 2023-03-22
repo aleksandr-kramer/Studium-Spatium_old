@@ -7,12 +7,16 @@ export default function Header({
   AltLogoHeaderTop,
   ImgLogoHeaderBottom,
   AltLogoHeaderBottom,
+  menulinkssubdomain,
+  menulinksdomain,
 }) {
   return (
     <header className={styles.Header}>
       <HeaderTop
         ImgLogoHeaderTop={ImgLogoHeaderTop}
         AltLogoHeaderTop={AltLogoHeaderTop}
+        menulinkssubdomain={menulinkssubdomain}
+        menulinksdomain={menulinksdomain}
       />
       <HeaderBottom
         ImgLogoHeaderBottom={ImgLogoHeaderBottom}
