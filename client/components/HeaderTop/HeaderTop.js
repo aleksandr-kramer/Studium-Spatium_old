@@ -1,5 +1,4 @@
 import styles from "./HeaderTop.module.scss";
-import selectTranslate from "../../utils/selectTranslate";
 import MenuLinks from "../MenuLinks/MenuLinks";
 import LanguageSelector from "../LanguageSelector/LanguageSelector";
 import { menulinksdarktheme } from "../../constants/stylesconstants";
@@ -12,18 +11,11 @@ export default function HeaderTop({
   menulinksdomain,
   menulinkssubdomain,
 }) {
-  // const SubDomainLink = selectTranslate().Header.SubDomainLink;
-  // const DomainLink = selectTranslate().Header.DomainLink;
   return (
     <section className={styles.HeaderTop}>
       <div className={styles.HeaderTop__Content}>
         <div className={styles.HeaderTop__logo}>
-          <Logo
-            ImgLogo={ImgLogoHeaderTop}
-            AltLogo={AltLogoHeaderTop}
-            // ImgName={selectTranslate().Logo.LogoHeader.ImgName}
-            // ImgAlt={selectTranslate().Logo.LogoHeader.ImgAlt}
-          />
+          <Logo ImgLogo={ImgLogoHeaderTop} AltLogo={AltLogoHeaderTop} />
         </div>
         <div className={styles.HeaderTop__SubDomainLink}>
           <MenuLinks

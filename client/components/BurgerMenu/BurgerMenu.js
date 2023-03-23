@@ -7,9 +7,6 @@ import LanguageSelector from "../LanguageSelector/LanguageSelector";
 import HeaderNavSubMenu from "../HeaderNavSubMenu/HeaderNavSubMenu";
 
 export default function BurgerMenu({ menulinksdomain, menulinkssubdomain }) {
-  // const SubDomainLink = selectTranslate().Header.SubDomainLink;
-  // const DomainLink = selectTranslate().Header.DomainLink;
-
   function ListNavMenuItems(id) {
     return selectTranslate().Header.NavMenu[id - 1].SubMenu;
   }

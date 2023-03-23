@@ -11,12 +11,7 @@ export default function HeaderNavMenu({
   return (
     <div className={styles.HeaderNavMenu}>
       <div className={styles.HeaderNavMenu__logo}>
-        <Logo
-          ImgLogo={ImgLogoHeaderBottom}
-          AltLogo={AltLogoHeaderBottom}
-          // ImgName={selectTranslate().Logo.LogoHeader.ImgName}
-          // ImgAlt={selectTranslate().Logo.LogoHeader.ImgAlt}
-        />
+        <Logo ImgLogo={ImgLogoHeaderBottom} AltLogo={AltLogoHeaderBottom} />
       </div>
 
       <NavMenuLinks NavMenuLinksItems={NavMenuLinksItem} />
