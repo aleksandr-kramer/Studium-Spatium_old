@@ -32,6 +32,11 @@ export default function Index({ data }) {
       socialnetworkdata={data.socialnetworkdata}
       menulinksdomain={data.navigationdata.domainlink}
       menulinkssubdomain={data.navigationdata.subdomainlink}
+      textbeforespan={data.footerdata.textbeforespan}
+      textspan={data.footerdata.textspan}
+      textafterspan={data.footerdata.textafterspan}
+      titlecontact={data.footerdata.titlecontact}
+      contactemail={data.footerdata.contactemail}
     >
       <section className={styles.main__firstscreenvideo}>
         <div className={styles.main__firstscreenvideo__container}>

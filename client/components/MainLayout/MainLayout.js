@@ -16,6 +16,11 @@ export default function MainLayout({
   socialnetworkdata,
   menulinksdomain,
   menulinkssubdomain,
+  textbeforespan,
+  textspan,
+  textafterspan,
+  titlecontact,
+  contactemail,
 }) {
   return (
     <>
@@ -37,6 +42,11 @@ export default function MainLayout({
         AltLogoFooter={AltLogoFooter}
         socialnetworkdata={socialnetworkdata}
         menulinksdomain={menulinksdomain}
+        textbeforespan={textbeforespan}
+        textspan={textspan}
+        textafterspan={textafterspan}
+        titlecontact={titlecontact}
+        contactemail={contactemail}
       />
     </>
   );

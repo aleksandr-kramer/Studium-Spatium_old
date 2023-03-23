@@ -6,6 +6,7 @@ const {
   Navigation_es,
   Navigation_ru,
 } = require("../models/Navigation");
+const { Footer_en, Footer_es, Footer_ru } = require("../models/Footer");
 const { Page_en, Page_es, Page_ru } = require("../models/Page");
 const {
   AboutStSp_en,
@@ -20,6 +21,9 @@ const getPageIndexEn = async (req, res) => {
     const navigationdata = await Navigation_en.findOne({
       _id: "641a283568c667addfdb882f",
     });
+    const footerdata = await Footer_en.findOne({
+      _id: "641b83bdbd16bd51f6942478",
+    });
     const indexpagedata = await Page_en.findOne({ name: "index" }).populate(
       "LandingMonoLink"
     );
@@ -30,6 +34,7 @@ const getPageIndexEn = async (req, res) => {
       logodata,
       socialnetworkdata,
       navigationdata,
+      footerdata,
       indexpagedata,
       aboutstspdata,
     });
@@ -45,6 +50,9 @@ const getPageIndexEs = async (req, res) => {
     const navigationdata = await Navigation_es.findOne({
       _id: "641a283568c667addfdb882f",
     });
+    const footerdata = await Footer_es.findOne({
+      _id: "641b83bdbd16bd51f6942478",
+    });
     const indexpagedata = await Page_es.findOne({ name: "index" }).populate(
       "LandingMonoLink"
     );
@@ -55,6 +63,7 @@ const getPageIndexEs = async (req, res) => {
       logodata,
       socialnetworkdata,
       navigationdata,
+      footerdata,
       indexpagedata,
       aboutstspdata,
     });
@@ -70,6 +79,9 @@ const getPageIndexRu = async (req, res) => {
     const navigationdata = await Navigation_ru.findOne({
       _id: "641a283568c667addfdb882f",
     });
+    const footerdata = await Footer_ru.findOne({
+      _id: "641b83bdbd16bd51f6942478",
+    });
     const indexpagedata = await Page_ru.findOne({ name: "index" }).populate(
       "LandingMonoLink"
     );
@@ -80,6 +92,7 @@ const getPageIndexRu = async (req, res) => {
       logodata,
       socialnetworkdata,
       navigationdata,
+      footerdata,
       indexpagedata,
       aboutstspdata,
     });

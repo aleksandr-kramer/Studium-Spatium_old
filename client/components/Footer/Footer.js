@@ -1,6 +1,5 @@
 import styles from "./Footer.module.scss";
 import Logo from "../Logo/Logo";
-import selectTranslate from "../../utils/selectTranslate";
 import MenuLinks from "../MenuLinks/MenuLinks";
 import { menulinkswhitetheme } from "../../constants/stylesconstants";
 import SocialNetworkFooter from "../SocialNetworkFooter/SocialNetworkFooter";
@@ -10,25 +9,23 @@ export default function Footer({
   AltLogoFooter,
   socialnetworkdata,
   menulinksdomain,
+  textbeforespan,
+  textspan,
+  textafterspan,
+  titlecontact,
+  contactemail,
 }) {
   return (
     <footer className={styles.Footer}>
       <div className={styles.Footer__top}>
         <div className={styles.Footer__content}>
           <div className={styles.Footer__logo}>
-            <Logo
-              ImgLogo={ImgLogoFooter}
-              AltLogo={AltLogoFooter}
-              // ImgLogo={selectTranslate().Logo.LogoFooter.ImgName}
-              // AltLogo={selectTranslate().Logo.LogoFooter.ImgAlt}
-            />
+            <Logo ImgLogo={ImgLogoFooter} AltLogo={AltLogoFooter} />
           </div>
           <p className={styles.Footer__text}>
-            {selectTranslate().Footer.FooterTextBeforeSpan}
-            <span className={styles.Footer__textspan}>
-              {selectTranslate().Footer.FooterSpanText}
-            </span>{" "}
-            {selectTranslate().Footer.FooterTextAfterSpan}
+            {textbeforespan}
+            <span className={styles.Footer__textspan}>{textspan}</span>{" "}
+            {textafterspan}
           </p>
           <div className={styles.Footer__links}>
             <MenuLinks
@@ -39,14 +36,12 @@ export default function Footer({
           <div className={styles.Footer__socialnetworkfooter}>
             <SocialNetworkFooter socialnetwork={socialnetworkdata} />
           </div>
-          <p className={styles.Footer__contacttext}>
-            {selectTranslate().Footer.TitleContact}
-          </p>
+          <p className={styles.Footer__contacttext}>{titlecontact}</p>
           <a
             className={styles.Footer__contactemail}
-            href={`mailto: ${selectTranslate().Footer.ContactEmail}`}
+            href={`mailto: ${contactemail}`}
           >
-            info@studiumspatium.com
+            {contactemail}
           </a>
         </div>
       </div>
