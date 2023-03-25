@@ -57,62 +57,72 @@ export const ru = {
     NavMenu: [
       {
         id: 1,
-        NameMenu: "О программе. Учебный план",
+        NameMenu: "О программе P-UAP. Содержание",
         SubMenu: [
           {
             id: 1,
-            TitleSubMenu: "Основная информация",
+            TitleSubMenu: "О программе P-UAP",
             ListSubMenu: [
               {
                 id: 1,
                 NameSubMenu: "Актуальность программы",
-                UrlSubMenu: "/programme/programme-relevance",
+                UrlSubMenu: "/pre-university-academic-programme/puap-relevance-of-the-program",
               },
               {
                 id: 2,
-                NameSubMenu: "Для кого данная программа?",
-                UrlSubMenu: "/programme/who-is-this-programme-for",
+                NameSubMenu: "Для кого программа?",
+                UrlSubMenu: "/pre-university-academic-programme/puap-who-is-the-program-for",
               },
               {
                 id: 3,
-                NameSubMenu: "Портфолио для университета",
-                UrlSubMenu: "/about-portfolio",
+                NameSubMenu: "Портрет выпускника",
+                UrlSubMenu: "/pre-university-academic-programme/puap-portrait-of-a-graduate",
               },
               {
                 id: 4,
-                NameSubMenu: "Программа и школьное образование",
-                UrlSubMenu: "/programme/programme-and-school-education",
+                NameSubMenu: "Необходимые базовые знания",
+                UrlSubMenu: "/pre-university-academic-programme/puap-necessary-knowledge",
               },
               {
                 id: 5,
-                NameSubMenu: "Программа и высшее образование",
-                UrlSubMenu: "/programme/program-and-higher-education",
+                NameSubMenu: "P-UAP и школьное образование",
+                UrlSubMenu: "/pre-university-academic-programme/puap-and-school-education",
+              },
+			  {
+                id: 6,
+                NameSubMenu: "Подготовка портфолио",
+                UrlSubMenu: "/pre-university-academic-programme/puap-preparing-a-portfolio",
               },
             ],
           },
           {
             id: 2,
-            TitleSubMenu: "Учебный план программы",
+            TitleSubMenu: "Содержание P-UAP",
             ListSubMenu: [
               {
                 id: 1,
-                NameSubMenu: "Модуль: Исследовательская деятельность",
-                UrlSubMenu: "/programme/research-activities",
+                NameSubMenu: "P-UAP: Содержание программы",
+                UrlSubMenu: "/pre-university-academic-programme/puap-curriculum",
               },
               {
                 id: 2,
-                NameSubMenu: "Модуль: Проектная деятельность",
-                UrlSubMenu: "/programme/project-activities",
+                NameSubMenu: "Модуль: Исследование",
+                UrlSubMenu: "/pre-university-academic-programme/puap-module-research",
               },
               {
                 id: 3,
-                NameSubMenu: "Модуль: Академическое письмо",
-                UrlSubMenu: "/programme/academic-writing",
+                NameSubMenu: "Модуль: Проектная деятельность",
+                UrlSubMenu: "/pre-university-academic-programme/puap-module-project-activities",
               },
               {
                 id: 4,
+                NameSubMenu: "Модуль: Академическое письмо",
+                UrlSubMenu: "/pre-university-academic-programme/puap-module-academic-writing",
+              },
+			  {
+                id: 5,
                 NameSubMenu: "Модуль: Статистическая обработка данных",
-                UrlSubMenu: "/programme/statistical-data-processing",
+                UrlSubMenu: "/pre-university-academic-programme/puap-module-statistical-data-processing",
               },
             ],
           },
@@ -122,23 +132,23 @@ export const ru = {
             ListSubMenu: [
               {
                 id: 1,
-                NameSubMenu: "Теоретическая подготовка",
-                UrlSubMenu: "/programme/theoretical-learning",
+                NameSubMenu: "Продолжительность обучения",
+                UrlSubMenu: "/pre-university-academic-programme/puap-duration-of-learning",
               },
               {
                 id: 2,
-                NameSubMenu: "Практическая деятельность",
-                UrlSubMenu: "/programme/practical-activities",
+                NameSubMenu: "Online и Offline обучение",
+                UrlSubMenu: "/pre-university-academic-programme/puap-online-and-offline-learning",
               },
               {
                 id: 3,
-                NameSubMenu: "Объём курса",
-                UrlSubMenu: "/programme/course-scope",
+                NameSubMenu: "Теоретическая подготовка",
+                UrlSubMenu: "/pre-university-academic-programme/puap-theoretical-training",
               },
               {
                 id: 4,
-                NameSubMenu: "Необходимый базовый уровень знаний",
-                UrlSubMenu: "/programme/required-basic-level-of-knowledge",
+                NameSubMenu: "Практические работы",
+                UrlSubMenu: "/pre-university-academic-programme/puap-practical-work",
               },
             ],
           },
@@ -146,29 +156,35 @@ export const ru = {
         LandingMenu: [
           {
             id: 1,
-            TitleLandingMenu: "О программе",
-            TextLandingMenu: "Содержание, назначение, цели и задачи программы",
-            UrlLandingMenu: "/programme",
+            TitleLandingMenu: "Запросить презентацию программы",
+            TextLandingMenu: "Мы проведем бесплатную онлайн-презентацию программы для школ и университетов. Ответим на вопросы.",
+            UrlLandingMenu: "/pre-university-academic-programme/puap-request-a-presentation-of-the-program",
           },
           {
             id: 2,
-            TitleLandingMenu: "Портфолио выпускника",
+            TitleLandingMenu: "Все образовательные услуги",
             TextLandingMenu:
-              "Основные составляющие портфолио ученика для поступления в ВУЗ",
-            UrlLandingMenu: "/about-portfolio",
+              "Обучение, семинары и консультации для школ и студентов",
+            UrlLandingMenu: "/services",
           },
           {
             id: 3,
-            TitleLandingMenu: "Запросить презентацию программы",
+            TitleLandingMenu: "Портфолио для университета",
             TextLandingMenu:
-              "Для школ и университетов мы проведем online презентацию курса. Ответим на вопросы.",
-            UrlLandingMenu: "/course-presentation",
+              "Что включает в себя портфолио? Как подготовить портфолио для поступления в университет?",
+            UrlLandingMenu: "/pre-university-academic-programme/puap-portfolio",
           },
           {
             id: 4,
+            TitleLandingMenu: "Online обучение",
+            TextLandingMenu: "Подробное описание онлайн-обучения",
+            UrlLandingMenu: "/pre-university-academic-programme/puap-online-learning",
+          },
+		  {
+            id: 5,
             TitleLandingMenu: "Задать вопрос",
-            TextLandingMenu: "",
-            UrlLandingMenu: "#",
+            TextLandingMenu: "Спрашивайте. Мы ответим на все вопросы.",
+            UrlLandingMenu: "/ask-a-question",
           },
         ],
       },
@@ -178,99 +194,94 @@ export const ru = {
         SubMenu: [
           {
             id: 1,
-            TitleSubMenu: "Школам",
+            TitleSubMenu: "О программе P-UAP",
             ListSubMenu: [
               {
                 id: 1,
-                NameSubMenu: "Актульность курса для школы",
-                UrlSubMenu: "/programme/programme-relevance",
+                NameSubMenu: "Актуальность программы",
+                UrlSubMenu: "/pre-university-academic-programme/puap-relevance-of-the-program",
               },
               {
                 id: 2,
-                NameSubMenu: "Программа и школьное образование",
-                UrlSubMenu: "/programme/programme-and-school-education",
+                NameSubMenu: "Для кого программа?",
+                UrlSubMenu: "/pre-university-academic-programme/puap-who-is-the-program-for",
               },
               {
                 id: 3,
-                NameSubMenu: "Как внедрить программу в школу?",
-                UrlSubMenu: "/implementation-course",
+                NameSubMenu: "Портрет выпускника",
+                UrlSubMenu: "/pre-university-academic-programme/puap-portrait-of-a-graduate",
               },
               {
                 id: 4,
-                NameSubMenu: "Обучение учителей",
-                UrlSubMenu: "/programme/course-scope",
+                NameSubMenu: "Необходимые базовые знания",
+                UrlSubMenu: "/pre-university-academic-programme/puap-necessary-knowledge",
               },
               {
                 id: 5,
-                NameSubMenu: "Методические материалы",
-                UrlSubMenu: "/programme",
+                NameSubMenu: "P-UAP и школьное образование",
+                UrlSubMenu: "/pre-university-academic-programme/puap-and-school-education",
               },
               {
                 id: 6,
-                NameSubMenu: "Варианты реализации программы в школе",
-                UrlSubMenu: "/implementation-course",
+                NameSubMenu: "Подготовка портфолио",
+                UrlSubMenu: "/pre-university-academic-programme/puap-preparing-a-portfolio",
               },
-              {
-                id: 7,
-                NameSubMenu: "Обмен опытом: тематические семинары",
-                UrlSubMenu: "/seminars",
-              },
-            ],
+                         ],
           },
           {
             id: 2,
-            TitleSubMenu: "Учителям",
+            TitleSubMenu: "Школам и учителям",
             ListSubMenu: [
               {
                 id: 1,
-                NameSubMenu: "Актульность курса для преподавателя",
-                UrlSubMenu: "/programme/programme-relevance",
+                NameSubMenu: "Запросить презентацию программы",
+                UrlSubMenu: "/pre-university-academic-programme/puap-request-a-presentation-of-the-program",
               },
               {
                 id: 2,
-                NameSubMenu: "Как внедрить программу в свой предмет?",
-                UrlSubMenu: "/programme/programme-relevance",
+                NameSubMenu: "Как внедрить программу в школе?",
+                UrlSubMenu: "/pre-university-academic-programme/puap-how-to-implement-the-program-at-school",
               },
               {
                 id: 3,
-                NameSubMenu: "Содержание программы",
-                UrlSubMenu: "/programme",
+                NameSubMenu: "Актуальность для учителей",
+                UrlSubMenu: "/pre-university-academic-programme/puap-relevance-for-teachers",
               },
               {
                 id: 4,
-                NameSubMenu: "Междисциплинарное взаимодействие",
-                UrlSubMenu: "/programme/programme-relevance",
+                NameSubMenu: "Актуальность для школы",
+                UrlSubMenu: "/pre-university-academic-programme/puap-relevance-for-the-school",
               },
               {
                 id: 5,
-                NameSubMenu: "Подготовка педагогов",
-                UrlSubMenu: "/programme/programme-relevance",
+                NameSubMenu: "Варианты реализации программы в школе",
+                UrlSubMenu: "/pre-university-academic-programme/puap-implementation-options-at-school",
               },
             ],
           },
           {
             id: 3,
-            TitleSubMenu: "Университетам",
+            TitleSubMenu: "Дополнительные услуги",
             ListSubMenu: [
               {
                 id: 1,
-                NameSubMenu: "Актуальность программы для ВУЗ'а",
-                UrlSubMenu: "/programme/programme-relevance",
+                NameSubMenu: "Программа супервайзерства",
+                UrlSubMenu: "/supervisor/index",
               },
               {
                 id: 2,
-                NameSubMenu: "Уровень знаний будущего студента",
-                UrlSubMenu: "/programme/programme-relevance",
+                NameSubMenu: "Консультационная поддержка",
+                UrlSubMenu: "/student-consultation/index",
               },
               {
                 id: 3,
-                NameSubMenu: "Формирование портфолио для ВУЗ'а",
-                UrlSubMenu: "/about-portfolio",
+                NameSubMenu: "Учебные курсы",
+                UrlSubMenu: "/courses/index",
               },
               {
                 id: 4,
-                NameSubMenu: "Академическая подготовка абитуриента",
-                UrlSubMenu: "/programme/programme-relevance",
+                NameSubMenu: "Семинары для школ и учителей",
+                UrlSubMenu: "/seminars/index",
               },
             ],
           },
@@ -278,91 +289,68 @@ export const ru = {
         LandingMenu: [
           {
             id: 1,
-            TitleLandingMenu: "О программе",
-            TextLandingMenu: "Содержание, назначение, цели и задачи программы",
-            UrlLandingMenu: "/programme",
+            TitleLandingMenu: "Содержание программы P-UAP",
+            TextLandingMenu: "Описание, содержание и цели программы P-UAP",
+            UrlLandingMenu: "/pre-university-academic-programme/puap-curriculum",
           },
           {
             id: 2,
-            TitleLandingMenu: "Как внедрить программу в школу?",
+            TitleLandingMenu: "Все образовательные услуги",
             TextLandingMenu:
-              "Основные этапы внедрения программы в школьное образование",
-            UrlLandingMenu: "/implementation-course",
+              "Обучение, семинары и консультации для школ и студентов",
+            UrlLandingMenu: "/services",
           },
           {
             id: 3,
-            TitleLandingMenu: "Тематические семинары",
+            TitleLandingMenu: "Портфолио для университета",
             TextLandingMenu:
-              "Обмен опытом  в системе международного образования",
-            UrlLandingMenu: "/seminars",
+              "Что включает в себя портфолио? Как подготовить портфолио для поступления в университет?",
+            UrlLandingMenu: "/pre-university-academic-programme/puap-portfolio",
           },
           {
             id: 4,
-            TitleLandingMenu: "Портфолио ученика",
-            TextLandingMenu:
-              "Основные составляющие портфолио ученика для поступления в ВУЗ",
-            UrlLandingMenu: "/about-portfolio",
-          },
-          {
-            id: 5,
-            TitleLandingMenu: "Запросить презентацию программы",
-            TextLandingMenu:
-              "Для школ и университетов мы проведем online презентацию программы. Ответим на вопросы.",
-            UrlLandingMenu: "/course-presentation",
-          },
-          {
-            id: 6,
             TitleLandingMenu: "Задать вопрос",
-            TextLandingMenu: "",
-            UrlLandingMenu: "#",
+            TextLandingMenu:
+              "Спрашивайте. Мы ответим на все вопросы.",
+            UrlLandingMenu: "/ask-a-question",
           },
-        ],
+                  ],
       },
       {
         id: 3,
-        NameMenu: "Online обучение и консультации",
+        NameMenu: "Online обучение. Консультации.",
         SubMenu: [
           {
             id: 1,
-            TitleSubMenu: "О программе Pre-university programme",
+            TitleSubMenu: "Содержание P-UAP",
             ListSubMenu: [
               {
                 id: 1,
                 NameSubMenu:
-                  "Зачем абитуриенту программа Pre-university programme?",
-                UrlSubMenu: "/schoolboys/info",
+                  "Содержание программы",
+                UrlSubMenu: "/pre-university-academic-programme/puap-curriculum",
               },
               {
                 id: 2,
-                NameSubMenu: "Для кого предназначена программа?",
-                UrlSubMenu: "/schoolboys/info",
+                NameSubMenu: "Модуль: Исследование",
+                UrlSubMenu: "/pre-university-academic-programme/puap-module-research",
               },
               {
                 id: 3,
-                NameSubMenu: "Содержание программы",
-                UrlSubMenu: "/programme",
+                NameSubMenu: "Модуль: Проектная деятельность",
+                UrlSubMenu: "/pre-university-academic-programme/puap-module-project-activities",
               },
               {
                 id: 4,
-                NameSubMenu: "Что даёт обучение по данной программе?",
-                UrlSubMenu: "/schoolboys/info",
+                NameSubMenu: "Модуль: Академическое письмо",
+                UrlSubMenu: "/pre-university-academic-programme/puap-module-academic-writing",
               },
               {
                 id: 5,
-                NameSubMenu: "Формирование портфолио для университета",
-                UrlSubMenu: "/about-portfolio",
+                NameSubMenu: "Модуль: Статистическая обработка данных",
+                UrlSubMenu: "/pre-university-academic-programme/puap-module-statistical-data-processing",
               },
-              {
-                id: 6,
-                NameSubMenu: "Программа и школьное образование",
-                UrlSubMenu: "/schoolboys/info",
-              },
-              {
-                id: 7,
-                NameSubMenu: "Необходимый уровень знаний",
-                UrlSubMenu: "/schoolboys/info",
-              },
-            ],
+                          ],
           },
           {
             id: 2,
@@ -370,49 +358,44 @@ export const ru = {
             ListSubMenu: [
               {
                 id: 1,
-                NameSubMenu: "Как начать обучение?",
-                UrlSubMenu: "/implementation-course",
+                NameSubMenu: "P-UAP: Online обучение",
+                UrlSubMenu: "/pre-university-academic-programme/puap-online-learning",
               },
               {
                 id: 2,
-                NameSubMenu: "Продолжительность обучения",
-                UrlSubMenu: "/schoolboys/info",
+                NameSubMenu: "Как начать Online обучение?",
+                UrlSubMenu: "/pre-university-academic-programme/puap-how-to-start-online-learning",
               },
               {
                 id: 3,
-                NameSubMenu: "Тестирование начального уровня",
-                UrlSubMenu: "/schoolboys/info",
+                NameSubMenu: "Запрос на online обучение",
+                UrlSubMenu: "/pre-university-academic-programme/puap-request-for-online-learning",
               },
-              {
-                id: 4,
-                NameSubMenu: "Стоимость обучения",
-                UrlSubMenu: "/schoolboys/info",
-              },
-            ],
+                          ],
           },
           {
             id: 3,
-            TitleSubMenu: "Дополнительное образование",
+            TitleSubMenu: "Дополнительные услуги",
             ListSubMenu: [
               {
                 id: 1,
-                NameSubMenu: "Зачем нужны дополнительные курсы?",
-                UrlSubMenu: "/implementation-course",
+                NameSubMenu: "Программа супервайзерства",
+                UrlSubMenu: "/supervisor/index",
               },
               {
                 id: 2,
-                NameSubMenu: "Программа индивидуального супервайзерства",
-                UrlSubMenu: "/supervising",
+                NameSubMenu: "Консультационная поддержка",
+                UrlSubMenu: "/student-consultation/index",
               },
               {
                 id: 3,
-                NameSubMenu: "Консультационная поддержка",
-                UrlSubMenu: "/consultation",
+                NameSubMenu: "Учебные курсы",
+                UrlSubMenu: "/courses/index",
               },
               {
                 id: 4,
-                NameSubMenu: "Тематические мини-курсы",
-                UrlSubMenu: "/courses",
+                NameSubMenu: "Семинары для школ и учителей",
+                UrlSubMenu: "/seminars/index",
               },
             ],
           },
@@ -420,51 +403,25 @@ export const ru = {
         LandingMenu: [
           {
             id: 1,
-            TitleLandingMenu: "Online обучение",
+            TitleLandingMenu: "Все образовательные услуги",
             TextLandingMenu:
-              "Подробное описание online обучения. Содержание, преимущества, стоимость, расписание",
-            UrlLandingMenu: "/online-learning",
+              "Обучение, семинары и консультации для школ и студентов",
+            UrlLandingMenu: "/services",
           },
           {
             id: 2,
-            TitleLandingMenu: "Содержание программы",
-            TextLandingMenu: "Содержание, назначение, цели и задачи курса",
-            UrlLandingMenu: "/programme",
+            TitleLandingMenu: "Портфолио для университета",
+            TextLandingMenu: "Что включает в себя портфолио? Как подготовить портфолио для поступления в университет?",
+            UrlLandingMenu: "/pre-university-academic-programme/puap-portfolio",
           },
           {
             id: 3,
-            TitleLandingMenu: "Портфолио ученика",
-            TextLandingMenu:
-              "Основные составляющие портфолио ученика для поступления в университет",
-            UrlLandingMenu: "/about-portfolio",
-          },
-          {
-            id: 4,
-            TitleLandingMenu: "Индивидуальное супервайзерство",
-            TextLandingMenu:
-              "Работа с супервайзером при выполнении исследователской и/или проектной работы",
-            UrlLandingMenu: "/supervising",
-          },
-          {
-            id: 5,
-            TitleLandingMenu: "Индивидуальная консультация",
-            TextLandingMenu:
-              "Оценка, рекомендации, критические замечания при самостоятельном выполнении школьных работ",
-            UrlLandingMenu: "/supervising",
-          },
-          {
-            id: 6,
-            TitleLandingMenu: "Дополнительные курсы",
-            TextLandingMenu: "",
-            UrlLandingMenu: "/courses",
-          },
-          {
-            id: 7,
             TitleLandingMenu: "Задать вопрос",
-            TextLandingMenu: "",
-            UrlLandingMenu: "/supervising",
+            TextLandingMenu:
+              "Спрашивайте. Мы ответим на все вопросы.",
+            UrlLandingMenu: "/ask-a-question",
           },
-        ],
+                  ],
       },
     ],
   },
