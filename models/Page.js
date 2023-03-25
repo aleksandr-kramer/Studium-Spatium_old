@@ -54,7 +54,7 @@ const pageSchema = new Schema({
   landingmultilink: [
     {
       type: Schema.Types.ObjectId,
-      ref: `LandingMonoLink_en`,
+      ref: `LandingMultiLink_en`,
     },
   ],
 });

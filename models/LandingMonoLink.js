@@ -14,15 +14,15 @@ const landingMonoLinkSchema = new Schema({
     type: String,
     require: true,
   },
-  imgAlt: {
+  imgalt: {
     type: String,
     default: "Studium Spatium",
   },
-  imgName: {
+  imgname: {
     type: String,
     require: true,
   },
-  textLink: {
+  textlink: {
     type: String,
     require: true,
   },

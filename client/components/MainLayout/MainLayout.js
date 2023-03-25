@@ -6,6 +6,7 @@ import styles from "./MainLayout.module.scss";
 export default function MainLayout({
   children,
   title,
+  description,
   keywords,
   ImgLogoFooter,
   ImgLogoHeaderTop,
@@ -26,6 +27,7 @@ export default function MainLayout({
     <>
       <Head>
         <title>{title}</title>
+        <meta name="description" content={description} />
         <meta name="Keywords" content={keywords} />
       </Head>
       <Header
