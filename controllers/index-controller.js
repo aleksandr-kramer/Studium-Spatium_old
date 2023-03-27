@@ -7,7 +7,7 @@ const {
   Navigation_ru,
 } = require("../models/Navigation");
 const { Footer_en, Footer_es, Footer_ru } = require("../models/Footer");
-const { Page_en, Page_es, Page_ru } = require("../models/Page");
+const { Page_en, Page_es, Page_ru } = require("../models/Page_en");
 const {
   AboutStSp_en,
   AboutStSp_es,

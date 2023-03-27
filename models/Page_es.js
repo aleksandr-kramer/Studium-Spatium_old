@@ -9,14 +9,10 @@ const pageSchema = new Schema({
   },
   pagetype: {
     type: String,
+    enum: ["landing", "info", "feedback", "service"],
   },
-  pageurl: {
-    type: String,
-    require: true,
-  },
-  robotstxt: {
-    type: Boolean,
-  },
+  pageurl: String,
+  robotstxt: Boolean,
   meta: {
     title: String,
     keywords: String,
@@ -48,18 +44,16 @@ const pageSchema = new Schema({
   landingmonolink: [
     {
       type: Schema.Types.ObjectId,
-      ref: `LandingMonoLink_en`,
+      ref: `LandingMonoLink_es`,
     },
   ],
   landingmultilink: [
     {
       type: Schema.Types.ObjectId,
-      ref: `LandingMultiLink_en`,
+      ref: `LandingMultiLink_es`,
     },
   ],
 });
 
-const Page_en = mongoose.model("Page_en", pageSchema, "page_en");
 const Page_es = mongoose.model("Page_es", pageSchema, "page_es");
-const Page_ru = mongoose.model("Page_ru", pageSchema, "page_ru");
-module.exports = { Page_en, Page_es, Page_ru };
+module.exports = Page_es;
