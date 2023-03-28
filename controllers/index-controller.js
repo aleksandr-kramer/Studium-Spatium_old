@@ -17,6 +17,8 @@ const {
   AboutStSp_ru,
 } = require("../models/AboutStudiumSpatium");
 
+const { Puap_en, Puap_es, Puap_ru } = require("../models/Puap");
+
 const getPageIndexEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
@@ -33,6 +35,7 @@ const getPageIndexEn = async (req, res) => {
     const aboutstspdata = await AboutStSp_en.findOne({
       _id: "63efa08c2dc00ae4493c2872",
     });
+    const puapdata = await Puap_en.findOne({ _id: "6422f5345b70a17cd50b7a82" });
     res.json({
       logodata,
       socialnetworkdata,
@@ -40,6 +43,7 @@ const getPageIndexEn = async (req, res) => {
       footerdata,
       indexpagedata,
       aboutstspdata,
+      puapdata,
     });
   } catch (error) {
     console.log(error);
@@ -62,6 +66,7 @@ const getPageIndexEs = async (req, res) => {
     const aboutstspdata = await AboutStSp_es.findOne({
       _id: "63efa08c2dc00ae4493c2872",
     });
+    const puapdata = await Puap_es.findOne({ _id: "6422f5345b70a17cd50b7a82" });
     res.json({
       logodata,
       socialnetworkdata,
@@ -69,6 +74,7 @@ const getPageIndexEs = async (req, res) => {
       footerdata,
       indexpagedata,
       aboutstspdata,
+      puapdata,
     });
   } catch (error) {
     console.log(error);
@@ -91,6 +97,7 @@ const getPageIndexRu = async (req, res) => {
     const aboutstspdata = await AboutStSp_ru.findOne({
       _id: "63efa08c2dc00ae4493c2872",
     });
+    const puapdata = await Puap_ru.findOne({ _id: "6422f5345b70a17cd50b7a82" });
     res.json({
       logodata,
       socialnetworkdata,
@@ -98,6 +105,7 @@ const getPageIndexRu = async (req, res) => {
       footerdata,
       indexpagedata,
       aboutstspdata,
+      puapdata,
     });
   } catch (error) {
     console.log(error);

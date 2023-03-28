@@ -6,9 +6,9 @@ export default function H2Component({
   H2ComponentUIBorder,
   H2ComponentUITheme,
 }) {
-  const h2subtitlecontent = H2ComponentSubtitle.map(({ id, Paragraph }) => (
+  const h2subtitlecontent = H2ComponentSubtitle.map(({ id, paragraph }) => (
     <li key={id} className={styles.H2Component__H2SubtitleItem}>
-      <p className={styles.H2Component__H2Paragraph}>{Paragraph}</p>
+      <p className={styles.H2Component__H2Paragraph}>{paragraph}</p>
     </li>
   ));
 

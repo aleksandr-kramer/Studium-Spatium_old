@@ -53,14 +53,11 @@ export default function Index({ data }) {
           />
         </div>
       </section>
-      {/* <section className={styles.main__h2component}>
+      <section className={styles.main__h2component}>
         <div className={styles.main__h2component__container}>
           <H2Component
-            // H2Title={selectTranslate().Pages.index.H2Compoonent.H2Title}
             H2Title={data.aboutstspdata.title}
-            H2ComponentSubtitle={
-              selectTranslate().Pages.index.H2Compoonent.H2SubTitle
-            }
+            H2ComponentSubtitle={data.aboutstspdata.subtitle}
             H2ComponentUIBorder={h2componentbordertrue}
             H2ComponentUITheme={h2componentbgthemewhite}
           />
@@ -69,10 +66,8 @@ export default function Index({ data }) {
       <section className={styles.main__aboutcourseprogramm}>
         <div className={styles.main__aboutcourseprogramm__container}>
           <H2Component
-            H2Title={selectTranslate().Pages.index.H2AboutCourseProgram.H2Title}
-            H2ComponentSubtitle={
-              selectTranslate().Pages.index.H2AboutCourseProgram.H2SubTitle
-            }
+            H2Title={data.puapdata.aboutpuap.title}
+            H2ComponentSubtitle={data.puapdata.aboutpuap.text}
             H2ComponentUIBorder={h2componentborderfalse}
             H2ComponentUITheme={h2componentbgthemewhite}
           />
@@ -83,19 +78,15 @@ export default function Index({ data }) {
         <div className={styles.main__listmoduleofcourse__container}>
           <ListModuleOfCourse
             linktextstate={"greenishtransporent"}
-            listmoduleofcourse={
-              selectTranslate().CourseContent.ListModuleOfCourse
-            }
+            listmoduleofcourse={data.puapdata.modulespuap}
           />
         </div>
       </section>
       <section className={styles.main__aboutportfolio}>
         <div className={styles.main__aboutportfolio__container}>
           <H2Component
-            H2Title={selectTranslate().Portfolio.AboutPortfolioTitle}
-            H2ComponentSubtitle={
-              selectTranslate().Portfolio.AboutPortfolioSubTitle
-            }
+            H2Title={data.puapdata.whatdoesthepuap.title}
+            H2ComponentSubtitle={data.puapdata.whatdoesthepuap.text}
             H2ComponentUIBorder={h2componentborderfalse}
             H2ComponentUITheme={h2componentbgthemeblack}
           />
@@ -125,7 +116,7 @@ export default function Index({ data }) {
         </div>
         <div className={styles.main__aboutportfolio__patternbig}></div>
         <div className={styles.main__aboutportfolio__patternsmall}></div>
-      </section> */}
+      </section>
 
       {/* Обязательные блоки-шаблоны для страниц*/}
 
@@ -180,6 +171,6 @@ export async function getServerSideProps({ locale }) {
   const lang = locale;
   const res = await fetch(`http://localhost:5000/api/index_${lang}`);
   const data = await res.json();
-  console.log(data.indexpagedata.landingmultilink);
+  console.log(data.puapdata.modulespuap[0]);
   return { props: { data } };
 }
