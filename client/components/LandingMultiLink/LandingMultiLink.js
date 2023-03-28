@@ -4,23 +4,27 @@ import LandingLinks from "../LandingLinks/LandingLinks";
 
 export default function LandingMultiLink({ listlandingmultilink }) {
   const landingmultilinkitems = listlandingmultilink.map(
-    ({ id, Anchor, Title, SpanTitle, Text, Links }, index) => (
-      <li key={id} id={Anchor} className={styles.LandingMultiLink__item}>
+    ({ _id, anchorfixlink, title, spantitle, text, links }, index) => (
+      <li
+        key={_id}
+        id={anchorfixlink}
+        className={styles.LandingMultiLink__item}
+      >
         <h2 className={styles.LandingMultiLink__title}>
-          {Title}
+          {title}
           <span className={styles.LandingMultiLink__titlespan}>
-            {` ${SpanTitle}`}
+            {` ${spantitle}`}
           </span>
         </h2>
         <div className={styles.LandingMultiLink__paragraphlist}>
           <ParagraphList
-            ParagraphItems={Text}
+            ParagraphItems={text}
             paragraphliststate="fontcolorbasecenter"
           />
         </div>
 
         <ul className={styles.LandingMultiLink__landinglinks}>
-          <LandingLinks landinglinkslist={Links} />
+          <LandingLinks landinglinkslist={links} />
         </ul>
       </li>
     )

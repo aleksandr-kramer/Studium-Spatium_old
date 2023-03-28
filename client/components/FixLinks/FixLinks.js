@@ -2,11 +2,11 @@ import styles from "./FixLinks.module.scss";
 import Link from "next/link";
 
 export default function FixLinks({ fixlinkdata }) {
-  const anchorlink = fixlinkdata.map(({ id, Anchor, TextLink }) => (
-    <li key={id} className={styles.FixLinks__item}>
-      <Link href={`#${Anchor}`} className={styles.FixLinks__link}>
+  const anchorlink = fixlinkdata.map(({ _id, anchorfixlink, textfixlink }) => (
+    <li key={_id} className={styles.FixLinks__item}>
+      <Link href={`#${anchorfixlink}`} className={styles.FixLinks__link}>
         <div className={styles.FixLinks__button}>
-          <p className={styles.FixLinks__text}>{TextLink}</p>
+          <p className={styles.FixLinks__text}>{textfixlink}</p>
         </div>
       </Link>
     </li>

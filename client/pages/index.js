@@ -53,7 +53,7 @@ export default function Index({ data }) {
           />
         </div>
       </section>
-      <section className={styles.main__h2component}>
+      {/* <section className={styles.main__h2component}>
         <div className={styles.main__h2component__container}>
           <H2Component
             // H2Title={selectTranslate().Pages.index.H2Compoonent.H2Title}
@@ -125,7 +125,7 @@ export default function Index({ data }) {
         </div>
         <div className={styles.main__aboutportfolio__patternbig}></div>
         <div className={styles.main__aboutportfolio__patternsmall}></div>
-      </section>
+      </section> */}
 
       {/* Обязательные блоки-шаблоны для страниц*/}
 
@@ -153,11 +153,11 @@ export default function Index({ data }) {
         </section>
       ) : null}
 
-      {selectTranslate().Pages.index.FixLinks.length !== 0 ? (
+      {data.indexpagedata.landingmultilink.length !== 0 ? (
         <section className={styles.main__landingmultilink}>
           <div className={styles.main__landingmultilink__container}>
             <LandingMultiLink
-              listlandingmultilink={selectTranslate().Pages.index.FixLinks}
+              listlandingmultilink={data.indexpagedata.landingmultilink}
             />
           </div>
           <div
@@ -168,9 +168,9 @@ export default function Index({ data }) {
           ></div>
         </section>
       ) : null}
-      
+
       {selectTranslate().Pages.index.FixLinks.length !== 0 ? (
-        <FixLinks fixlinkdata={selectTranslate().Pages.index.FixLinks} />
+        <FixLinks fixlinkdata={data.indexpagedata.landingmultilink} />
       ) : null}
     </MainLayout>
   );
@@ -180,6 +180,6 @@ export async function getServerSideProps({ locale }) {
   const lang = locale;
   const res = await fetch(`http://localhost:5000/api/index_${lang}`);
   const data = await res.json();
-  console.log(data.indexpagedata);
+  console.log(data.indexpagedata.landingmultilink);
   return { props: { data } };
 }

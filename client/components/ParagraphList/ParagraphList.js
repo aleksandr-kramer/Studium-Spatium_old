@@ -21,14 +21,14 @@ export default function ParagraphList({
     uiparagraphliststyle = paragraphlistfontcolorwhitecenter;
   }
 
-  const paragraphitems = ParagraphItems.map(({ id, Paragraph }) => (
+  const paragraphitems = ParagraphItems.map(({ id, paragraph }) => (
     <li key={id} className={styles.ParagraphList__paragraphitem}>
       <p
         className={`${styles.ParagraphList__paragraphtext} ${
           styles[`ParagraphList__paragraphtext${uiparagraphliststyle}`]
         }`}
       >
-        {Paragraph}
+        {paragraph}
       </p>
     </li>
   ));
