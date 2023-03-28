@@ -12,6 +12,8 @@ export default function FirstScreenVideo({
   nameimage,
   urlvideo,
   titlevideo,
+  videobuttontitle,
+  socialnetworkdata,
 }) {
   const [activePopUpVideo, setActivePopUpVideo] = useState(false);
 
@@ -53,13 +55,13 @@ export default function FirstScreenVideo({
       </div>
 
       <div className={styles.FirstScreenVideo__SocialNetwork}>
-        <SocialNetwork />
+        <SocialNetwork socialnetwork={socialnetworkdata} />
       </div>
       <div
         onClick={() => setActivePopUpVideo(!activePopUpVideo)}
         className={styles.FirstScreenVideo__ButtonPlayVideo}
       >
-        <ButtonPlayVideo />
+        <ButtonPlayVideo videobuttontitle={videobuttontitle} />
       </div>
       <div className={styles.FirstScreenVideo__PopUpVideo}>
         <iframe

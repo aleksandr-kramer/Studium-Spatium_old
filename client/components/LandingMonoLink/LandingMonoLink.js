@@ -7,28 +7,28 @@ export default function LandingMonoLink({
   uilandingmonolinkbgcolor,
 }) {
   const landingmonolinkitem = landingmonolinkdata.map(
-    ({ id, Title, TextLink, Url, ImgAlt, ImgName, Text }) => (
+    ({ _id, title, textlink, url, imgalt, imgname, text }) => (
       <li
-        key={id}
+        key={_id}
         className={`${styles.LandingMonoLink__item} ${
           styles[`LandingMonoLink__item${uilandingmonolinkbgcolor}`]
         }`}
       >
-        <h3 className={styles.LandingMonoLink__title}>{Title}</h3>
-        <p className={styles.LandingMonoLink__paragraph}>{Text}</p>
+        <h3 className={styles.LandingMonoLink__title}>{title}</h3>
+        <p className={styles.LandingMonoLink__paragraph}>{text}</p>
         <div className={styles.LandingMonoLink__linkbutton}>
-          <Link href={Url} className={styles.LandingMonoLink__link}>
+          <Link href={url} className={styles.LandingMonoLink__link}>
             <div className={styles.LandingMonoLink__button}>
-              <p className={styles.LandingMonoLink__linktext}>{TextLink}</p>
+              <p className={styles.LandingMonoLink__linktext}>{textlink}</p>
             </div>
           </Link>
         </div>
         <div className={styles.LandingMonoLink__linkimage}>
-          <Link href={Url} className={styles.LandingMonoLink__link}>
+          <Link href={url} className={styles.LandingMonoLink__link}>
             <div className={styles.LandingMonoLink__image}>
               <Image
-                src={`/images/${ImgName}`}
-                alt={ImgAlt}
+                src={`/images/${imgname}`}
+                alt={imgalt}
                 height={350}
                 width={450}
                 style={{

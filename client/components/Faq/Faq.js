@@ -1,14 +1,14 @@
 import styles from "./Faq.module.scss";
 
 export default function Faq({ faqdata, title }) {
-  const faqitem = faqdata.map(({ id, Question, Answer }) => (
+  const faqitem = faqdata.map(({ id, question, answer }) => (
     <li key={id} className={styles.Faq__item}>
       <input className={styles.Faq__checkbox} type="checkbox" id={`a${id}`} />
       <label className={styles.Faq__question} htmlFor={`a${id}`}>
-        <p className={styles.Faq__questiontext}>{Question}</p>
+        <p className={styles.Faq__questiontext}>{question}</p>
       </label>
       <div className={styles.Faq__answer}>
-        <p className={styles.Faq__answertext}>{Answer}</p>
+        <p className={styles.Faq__answertext}>{answer}</p>
       </div>
     </li>
   ));

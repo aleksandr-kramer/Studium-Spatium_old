@@ -1,4 +1,5 @@
 require("../models/LandingMonoLink");
+require("../models/LandingMultiLink");
 const Logo = require("../models/Logo");
 const Socialnetwork = require("../models/Socialnetwork");
 const {
@@ -7,7 +8,9 @@ const {
   Navigation_ru,
 } = require("../models/Navigation");
 const { Footer_en, Footer_es, Footer_ru } = require("../models/Footer");
-const { Page_en, Page_es, Page_ru } = require("../models/Page_en");
+const Page_en = require("../models/Page_en");
+const Page_es = require("../models/Page_es");
+const Page_ru = require("../models/Page_ru");
 const {
   AboutStSp_en,
   AboutStSp_es,
@@ -24,9 +27,9 @@ const getPageIndexEn = async (req, res) => {
     const footerdata = await Footer_en.findOne({
       _id: "641b83bdbd16bd51f6942478",
     });
-    const indexpagedata = await Page_en.findOne({ name: "index" }).populate(
-      "LandingMonoLink"
-    );
+    const indexpagedata = await Page_en.findOne({ pagename: "index" })
+      .populate("landingmonolink")
+      .populate("landingmultilink");
     const aboutstspdata = await AboutStSp_en.findOne({
       _id: "63efa08c2dc00ae4493c2872",
     });
@@ -53,9 +56,9 @@ const getPageIndexEs = async (req, res) => {
     const footerdata = await Footer_es.findOne({
       _id: "641b83bdbd16bd51f6942478",
     });
-    const indexpagedata = await Page_es.findOne({ name: "index" }).populate(
-      "LandingMonoLink"
-    );
+    const indexpagedata = await Page_es.findOne({ pagename: "index" })
+      .populate("landingmonolink")
+      .populate("landingmultilink");
     const aboutstspdata = await AboutStSp_es.findOne({
       _id: "63efa08c2dc00ae4493c2872",
     });
@@ -82,9 +85,9 @@ const getPageIndexRu = async (req, res) => {
     const footerdata = await Footer_ru.findOne({
       _id: "641b83bdbd16bd51f6942478",
     });
-    const indexpagedata = await Page_ru.findOne({ name: "index" }).populate(
-      "LandingMonoLink"
-    );
+    const indexpagedata = await Page_ru.findOne({ pagename: "index" })
+      .populate("landingmonolink")
+      .populate("landingmultilink");
     const aboutstspdata = await AboutStSp_ru.findOne({
       _id: "63efa08c2dc00ae4493c2872",
     });

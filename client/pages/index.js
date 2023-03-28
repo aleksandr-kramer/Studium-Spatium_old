@@ -21,8 +21,9 @@ import {
 export default function Index({ data }) {
   return (
     <MainLayout
-      title={selectTranslate().Pages.index.Meta.title}
-      keywords={selectTranslate().Pages.index.Meta.keywords}
+      title={data.indexpagedata.meta.title}
+      keywords={data.indexpagedata.meta.keywords}
+      description={data.indexpagedata.meta.description}
       AltLogoFooter={data.logodata.img_alt}
       AltLogoHeaderTop={data.logodata.img_alt}
       AltLogoHeaderBottom={data.logodata.img_alt}
@@ -41,18 +42,14 @@ export default function Index({ data }) {
       <section className={styles.main__firstscreenvideo}>
         <div className={styles.main__firstscreenvideo__container}>
           <FirstScreenVideo
-            // h1title={selectTranslate().Pages.index.FirstScreenVideo.H1Title}
-            h1title={data.indexpagedata.FirstScreenVideo.H1Title}
-            // h1subtitle={
-            //   selectTranslate().Pages.index.FirstScreenVideo.H1SubTitle
-            // }
-            h1subtitle={data.logodata.img_name_header}
-            altimage={selectTranslate().Pages.index.FirstScreenVideo.AltImage}
-            nameimage={selectTranslate().Pages.index.FirstScreenVideo.NameImage}
-            urlvideo={selectTranslate().Pages.index.FirstScreenVideo.UrlVideo}
-            titlevideo={
-              selectTranslate().Pages.index.FirstScreenVideo.TitleVideo
-            }
+            h1title={data.indexpagedata.firstscreen.h1title}
+            h1subtitle={data.indexpagedata.firstscreen.h1subtitle}
+            altimage={data.indexpagedata.firstscreen.imagealt}
+            nameimage={data.indexpagedata.firstscreen.imagename}
+            urlvideo={data.indexpagedata.firstscreen.urlvideo}
+            titlevideo={data.indexpagedata.firstscreen.titlevideo}
+            videobuttontitle={data.indexpagedata.firstscreen.videobuttontitle}
+            socialnetworkdata={data.socialnetworkdata}
           />
         </div>
       </section>
@@ -132,25 +129,23 @@ export default function Index({ data }) {
 
       {/* Обязательные блоки-шаблоны для страниц*/}
 
-      {selectTranslate().Pages.index.LandingMonoLinkData.length !== 0 ? (
+      {data.indexpagedata.landingmonolink.length !== 0 ? (
         <section className={styles.main__landingmonolink}>
           <div className={styles.main__landingmonolink__container}>
             <LandingMonoLink
-              landingmonolinkdata={
-                selectTranslate().Pages.index.LandingMonoLinkData
-              }
+              landingmonolinkdata={data.indexpagedata.landingmonolink}
               uilandingmonolinkbgcolor={landingmonolinkbgcolorsmoky}
             />
           </div>
         </section>
       ) : null}
 
-      {Object.keys(selectTranslate().Pages.index.FAQ).length !== 0 ? (
+      {Object.keys(data.indexpagedata.faq).length !== 0 ? (
         <section className={styles.main__faq}>
           <div className={styles.main__faq__container}>
             <Faq
-              title={selectTranslate().Pages.index.FAQ.Title}
-              faqdata={selectTranslate().Pages.index.FAQ.QuestionAnswer}
+              title={data.indexpagedata.faq.faqtitle}
+              faqdata={data.indexpagedata.faq.questionanswer}
             />
           </div>
           <div className={styles.main__faq__patternbig}></div>
@@ -173,6 +168,7 @@ export default function Index({ data }) {
           ></div>
         </section>
       ) : null}
+      
       {selectTranslate().Pages.index.FixLinks.length !== 0 ? (
         <FixLinks fixlinkdata={selectTranslate().Pages.index.FixLinks} />
       ) : null}
@@ -184,6 +180,6 @@ export async function getServerSideProps({ locale }) {
   const lang = locale;
   const res = await fetch(`http://localhost:5000/api/index_${lang}`);
   const data = await res.json();
-  console.log(data);
+  console.log(data.indexpagedata);
   return { props: { data } };
 }
