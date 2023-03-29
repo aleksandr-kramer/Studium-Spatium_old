@@ -164,8 +164,9 @@ export default function Index({ data }) {
 
 export async function getServerSideProps({ locale }) {
   const lang = locale;
-  const res = await fetch(`http://localhost:5000/api/index_${lang}`);
+  // const res = await fetch(`http://localhost:5000/api/index_${lang}`);
+  const res = await fetch(`http://studiumspatium.com:5000/api/index_${lang}`);
   const data = await res.json();
-  console.log(data.portfoliodata);
+  // console.log(data.portfoliodata);
   return { props: { data } };
 }

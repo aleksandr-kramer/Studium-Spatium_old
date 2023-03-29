@@ -16,7 +16,8 @@ app.listen(5000, (err) => {
 });
 
 mongoose
-  .connect("mongodb://0.0.0.0:27017/studiumspatium")
+  .connect("mongodb://mongodb/studiumspatium")
+  // .connect("mongodb://0.0.0.0:27017/studiumspatium")
   .then(() => console.log("Connect to MongoDB"))
   .catch((err) => console.log(`MongoDB connection error: ${err}`));
 

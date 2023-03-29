@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  client:
+    container_name: next-client
+    build: ./client
+    restart: always
+    ports:
+      - 80:80
+    depends_on:
+      - server
+  server:
+    container_name: node-server
+    build: .
+    restart: always
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongodb
+  mongodb:
+    container_name: mongo-db
+    image: mongo
+    restart: always
+    # ports:
+    #   - "27017:27017"
+    # volumes:
+    #   - ./docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    #   - ./data/db:/data/db
+    #   - mongodb_data:/data/db
+volumes:
+  mongodb_data:
