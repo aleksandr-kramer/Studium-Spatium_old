@@ -5,12 +5,12 @@ export default function ThematicPointList({
   ThematicPointlistItems,
 }) {
   const thematicpointlistitems = ThematicPointlistItems.map(
-    ({ id, PoinListNumber, LongName }) => (
+    ({ id, portfoliolistnumber, portfoliolistlongname }) => (
       <li key={id} className={styles.ThematicPointList__item}>
         <div className={styles.ThematicPointList__itemcontent}>
-          <p className={styles.ThematicPointList__itemtext}>{LongName}</p>
+          <p className={styles.ThematicPointList__itemtext}>{portfoliolistlongname}</p>
           <p className={styles.ThematicPointList__itemnumber}>
-            {PoinListNumber}
+            {portfoliolistnumber}
           </p>
         </div>
       </li>

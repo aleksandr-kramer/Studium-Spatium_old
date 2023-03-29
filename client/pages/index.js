@@ -95,22 +95,17 @@ export default function Index({ data }) {
         <div className={styles.main__thematicpointlist__container}>
           <ThematicPointList
             PointListTitle={
-              selectTranslate().Portfolio.PortfolioIncludes
-                .PortfolioIncludesTitle
+              data.portfoliodata.portfoliocomponents.portfoliocomponentstitie
             }
             ThematicPointlistItems={
-              selectTranslate().Portfolio.PortfolioIncludes.PortfolioParts
+              data.portfoliodata.portfoliocomponents.portfoliolist
             }
           />
           <div className={styles.main__thematicpointlist__linktext}>
             <LinkText
               linktextstate={"whitewhite"}
-              linktexturl={
-                selectTranslate().Portfolio.LinkTextAboutPortfolioUrl
-              }
-              linktextcontent={
-                selectTranslate().Portfolio.LinkTextAboutPortfolio
-              }
+              linktexturl={data.portfoliodata.portfoliourl}
+              linktextcontent={data.portfoliodata.portfoliotexturl}
             />
           </div>
         </div>
@@ -171,6 +166,6 @@ export async function getServerSideProps({ locale }) {
   const lang = locale;
   const res = await fetch(`http://localhost:5000/api/index_${lang}`);
   const data = await res.json();
-  console.log(data.puapdata.modulespuap[0]);
+  console.log(data.portfoliodata);
   return { props: { data } };
 }
