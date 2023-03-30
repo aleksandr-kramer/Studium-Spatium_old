@@ -17,6 +17,7 @@ import {
   h2componentbgthemeblack,
   landingmonolinkbgcolorsmoky,
 } from "../constants/stylesconstants";
+const FETCH_URL = process.env.FETCH_URL;
 
 export default function Index({ data }) {
   return (
@@ -163,8 +164,10 @@ export default function Index({ data }) {
 }
 export async function getStaticProps({ locale }) {
   const lang = locale;
-  const res = await fetch(`http://localhost:5000/api/index_${lang}`);
+  const res = await fetch(`${FETCH_URL}:5000/api/index_${lang}`);
+  // const res = await fetch(`http://localhost:5000/api/index_${lang}`);
   // const res = await fetch(`http://studiumspatium.com:5000/api/index_${lang}`);
   const data = await res.json();
+  console.log(process.env.FETCH_URL);
   return { props: { data } };
 }

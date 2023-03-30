@@ -4,6 +4,9 @@ mongoose.set("strictQuery", false);
 const app = express();
 app.use(express.json({ extended: true }));
 
+const MONGO_URI =
+  process.env.MONGO_URI || "mongodb://0.0.0.0:27017/studiumspatium";
+
 // Импорт созданных роутов
 const indexRoutes = require("./routes/index-routes");
 
@@ -16,8 +19,7 @@ app.listen(5000, (err) => {
 });
 
 mongoose
-  // .connect("mongodb://mongodb/studiumspatium")
-  .connect("mongodb://0.0.0.0:27017/studiumspatium")
+  .connect(MONGO_URI)
   .then(() => console.log("Connect to MongoDB"))
   .catch((err) => console.log(`MongoDB connection error: ${err}`));
 

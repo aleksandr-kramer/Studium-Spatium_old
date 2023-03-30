@@ -9,6 +9,8 @@ services:
       - 80:80
     depends_on:
       - server
+    environment:
+      FETCH_URL: http://studiumspatium.com
   server:
     container_name: node-server
     build: .
@@ -17,6 +19,8 @@ services:
       - "5000:5000"
     depends_on:
       - mongodb
+    environment:
+      MONGO_URI: mongodb://mongodb/studiumspatium
   mongodb:
     container_name: mongo-db
     image: mongo
