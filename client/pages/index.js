@@ -161,11 +161,10 @@ export default function Index({ data }) {
     </MainLayout>
   );
 }
-
 export async function getStaticProps({ locale }) {
   const lang = locale;
-  // const res = await fetch(`http://localhost:5000/api/index_${lang}`);
-  const res = await fetch(`http://studiumspatium.com:5000/api/index_${lang}`);
+  const res = await fetch(`http://localhost:5000/api/index_${lang}`);
+  // const res = await fetch(`http://studiumspatium.com:5000/api/index_${lang}`);
   const data = await res.json();
   return { props: { data } };
 }
