@@ -1,7 +1,6 @@
 import styles from "./SocialNetwork.module.scss";
 import Link from "next/link";
 import { useState } from "react";
-import selectTranslate from "../../utils/selectTranslate";
 
 export default function SocialNetwork({ socialnetwork }) {
   const [socialnetworkicon, SetSocialNetworkIcon] = useState(0);

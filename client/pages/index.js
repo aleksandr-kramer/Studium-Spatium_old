@@ -1,5 +1,4 @@
 import MainLayout from "../components/MainLayout/MainLayout";
-import selectTranslate from "../utils/selectTranslate";
 import styles from "../styles/pages/Index.module.scss";
 import FirstScreenVideo from "../components/FirstScreenVideo/FirstScreenVideo";
 import FixLinks from "../components/FixLinks/FixLinks";
@@ -157,7 +156,7 @@ export default function Index({ data }) {
         </section>
       ) : null}
 
-      {selectTranslate().Pages.index.FixLinks.length !== 0 ? (
+      {data.indexpagedata.landingmultilink !== 0 ? (
         <FixLinks fixlinkdata={data.indexpagedata.landingmultilink} />
       ) : null}
     </MainLayout>
