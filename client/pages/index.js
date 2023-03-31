@@ -17,8 +17,6 @@ import {
   landingmonolinkbgcolorsmoky,
 } from "../constants/stylesconstants";
 
-const FETCH_URL = process.env.FETCH_URL;
-
 export default function Index({ data }) {
   return (
     <MainLayout
@@ -162,13 +160,10 @@ export default function Index({ data }) {
     </MainLayout>
   );
 }
-export async function getServerSideProps({ locale }) {
-  // export async function getStaticProps({ locale }) {
+
+export async function getStaticProps({ locale }) {
   const lang = locale;
-  const res = await fetch(`${FETCH_URL}:5000/api/index_${lang}`);
-  // const res = await fetch(`http://localhost:5000/api/index_${lang}`);
-  // const res = await fetch(`http://studiumspatium.com:5000/api/index_${lang}`);
+  const res = await fetch(`${process.env.FETCH_URL}:5000/api/index_${lang}`);
   const data = await res.json();
-  console.log(FETCH_URL);
   return { props: { data } };
 }
