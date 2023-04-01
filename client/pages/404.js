@@ -10,23 +10,16 @@ import LandingMonoLink from "../components/LandingMonoLink/LandingMonoLink";
 import Faq from "../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
-import H2Component from "../components/H2Component/H2Component";
-import ListModuleOfCourse from "../components/ListModuleOfCourse/ListModuleOfCourse";
-import ThematicPointList from "../components/ThematicPointList/ThematicPointList";
-import LinkText from "../components/LinkText/LinkText";
-// ------------------------------------------
-// Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
-// ------------------------------------------
-import {
-  h2componentbordertrue,
-  h2componentborderfalse,
-  h2componentbgthemewhite,
-  h2componentbgthemeblack,
-  landingmonolinkbgcolorsmoky,
-} from "../constants/stylesconstants";
 // ------------------------------------------
 
-export default function Index({ data }) {
+// ------------------------------------------
+
+// Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
+// ------------------------------------------
+import { landingmonolinkbgcolorsmoky } from "../constants/stylesconstants";
+// ------------------------------------------
+
+export default function Pageerror({ data }) {
   return (
     <MainLayout
       // ------------------------------------------
@@ -77,66 +70,6 @@ export default function Index({ data }) {
 
       {/* Блок первого экрана для каждой страницы (выбор из трёх вариантов)*/}
       {/* Конец */}
-
-      <section className={styles.main__h2component}>
-        <div className={styles.main__h2component__container}>
-          <H2Component
-            H2Title={data.aboutstspdata.title}
-            H2ComponentSubtitle={data.aboutstspdata.subtitle}
-            H2ComponentUIBorder={h2componentbordertrue}
-            H2ComponentUITheme={h2componentbgthemewhite}
-          />
-        </div>
-      </section>
-      <section className={styles.main__aboutcourseprogramm}>
-        <div className={styles.main__aboutcourseprogramm__container}>
-          <H2Component
-            H2Title={data.puapdata.aboutpuap.title}
-            H2ComponentSubtitle={data.puapdata.aboutpuap.text}
-            H2ComponentUIBorder={h2componentborderfalse}
-            H2ComponentUITheme={h2componentbgthemewhite}
-          />
-          <div className={styles.main__aboutcourseprogramm__image}></div>
-        </div>
-      </section>
-      <section className={styles.main__listmoduleofcourse}>
-        <div className={styles.main__listmoduleofcourse__container}>
-          <ListModuleOfCourse
-            linktextstate={"greenishtransporent"}
-            listmoduleofcourse={data.puapdata.modulespuap}
-          />
-        </div>
-      </section>
-      <section className={styles.main__aboutportfolio}>
-        <div className={styles.main__aboutportfolio__container}>
-          <H2Component
-            H2Title={data.puapdata.whatdoesthepuap.title}
-            H2ComponentSubtitle={data.puapdata.whatdoesthepuap.text}
-            H2ComponentUIBorder={h2componentborderfalse}
-            H2ComponentUITheme={h2componentbgthemeblack}
-          />
-        </div>
-        <div className={styles.main__aboutportfolio__borderbottom}></div>
-        <div className={styles.main__thematicpointlist__container}>
-          <ThematicPointList
-            PointListTitle={
-              data.portfoliodata.portfoliocomponents.portfoliocomponentstitie
-            }
-            ThematicPointlistItems={
-              data.portfoliodata.portfoliocomponents.portfoliolist
-            }
-          />
-          <div className={styles.main__thematicpointlist__linktext}>
-            <LinkText
-              linktextstate={"whitewhite"}
-              linktexturl={data.portfoliodata.portfoliourl}
-              linktextcontent={data.portfoliodata.portfoliotexturl}
-            />
-          </div>
-        </div>
-        <div className={styles.main__aboutportfolio__patternbig}></div>
-        <div className={styles.main__aboutportfolio__patternsmall}></div>
-      </section>
 
       {/* Обязательные блоки-шаблоны для страниц*/}
 
