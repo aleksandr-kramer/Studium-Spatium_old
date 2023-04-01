@@ -12,6 +12,29 @@ const pageSchema = new Schema({
     enum: ["landing", "info", "feedback", "service"],
   },
   pageurl: String,
+  parentcategory: {
+    type: String,
+    enum: [
+      "root",
+      "inpre-university-academic-programmefo",
+      "supervisor",
+      "courses",
+      "student-consultation",
+      "seminars",
+    ],
+  },
+  thematiccategory: {
+    type: String,
+    enum: [
+      "about-puap",
+      "puap-content",
+      "educational-process",
+      "schools-and-teachers",
+      "online-learning",
+      "educational-services",
+      "none",
+    ],
+  },
   robotstxt: Boolean,
   meta: {
     title: String,
