@@ -8,6 +8,7 @@ export default function FirstScreenImage({
   h1subtitle,
   altimage,
   nameimage,
+  socialnetworkdata,
 }) {
   return (
     <div className={styles.FirstScreenImage}>
@@ -27,7 +28,7 @@ export default function FirstScreenImage({
         />
       </div>
       <div className={styles.FirstScreenImage__SocialNetwork}>
-        <SocialNetwork />
+        <SocialNetwork socialnetwork={socialnetworkdata} />
       </div>
     </div>
   );

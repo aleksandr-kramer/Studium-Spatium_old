@@ -5,8 +5,13 @@
   &__firstscreenvideo {
     @include block-margin-bottom;
   }
-
   &__firstscreenvideo__container {
+    @include page-container;
+  }
+  &__firstscreenimage {
+    @include block-margin-bottom;
+  }
+  &__firstscreenimage__container {
     @include page-container;
   }
   &__h2component__container {

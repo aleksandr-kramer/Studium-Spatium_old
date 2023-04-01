@@ -72,11 +72,23 @@ export default function Index({ data }) {
           </div>
         </section>
       ) : data.indexpagedata.firstscreen.firstscreentype === "image" ? (
-        false
+        <section className={styles.main__firstscreenimage}>
+          <div className={styles.main__firstscreenimage__container}>
+            <FirstScreenImage
+              h1title={data.indexpagedata.firstscreen.h1title}
+              h1subtitle={data.indexpagedata.firstscreen.h1subtitle}
+              altimage={data.indexpagedata.firstscreen.imagealt}
+              nameimage={data.indexpagedata.firstscreen.imagename}
+              socialnetworkdata={data.socialnetworkdata}
+            />
+          </div>
+        </section>
       ) : null}
 
       {/* Блок первого экрана для каждой страницы (выбор из трёх вариантов)*/}
       {/* Конец */}
+
+      {/* ------------ блоки для конкретной страницы (начало) ------------ */}
 
       <section className={styles.main__h2component}>
         <div className={styles.main__h2component__container}>
@@ -138,7 +150,9 @@ export default function Index({ data }) {
         <div className={styles.main__aboutportfolio__patternsmall}></div>
       </section>
 
-      {/* Обязательные блоки-шаблоны для страниц*/}
+      {/* ------------ блоки для конкретной страницы (конец) ------------ */}
+
+      {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
 
       {data.indexpagedata.landingmonolink.length !== 0 ? (
         <section className={styles.main__landingmonolink}>
@@ -185,6 +199,10 @@ export default function Index({ data }) {
       ) : null}
     </MainLayout>
   );
+}
+
+{
+  /* ------------ Обязательные блоки-шаблоны для страниц (конец) ------------ */
 }
 
 export async function getStaticProps({ locale }) {
