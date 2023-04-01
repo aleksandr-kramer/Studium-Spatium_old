@@ -16,7 +16,7 @@ const pageSchema = new Schema({
     type: String,
     enum: [
       "root",
-      "inpre-university-academic-programmefo",
+      "pre-university-academic-programme",
       "supervisor",
       "courses",
       "student-consultation",
