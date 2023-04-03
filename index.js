@@ -10,6 +10,7 @@ const MONGO_URI =
 // Импорт созданных роутов
 const indexRoutes = require("./routes/index-routes");
 const puaprelevanceoftheprogramRoutes = require("./routes/puaprelevanceoftheprogram-routes");
+const supervisorRoutes = require("./routes/supervisor-routes");
 
 // Смотрим, как сделано у других программистов и, возможно,
 // переписываем подключение к БД и запуск сервера с учётом
@@ -27,3 +28,4 @@ mongoose
 // Для каждого отдельного роутера создаём отдельную строку app.use:
 app.use("/api", indexRoutes);
 app.use("/api", puaprelevanceoftheprogramRoutes);
+app.use("/api", supervisorRoutes);
