@@ -1,7 +1,7 @@
 // Стандартные для всех страниц импорты. Меняем при необходимости путь до файла
 // ------------------------------------------
 import MainLayout from "../../components/MainLayout/MainLayout";
-import styles from "../../styles/pages/Info-pages.module.scss";
+import styles from "../../styles/pages/Index.module.scss";
 import FirstScreenImage from "../../components/FirstScreenImage/FirstScreenImage";
 import FirstScreenVideo from "../../components/FirstScreenVideo/FirstScreenVideo";
 import FixLinks from "../../components/FixLinks/FixLinks";
@@ -19,7 +19,7 @@ import Faq from "../../components/Faq/Faq";
 import { landingmonolinkbgcolorsmoky } from "../../constants/stylesconstants";
 // ------------------------------------------
 
-export default function Puapportraitofagraduate({ data }) {
+export default function Pageerror({ data }) {
   return (
     <MainLayout
       // ------------------------------------------
@@ -42,57 +42,36 @@ export default function Puapportraitofagraduate({ data }) {
       // ------------------------------------------
       // Переменные значения для конкретных страниц сайта
       // ------------------------------------------
-      title={data.puapportraitofagraduatepagedata.meta.title}
-      keywords={data.puapportraitofagraduatepagedata.meta.keywords}
-      description={data.puapportraitofagraduatepagedata.meta.description}
+      title={data.indexpagedata.meta.title}
+      keywords={data.indexpagedata.meta.keywords}
+      description={data.indexpagedata.meta.description}
     >
       {/* Блок первого экрана для каждой страницы (выбор из трёх вариантов)*/}
       {/* Начало */}
 
-      {data.puapportraitofagraduatepagedata.firstscreen.firstscreentype ===
-      "video" ? (
+      {data.indexpagedata.firstscreen.firstscreentype === "video" ? (
         <section className={styles.main__firstscreenvideo}>
           <div className={styles.main__firstscreenvideo__container}>
             <FirstScreenVideo
-              h1title={data.puapportraitofagraduatepagedata.firstscreen.h1title}
-              h1subtitle={
-                data.puapportraitofagraduatepagedata.firstscreen.h1subtitle
-              }
-              altimage={
-                data.puapportraitofagraduatepagedata.firstscreen.imagealt
-              }
-              nameimage={
-                data.puapportraitofagraduatepagedata.firstscreen.imagename
-              }
-              urlvideo={
-                data.puapportraitofagraduatepagedata.firstscreen.urlvideo
-              }
-              titlevideo={
-                data.puapportraitofagraduatepagedata.firstscreen.titlevideo
-              }
-              videobuttontitle={
-                data.puapportraitofagraduatepagedata.firstscreen
-                  .videobuttontitle
-              }
+              h1title={data.indexpagedata.firstscreen.h1title}
+              h1subtitle={data.indexpagedata.firstscreen.h1subtitle}
+              altimage={data.indexpagedata.firstscreen.imagealt}
+              nameimage={data.indexpagedata.firstscreen.imagename}
+              urlvideo={data.indexpagedata.firstscreen.urlvideo}
+              titlevideo={data.indexpagedata.firstscreen.titlevideo}
+              videobuttontitle={data.indexpagedata.firstscreen.videobuttontitle}
               socialnetworkdata={data.socialnetworkdata}
             />
           </div>
         </section>
-      ) : data.puapportraitofagraduatepagedata.firstscreen.firstscreentype ===
-        "image" ? (
+      ) : data.indexpagedata.firstscreen.firstscreentype === "image" ? (
         <section className={styles.main__firstscreenimage}>
           <div className={styles.main__firstscreenimage__container}>
             <FirstScreenImage
-              h1title={data.puapportraitofagraduatepagedata.firstscreen.h1title}
-              h1subtitle={
-                data.puapportraitofagraduatepagedata.firstscreen.h1subtitle
-              }
-              altimage={
-                data.puapportraitofagraduatepagedata.firstscreen.imagealt
-              }
-              nameimage={
-                data.puapportraitofagraduatepagedata.firstscreen.imagename
-              }
+              h1title={data.indexpagedata.firstscreen.h1title}
+              h1subtitle={data.indexpagedata.firstscreen.h1subtitle}
+              altimage={data.indexpagedata.firstscreen.imagealt}
+              nameimage={data.indexpagedata.firstscreen.imagename}
               socialnetworkdata={data.socialnetworkdata}
             />
           </div>
@@ -108,25 +87,23 @@ export default function Puapportraitofagraduate({ data }) {
 
       {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
 
-      {data.puapportraitofagraduatepagedata.landingmonolink.length !== 0 ? (
+      {data.indexpagedata.landingmonolink.length !== 0 ? (
         <section className={styles.main__landingmonolink}>
           <div className={styles.main__landingmonolink__container}>
             <LandingMonoLink
-              landingmonolinkdata={
-                data.puapportraitofagraduatepagedata.landingmonolink
-              }
+              landingmonolinkdata={data.indexpagedata.landingmonolink}
               uilandingmonolinkbgcolor={landingmonolinkbgcolorsmoky}
             />
           </div>
         </section>
       ) : null}
 
-      {Object.keys(data.puapportraitofagraduatepagedata.faq).length !== 0 ? (
+      {Object.keys(data.indexpagedata.faq).length !== 0 ? (
         <section className={styles.main__faq}>
           <div className={styles.main__faq__container}>
             <Faq
-              title={data.puapportraitofagraduatepagedata.faq.faqtitle}
-              faqdata={data.puapportraitofagraduatepagedata.faq.questionanswer}
+              title={data.indexpagedata.faq.faqtitle}
+              faqdata={data.indexpagedata.faq.questionanswer}
             />
           </div>
           <div className={styles.main__faq__patternbig}></div>
@@ -134,13 +111,11 @@ export default function Puapportraitofagraduate({ data }) {
         </section>
       ) : null}
 
-      {data.puapportraitofagraduatepagedata.landingmultilink.length !== 0 ? (
+      {data.indexpagedata.landingmultilink.length !== 0 ? (
         <section className={styles.main__landingmultilink}>
           <div className={styles.main__landingmultilink__container}>
             <LandingMultiLink
-              listlandingmultilink={
-                data.puapportraitofagraduatepagedata.landingmultilink
-              }
+              listlandingmultilink={data.indexpagedata.landingmultilink}
             />
           </div>
           <div
@@ -152,10 +127,8 @@ export default function Puapportraitofagraduate({ data }) {
         </section>
       ) : null}
 
-      {data.puapportraitofagraduatepagedata.landingmultilink !== 0 ? (
-        <FixLinks
-          fixlinkdata={data.puapportraitofagraduatepagedata.landingmultilink}
-        />
+      {data.indexpagedata.landingmultilink !== 0 ? (
+        <FixLinks fixlinkdata={data.indexpagedata.landingmultilink} />
       ) : null}
     </MainLayout>
   );
@@ -167,9 +140,7 @@ export default function Puapportraitofagraduate({ data }) {
 
 export async function getStaticProps({ locale }) {
   const lang = locale;
-  const res = await fetch(
-    `${process.env.FETCH_URL}:5000/api/puapportraitofagraduate_${lang}`
-  );
+  const res = await fetch(`${process.env.FETCH_URL}:5000/api/index_${lang}`);
   const data = await res.json();
   return { props: { data } };
 }

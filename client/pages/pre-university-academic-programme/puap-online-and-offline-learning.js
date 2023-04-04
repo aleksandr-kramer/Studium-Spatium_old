@@ -19,7 +19,7 @@ import Faq from "../../components/Faq/Faq";
 import { landingmonolinkbgcolorsmoky } from "../../constants/stylesconstants";
 // ------------------------------------------
 
-export default function Puapportraitofagraduate({ data }) {
+export default function Puaponlineandofflinelearning({ data }) {
   return (
     <MainLayout
       // ------------------------------------------
@@ -42,56 +42,60 @@ export default function Puapportraitofagraduate({ data }) {
       // ------------------------------------------
       // Переменные значения для конкретных страниц сайта
       // ------------------------------------------
-      title={data.puapportraitofagraduatepagedata.meta.title}
-      keywords={data.puapportraitofagraduatepagedata.meta.keywords}
-      description={data.puapportraitofagraduatepagedata.meta.description}
+      title={data.puaponlineandofflinelearningpagedata.meta.title}
+      keywords={data.puaponlineandofflinelearningpagedata.meta.keywords}
+      description={data.puaponlineandofflinelearningpagedata.meta.description}
     >
       {/* Блок первого экрана для каждой страницы (выбор из трёх вариантов)*/}
       {/* Начало */}
 
-      {data.puapportraitofagraduatepagedata.firstscreen.firstscreentype ===
+      {data.puaponlineandofflinelearningpagedata.firstscreen.firstscreentype ===
       "video" ? (
         <section className={styles.main__firstscreenvideo}>
           <div className={styles.main__firstscreenvideo__container}>
             <FirstScreenVideo
-              h1title={data.puapportraitofagraduatepagedata.firstscreen.h1title}
+              h1title={
+                data.puaponlineandofflinelearningpagedata.firstscreen.h1title
+              }
               h1subtitle={
-                data.puapportraitofagraduatepagedata.firstscreen.h1subtitle
+                data.puaponlineandofflinelearningpagedata.firstscreen.h1subtitle
               }
               altimage={
-                data.puapportraitofagraduatepagedata.firstscreen.imagealt
+                data.puaponlineandofflinelearningpagedata.firstscreen.imagealt
               }
               nameimage={
-                data.puapportraitofagraduatepagedata.firstscreen.imagename
+                data.puaponlineandofflinelearningpagedata.firstscreen.imagename
               }
               urlvideo={
-                data.puapportraitofagraduatepagedata.firstscreen.urlvideo
+                data.puaponlineandofflinelearningpagedata.firstscreen.urlvideo
               }
               titlevideo={
-                data.puapportraitofagraduatepagedata.firstscreen.titlevideo
+                data.puaponlineandofflinelearningpagedata.firstscreen.titlevideo
               }
               videobuttontitle={
-                data.puapportraitofagraduatepagedata.firstscreen
+                data.puaponlineandofflinelearningpagedata.firstscreen
                   .videobuttontitle
               }
               socialnetworkdata={data.socialnetworkdata}
             />
           </div>
         </section>
-      ) : data.puapportraitofagraduatepagedata.firstscreen.firstscreentype ===
-        "image" ? (
+      ) : data.puaponlineandofflinelearningpagedata.firstscreen
+          .firstscreentype === "image" ? (
         <section className={styles.main__firstscreenimage}>
           <div className={styles.main__firstscreenimage__container}>
             <FirstScreenImage
-              h1title={data.puapportraitofagraduatepagedata.firstscreen.h1title}
+              h1title={
+                data.puaponlineandofflinelearningpagedata.firstscreen.h1title
+              }
               h1subtitle={
-                data.puapportraitofagraduatepagedata.firstscreen.h1subtitle
+                data.puaponlineandofflinelearningpagedata.firstscreen.h1subtitle
               }
               altimage={
-                data.puapportraitofagraduatepagedata.firstscreen.imagealt
+                data.puaponlineandofflinelearningpagedata.firstscreen.imagealt
               }
               nameimage={
-                data.puapportraitofagraduatepagedata.firstscreen.imagename
+                data.puaponlineandofflinelearningpagedata.firstscreen.imagename
               }
               socialnetworkdata={data.socialnetworkdata}
             />
@@ -108,12 +112,13 @@ export default function Puapportraitofagraduate({ data }) {
 
       {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
 
-      {data.puapportraitofagraduatepagedata.landingmonolink.length !== 0 ? (
+      {data.puaponlineandofflinelearningpagedata.landingmonolink.length !==
+      0 ? (
         <section className={styles.main__landingmonolink}>
           <div className={styles.main__landingmonolink__container}>
             <LandingMonoLink
               landingmonolinkdata={
-                data.puapportraitofagraduatepagedata.landingmonolink
+                data.puaponlineandofflinelearningpagedata.landingmonolink
               }
               uilandingmonolinkbgcolor={landingmonolinkbgcolorsmoky}
             />
@@ -121,12 +126,15 @@ export default function Puapportraitofagraduate({ data }) {
         </section>
       ) : null}
 
-      {Object.keys(data.puapportraitofagraduatepagedata.faq).length !== 0 ? (
+      {Object.keys(data.puaponlineandofflinelearningpagedata.faq).length !==
+      0 ? (
         <section className={styles.main__faq}>
           <div className={styles.main__faq__container}>
             <Faq
-              title={data.puapportraitofagraduatepagedata.faq.faqtitle}
-              faqdata={data.puapportraitofagraduatepagedata.faq.questionanswer}
+              title={data.puaponlineandofflinelearningpagedata.faq.faqtitle}
+              faqdata={
+                data.puaponlineandofflinelearningpagedata.faq.questionanswer
+              }
             />
           </div>
           <div className={styles.main__faq__patternbig}></div>
@@ -134,12 +142,13 @@ export default function Puapportraitofagraduate({ data }) {
         </section>
       ) : null}
 
-      {data.puapportraitofagraduatepagedata.landingmultilink.length !== 0 ? (
+      {data.puaponlineandofflinelearningpagedata.landingmultilink.length !==
+      0 ? (
         <section className={styles.main__landingmultilink}>
           <div className={styles.main__landingmultilink__container}>
             <LandingMultiLink
               listlandingmultilink={
-                data.puapportraitofagraduatepagedata.landingmultilink
+                data.puaponlineandofflinelearningpagedata.landingmultilink
               }
             />
           </div>
@@ -152,9 +161,11 @@ export default function Puapportraitofagraduate({ data }) {
         </section>
       ) : null}
 
-      {data.puapportraitofagraduatepagedata.landingmultilink !== 0 ? (
+      {data.puaponlineandofflinelearningpagedata.landingmultilink !== 0 ? (
         <FixLinks
-          fixlinkdata={data.puapportraitofagraduatepagedata.landingmultilink}
+          fixlinkdata={
+            data.puaponlineandofflinelearningpagedata.landingmultilink
+          }
         />
       ) : null}
     </MainLayout>
@@ -168,7 +179,7 @@ export default function Puapportraitofagraduate({ data }) {
 export async function getStaticProps({ locale }) {
   const lang = locale;
   const res = await fetch(
-    `${process.env.FETCH_URL}:5000/api/puapportraitofagraduate_${lang}`
+    `${process.env.FETCH_URL}:5000/api/puaponlineandofflinelearning_${lang}`
   );
   const data = await res.json();
   return { props: { data } };

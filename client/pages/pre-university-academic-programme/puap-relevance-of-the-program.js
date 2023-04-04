@@ -20,7 +20,7 @@ import Faq from "../../components/Faq/Faq";
 import { landingmonolinkbgcolorsmoky } from "../../constants/stylesconstants";
 // ------------------------------------------
 
-export default function puaprelevanceoftheprogram({ data }) {
+export default function Puaprelevanceoftheprogram({ data }) {
   return (
     <MainLayout
       // ------------------------------------------
