@@ -12,7 +12,7 @@ const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
 
-const getPagepuappreparingaportfolioEn = async (req, res) => {
+const getPagePuappreparingaportfolioEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -39,7 +39,7 @@ const getPagepuappreparingaportfolioEn = async (req, res) => {
   }
 };
 
-const getPagepuappreparingaportfolioEs = async (req, res) => {
+const getPagePuappreparingaportfolioEs = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -66,7 +66,7 @@ const getPagepuappreparingaportfolioEs = async (req, res) => {
   }
 };
 
-const getPagepuappreparingaportfolioRu = async (req, res) => {
+const getPagePuappreparingaportfolioRu = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "ru" });
@@ -94,7 +94,7 @@ const getPagepuappreparingaportfolioRu = async (req, res) => {
 };
 
 module.exports = {
-  getPagepuappreparingaportfolioEn,
-  getPagepuappreparingaportfolioEs,
-  getPagepuappreparingaportfolioRu,
+  getPagePuappreparingaportfolioEn,
+  getPagePuappreparingaportfolioEs,
+  getPagePuappreparingaportfolioRu,
 };

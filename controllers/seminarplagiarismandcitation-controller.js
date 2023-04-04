@@ -12,7 +12,7 @@ const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
 
-const getPageseminarplagiarismandcitationEn = async (req, res) => {
+const getPageSeminarplagiarismandcitationEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -39,7 +39,7 @@ const getPageseminarplagiarismandcitationEn = async (req, res) => {
   }
 };
 
-const getPageseminarplagiarismandcitationEs = async (req, res) => {
+const getPageSeminarplagiarismandcitationEs = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -66,7 +66,7 @@ const getPageseminarplagiarismandcitationEs = async (req, res) => {
   }
 };
 
-const getPageseminarplagiarismandcitationRu = async (req, res) => {
+const getPageSeminarplagiarismandcitationRu = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "ru" });
@@ -94,7 +94,7 @@ const getPageseminarplagiarismandcitationRu = async (req, res) => {
 };
 
 module.exports = {
-  getPageseminarplagiarismandcitationEn,
-  getPageseminarplagiarismandcitationEs,
-  getPageseminarplagiarismandcitationRu,
+  getPageSeminarplagiarismandcitationEn,
+  getPageSeminarplagiarismandcitationEs,
+  getPageSeminarplagiarismandcitationRu,
 };

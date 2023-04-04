@@ -12,7 +12,7 @@ const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
 
-const getPagepuapwhoistheprogramforEn = async (req, res) => {
+const getPagePuapwhoistheprogramforEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -39,7 +39,7 @@ const getPagepuapwhoistheprogramforEn = async (req, res) => {
   }
 };
 
-const getPagepuapwhoistheprogramforEs = async (req, res) => {
+const getPagePuapwhoistheprogramforEs = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -66,7 +66,7 @@ const getPagepuapwhoistheprogramforEs = async (req, res) => {
   }
 };
 
-const getPagepuapwhoistheprogramforRu = async (req, res) => {
+const getPagePuapwhoistheprogramforRu = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "ru" });
@@ -94,7 +94,7 @@ const getPagepuapwhoistheprogramforRu = async (req, res) => {
 };
 
 module.exports = {
-  getPagepuapwhoistheprogramforEn,
-  getPagepuapwhoistheprogramforEs,
-  getPagepuapwhoistheprogramforRu,
+  getPagePuapwhoistheprogramforEn,
+  getPagePuapwhoistheprogramforEs,
+  getPagePuapwhoistheprogramforRu,
 };

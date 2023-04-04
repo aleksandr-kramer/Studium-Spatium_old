@@ -12,7 +12,7 @@ const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
 
-const getPagepuaphowtoimplementtheprogramatschoolEn = async (req, res) => {
+const getPagePuaphowtoimplementtheprogramatschoolEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -39,7 +39,7 @@ const getPagepuaphowtoimplementtheprogramatschoolEn = async (req, res) => {
   }
 };
 
-const getPagepuaphowtoimplementtheprogramatschoolEs = async (req, res) => {
+const getPagePuaphowtoimplementtheprogramatschoolEs = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -66,7 +66,7 @@ const getPagepuaphowtoimplementtheprogramatschoolEs = async (req, res) => {
   }
 };
 
-const getPagepuaphowtoimplementtheprogramatschoolRu = async (req, res) => {
+const getPagePuaphowtoimplementtheprogramatschoolRu = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "ru" });
@@ -94,7 +94,7 @@ const getPagepuaphowtoimplementtheprogramatschoolRu = async (req, res) => {
 };
 
 module.exports = {
-  getPagepuaphowtoimplementtheprogramatschoolEn,
-  getPagepuaphowtoimplementtheprogramatschoolEs,
-  getPagepuaphowtoimplementtheprogramatschoolRu,
+  getPagePuaphowtoimplementtheprogramatschoolEn,
+  getPagePuaphowtoimplementtheprogramatschoolEs,
+  getPagePuaphowtoimplementtheprogramatschoolRu,
 };

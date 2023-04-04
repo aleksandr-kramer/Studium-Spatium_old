@@ -12,7 +12,7 @@ const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
 
-const getPagepuappracticalworkEn = async (req, res) => {
+const getPagePuappracticalworkEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -39,7 +39,7 @@ const getPagepuappracticalworkEn = async (req, res) => {
   }
 };
 
-const getPagepuappracticalworkEs = async (req, res) => {
+const getPagePuappracticalworkEs = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -66,7 +66,7 @@ const getPagepuappracticalworkEs = async (req, res) => {
   }
 };
 
-const getPagepuappracticalworkRu = async (req, res) => {
+const getPagePuappracticalworkRu = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "ru" });
@@ -94,7 +94,7 @@ const getPagepuappracticalworkRu = async (req, res) => {
 };
 
 module.exports = {
-  getPagepuappracticalworkEn,
-  getPagepuappracticalworkEs,
-  getPagepuappracticalworkRu,
+  getPagePuappracticalworkEn,
+  getPagePuappracticalworkEs,
+  getPagePuappracticalworkRu,
 };

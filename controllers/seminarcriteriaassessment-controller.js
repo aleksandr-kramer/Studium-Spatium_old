@@ -12,7 +12,7 @@ const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
 
-const getPageseminarcriteriaassessmentEn = async (req, res) => {
+const getPageSeminarcriteriaassessmentEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -39,7 +39,7 @@ const getPageseminarcriteriaassessmentEn = async (req, res) => {
   }
 };
 
-const getPageseminarcriteriaassessmentEs = async (req, res) => {
+const getPageSeminarcriteriaassessmentEs = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -66,7 +66,7 @@ const getPageseminarcriteriaassessmentEs = async (req, res) => {
   }
 };
 
-const getPageseminarcriteriaassessmentRu = async (req, res) => {
+const getPageSeminarcriteriaassessmentRu = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "ru" });
@@ -94,7 +94,7 @@ const getPageseminarcriteriaassessmentRu = async (req, res) => {
 };
 
 module.exports = {
-  getPageseminarcriteriaassessmentEn,
-  getPageseminarcriteriaassessmentEs,
-  getPageseminarcriteriaassessmentRu,
+  getPageSeminarcriteriaassessmentEn,
+  getPageSeminarcriteriaassessmentEs,
+  getPageSeminarcriteriaassessmentRu,
 };

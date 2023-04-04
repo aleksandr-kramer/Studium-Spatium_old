@@ -12,7 +12,7 @@ const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
 
-const getPagepuaprelevanceoftheprogramEn = async (req, res) => {
+const getPagePuaprelevanceoftheprogramEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -39,7 +39,7 @@ const getPagepuaprelevanceoftheprogramEn = async (req, res) => {
   }
 };
 
-const getPagepuaprelevanceoftheprogramEs = async (req, res) => {
+const getPagePuaprelevanceoftheprogramEs = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -66,7 +66,7 @@ const getPagepuaprelevanceoftheprogramEs = async (req, res) => {
   }
 };
 
-const getPagepuaprelevanceoftheprogramRu = async (req, res) => {
+const getPagePuaprelevanceoftheprogramRu = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "ru" });
@@ -94,7 +94,7 @@ const getPagepuaprelevanceoftheprogramRu = async (req, res) => {
 };
 
 module.exports = {
-  getPagepuaprelevanceoftheprogramEn,
-  getPagepuaprelevanceoftheprogramEs,
-  getPagepuaprelevanceoftheprogramRu,
+  getPagePuaprelevanceoftheprogramEn,
+  getPagePuaprelevanceoftheprogramEs,
+  getPagePuaprelevanceoftheprogramRu,
 };

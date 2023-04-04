@@ -12,7 +12,7 @@ const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
 
-const getPageseminarresearchactivitiesattheschoolEn = async (req, res) => {
+const getPageSeminarresearchactivitiesattheschoolEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -39,7 +39,7 @@ const getPageseminarresearchactivitiesattheschoolEn = async (req, res) => {
   }
 };
 
-const getPageseminarresearchactivitiesattheschoolEs = async (req, res) => {
+const getPageSeminarresearchactivitiesattheschoolEs = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -66,7 +66,7 @@ const getPageseminarresearchactivitiesattheschoolEs = async (req, res) => {
   }
 };
 
-const getPageseminarresearchactivitiesattheschoolRu = async (req, res) => {
+const getPageSeminarresearchactivitiesattheschoolRu = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "ru" });
@@ -94,7 +94,7 @@ const getPageseminarresearchactivitiesattheschoolRu = async (req, res) => {
 };
 
 module.exports = {
-  getPageseminarresearchactivitiesattheschoolEn,
-  getPageseminarresearchactivitiesattheschoolEs,
-  getPageseminarresearchactivitiesattheschoolRu,
+  getPageSeminarresearchactivitiesattheschoolEn,
+  getPageSeminarresearchactivitiesattheschoolEs,
+  getPageSeminarresearchactivitiesattheschoolRu,
 };

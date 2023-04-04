@@ -12,7 +12,7 @@ const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
 
-const getPagepersonalsupervisorEn = async (req, res) => {
+const getPagePersonalsupervisorEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -39,7 +39,7 @@ const getPagepersonalsupervisorEn = async (req, res) => {
   }
 };
 
-const getPagepersonalsupervisorEs = async (req, res) => {
+const getPagePersonalsupervisorEs = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -66,7 +66,7 @@ const getPagepersonalsupervisorEs = async (req, res) => {
   }
 };
 
-const getPagepersonalsupervisorRu = async (req, res) => {
+const getPagePersonalsupervisorRu = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "ru" });
@@ -94,7 +94,7 @@ const getPagepersonalsupervisorRu = async (req, res) => {
 };
 
 module.exports = {
-  getPagepersonalsupervisorEn,
-  getPagepersonalsupervisorEs,
-  getPagepersonalsupervisorRu,
+  getPagePersonalsupervisorEn,
+  getPagePersonalsupervisorEs,
+  getPagePersonalsupervisorRu,
 };

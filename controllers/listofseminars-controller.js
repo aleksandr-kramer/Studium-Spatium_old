@@ -12,7 +12,7 @@ const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
 
-const getPagelistofseminarsEn = async (req, res) => {
+const getPageListofseminarsEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -39,7 +39,7 @@ const getPagelistofseminarsEn = async (req, res) => {
   }
 };
 
-const getPagelistofseminarsEs = async (req, res) => {
+const getPageListofseminarsEs = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -66,7 +66,7 @@ const getPagelistofseminarsEs = async (req, res) => {
   }
 };
 
-const getPagelistofseminarsRu = async (req, res) => {
+const getPageListofseminarsRu = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "ru" });
@@ -94,7 +94,7 @@ const getPagelistofseminarsRu = async (req, res) => {
 };
 
 module.exports = {
-  getPagelistofseminarsEn,
-  getPagelistofseminarsEs,
-  getPagelistofseminarsRu,
+  getPageListofseminarsEn,
+  getPageListofseminarsEs,
+  getPageListofseminarsRu,
 };

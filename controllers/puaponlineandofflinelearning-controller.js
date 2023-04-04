@@ -12,7 +12,7 @@ const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
 
-const getPagepuaponlineandofflinelearningEn = async (req, res) => {
+const getPagePuaponlineandofflinelearningEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -39,7 +39,7 @@ const getPagepuaponlineandofflinelearningEn = async (req, res) => {
   }
 };
 
-const getPagepuaponlineandofflinelearningEs = async (req, res) => {
+const getPagePuaponlineandofflinelearningEs = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -66,7 +66,7 @@ const getPagepuaponlineandofflinelearningEs = async (req, res) => {
   }
 };
 
-const getPagepuaponlineandofflinelearningRu = async (req, res) => {
+const getPagePuaponlineandofflinelearningRu = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "ru" });
@@ -94,7 +94,7 @@ const getPagepuaponlineandofflinelearningRu = async (req, res) => {
 };
 
 module.exports = {
-  getPagepuaponlineandofflinelearningEn,
-  getPagepuaponlineandofflinelearningEs,
-  getPagepuaponlineandofflinelearningRu,
+  getPagePuaponlineandofflinelearningEn,
+  getPagePuaponlineandofflinelearningEs,
+  getPagePuaponlineandofflinelearningRu,
 };

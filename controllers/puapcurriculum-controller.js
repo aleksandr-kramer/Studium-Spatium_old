@@ -12,7 +12,7 @@ const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
 
-const getPagepuapcurriculumEn = async (req, res) => {
+const getPagePuapcurriculumEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -39,7 +39,7 @@ const getPagepuapcurriculumEn = async (req, res) => {
   }
 };
 
-const getPagepuapcurriculumEs = async (req, res) => {
+const getPagePuapcurriculumEs = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -66,7 +66,7 @@ const getPagepuapcurriculumEs = async (req, res) => {
   }
 };
 
-const getPagepuapcurriculumRu = async (req, res) => {
+const getPagePuapcurriculumRu = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "ru" });
@@ -94,7 +94,7 @@ const getPagepuapcurriculumRu = async (req, res) => {
 };
 
 module.exports = {
-  getPagepuapcurriculumEn,
-  getPagepuapcurriculumEs,
-  getPagepuapcurriculumRu,
+  getPagePuapcurriculumEn,
+  getPagePuapcurriculumEs,
+  getPagePuapcurriculumRu,
 };

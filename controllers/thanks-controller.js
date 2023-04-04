@@ -12,7 +12,7 @@ const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
 
-const getPagethanksEn = async (req, res) => {
+const getPageThanksEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -39,7 +39,7 @@ const getPagethanksEn = async (req, res) => {
   }
 };
 
-const getPagethanksEs = async (req, res) => {
+const getPageThanksEs = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -66,7 +66,7 @@ const getPagethanksEs = async (req, res) => {
   }
 };
 
-const getPagethanksRu = async (req, res) => {
+const getPageThanksRu = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "ru" });
@@ -94,7 +94,7 @@ const getPagethanksRu = async (req, res) => {
 };
 
 module.exports = {
-  getPagethanksEn,
-  getPagethanksEs,
-  getPagethanksRu,
+  getPageThanksEn,
+  getPageThanksEs,
+  getPageThanksRu,
 };

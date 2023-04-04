@@ -12,7 +12,7 @@ const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
 
-const getPagestudentconsultationEn = async (req, res) => {
+const getPageStudentconsultationEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -39,7 +39,7 @@ const getPagestudentconsultationEn = async (req, res) => {
   }
 };
 
-const getPagestudentconsultationEs = async (req, res) => {
+const getPageStudentconsultationEs = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -66,7 +66,7 @@ const getPagestudentconsultationEs = async (req, res) => {
   }
 };
 
-const getPagestudentconsultationRu = async (req, res) => {
+const getPageStudentconsultationRu = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "ru" });
@@ -94,7 +94,7 @@ const getPagestudentconsultationRu = async (req, res) => {
 };
 
 module.exports = {
-  getPagestudentconsultationEn,
-  getPagestudentconsultationEs,
-  getPagestudentconsultationRu,
+  getPageStudentconsultationEn,
+  getPageStudentconsultationEs,
+  getPageStudentconsultationRu,
 };

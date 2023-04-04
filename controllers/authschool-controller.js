@@ -12,7 +12,7 @@ const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
 
-const getPageauthschoolEn = async (req, res) => {
+const getPageAuthschoolEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -39,7 +39,7 @@ const getPageauthschoolEn = async (req, res) => {
   }
 };
 
-const getPageauthschoolEs = async (req, res) => {
+const getPageAuthschoolEs = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -66,7 +66,7 @@ const getPageauthschoolEs = async (req, res) => {
   }
 };
 
-const getPageauthschoolRu = async (req, res) => {
+const getPageAuthschoolRu = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "ru" });
@@ -94,7 +94,7 @@ const getPageauthschoolRu = async (req, res) => {
 };
 
 module.exports = {
-  getPageauthschoolEn,
-  getPageauthschoolEs,
-  getPageauthschoolRu,
+  getPageAuthschoolEn,
+  getPageAuthschoolEs,
+  getPageAuthschoolRu,
 };

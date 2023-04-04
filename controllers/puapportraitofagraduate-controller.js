@@ -12,7 +12,7 @@ const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
 
-const getPagepuapportraitofagraduateEn = async (req, res) => {
+const getPagePuapportraitofagraduateEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -39,7 +39,7 @@ const getPagepuapportraitofagraduateEn = async (req, res) => {
   }
 };
 
-const getPagepuapportraitofagraduateEs = async (req, res) => {
+const getPagePuapportraitofagraduateEs = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -66,7 +66,7 @@ const getPagepuapportraitofagraduateEs = async (req, res) => {
   }
 };
 
-const getPagepuapportraitofagraduateRu = async (req, res) => {
+const getPagePuapportraitofagraduateRu = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "ru" });
@@ -94,7 +94,7 @@ const getPagepuapportraitofagraduateRu = async (req, res) => {
 };
 
 module.exports = {
-  getPagepuapportraitofagraduateEn,
-  getPagepuapportraitofagraduateEs,
-  getPagepuapportraitofagraduateRu,
+  getPagePuapportraitofagraduateEn,
+  getPagePuapportraitofagraduateEs,
+  getPagePuapportraitofagraduateRu,
 };

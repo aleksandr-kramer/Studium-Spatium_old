@@ -12,7 +12,7 @@ const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
 
-const getPagecourseenglishthroughscienceEn = async (req, res) => {
+const getPageCourseenglishthroughscienceEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -39,7 +39,7 @@ const getPagecourseenglishthroughscienceEn = async (req, res) => {
   }
 };
 
-const getPagecourseenglishthroughscienceEs = async (req, res) => {
+const getPageCourseenglishthroughscienceEs = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -66,7 +66,7 @@ const getPagecourseenglishthroughscienceEs = async (req, res) => {
   }
 };
 
-const getPagecourseenglishthroughscienceRu = async (req, res) => {
+const getPageCourseenglishthroughscienceRu = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "ru" });
@@ -94,7 +94,7 @@ const getPagecourseenglishthroughscienceRu = async (req, res) => {
 };
 
 module.exports = {
-  getPagecourseenglishthroughscienceEn,
-  getPagecourseenglishthroughscienceEs,
-  getPagecourseenglishthroughscienceRu,
+  getPageCourseenglishthroughscienceEn,
+  getPageCourseenglishthroughscienceEs,
+  getPageCourseenglishthroughscienceRu,
 };

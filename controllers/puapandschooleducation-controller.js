@@ -12,7 +12,7 @@ const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
 
-const getPagepuapandschooleducationEn = async (req, res) => {
+const getPagePuapandschooleducationEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -39,7 +39,7 @@ const getPagepuapandschooleducationEn = async (req, res) => {
   }
 };
 
-const getPagepuapandschooleducationEs = async (req, res) => {
+const getPagePuapandschooleducationEs = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -66,7 +66,7 @@ const getPagepuapandschooleducationEs = async (req, res) => {
   }
 };
 
-const getPagepuapandschooleducationRu = async (req, res) => {
+const getPagePuapandschooleducationRu = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "ru" });
@@ -94,7 +94,7 @@ const getPagepuapandschooleducationRu = async (req, res) => {
 };
 
 module.exports = {
-  getPagepuapandschooleducationEn,
-  getPagepuapandschooleducationEs,
-  getPagepuapandschooleducationRu,
+  getPagePuapandschooleducationEn,
+  getPagePuapandschooleducationEs,
+  getPagePuapandschooleducationRu,
 };

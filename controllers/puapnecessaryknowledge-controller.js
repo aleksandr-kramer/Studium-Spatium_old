@@ -12,7 +12,7 @@ const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
 
-const getPagepuapnecessaryknowledgeEn = async (req, res) => {
+const getPagePuapnecessaryknowledgeEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -39,7 +39,7 @@ const getPagepuapnecessaryknowledgeEn = async (req, res) => {
   }
 };
 
-const getPagepuapnecessaryknowledgeEs = async (req, res) => {
+const getPagePuapnecessaryknowledgeEs = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -66,7 +66,7 @@ const getPagepuapnecessaryknowledgeEs = async (req, res) => {
   }
 };
 
-const getPagepuapnecessaryknowledgeRu = async (req, res) => {
+const getPagePuapnecessaryknowledgeRu = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "ru" });
@@ -94,7 +94,7 @@ const getPagepuapnecessaryknowledgeRu = async (req, res) => {
 };
 
 module.exports = {
-  getPagepuapnecessaryknowledgeEn,
-  getPagepuapnecessaryknowledgeEs,
-  getPagepuapnecessaryknowledgeRu,
+  getPagePuapnecessaryknowledgeEn,
+  getPagePuapnecessaryknowledgeEs,
+  getPagePuapnecessaryknowledgeRu,
 };

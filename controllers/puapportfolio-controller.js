@@ -12,7 +12,7 @@ const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
 
-const getPagepuapportfolioEn = async (req, res) => {
+const getPagePuapportfolioEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -39,7 +39,7 @@ const getPagepuapportfolioEn = async (req, res) => {
   }
 };
 
-const getPagepuapportfolioEs = async (req, res) => {
+const getPagePuapportfolioEs = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -66,7 +66,7 @@ const getPagepuapportfolioEs = async (req, res) => {
   }
 };
 
-const getPagepuapportfolioRu = async (req, res) => {
+const getPagePuapportfolioRu = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "ru" });
@@ -94,7 +94,7 @@ const getPagepuapportfolioRu = async (req, res) => {
 };
 
 module.exports = {
-  getPagepuapportfolioEn,
-  getPagepuapportfolioEs,
-  getPagepuapportfolioRu,
+  getPagePuapportfolioEn,
+  getPagePuapportfolioEs,
+  getPagePuapportfolioRu,
 };

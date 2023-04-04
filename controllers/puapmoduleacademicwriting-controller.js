@@ -12,7 +12,7 @@ const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
 
-const getPagepuapmoduleacademicwritingEn = async (req, res) => {
+const getPagePuapmoduleacademicwritingEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -39,7 +39,7 @@ const getPagepuapmoduleacademicwritingEn = async (req, res) => {
   }
 };
 
-const getPagepuapmoduleacademicwritingEs = async (req, res) => {
+const getPagePuapmoduleacademicwritingEs = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -66,7 +66,7 @@ const getPagepuapmoduleacademicwritingEs = async (req, res) => {
   }
 };
 
-const getPagepuapmoduleacademicwritingRu = async (req, res) => {
+const getPagePuapmoduleacademicwritingRu = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "ru" });
@@ -94,7 +94,7 @@ const getPagepuapmoduleacademicwritingRu = async (req, res) => {
 };
 
 module.exports = {
-  getPagepuapmoduleacademicwritingEn,
-  getPagepuapmoduleacademicwritingEs,
-  getPagepuapmoduleacademicwritingRu,
+  getPagePuapmoduleacademicwritingEn,
+  getPagePuapmoduleacademicwritingEs,
+  getPagePuapmoduleacademicwritingRu,
 };

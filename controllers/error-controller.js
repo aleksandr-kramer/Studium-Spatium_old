@@ -12,7 +12,7 @@ const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
 
-const getPageerrorEn = async (req, res) => {
+const getPageErrorEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -39,7 +39,7 @@ const getPageerrorEn = async (req, res) => {
   }
 };
 
-const getPageerrorEs = async (req, res) => {
+const getPageErrorEs = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "en" });
@@ -66,7 +66,7 @@ const getPageerrorEs = async (req, res) => {
   }
 };
 
-const getPageerrorRu = async (req, res) => {
+const getPageErrorRu = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
     const socialnetworkdata = await Socialnetwork.find({ locale: "ru" });
@@ -94,7 +94,7 @@ const getPageerrorRu = async (req, res) => {
 };
 
 module.exports = {
-  getPageerrorEn,
-  getPageerrorEs,
-  getPageerrorRu,
+  getPageErrorEn,
+  getPageErrorEs,
+  getPageErrorRu,
 };
