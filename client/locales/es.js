@@ -57,45 +57,45 @@ export const es = {
     NavMenu: [
       {
         id: 1,
-        NameMenu: "About P-UAP programme. Curriculum",
+        NameMenu: "Sobre el programa P-UAP. Contenido",
         SubMenu: [
           {
             id: 1,
-            TitleSubMenu: "About programme P-UAP",
+            TitleSubMenu: "Sobre el programa P-UAP",
             ListSubMenu: [
               {
                 id: 1,
-                NameSubMenu: "Relevance of the programme",
+                NameSubMenu: "P-UAP: Relevancia del programa",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-relevance-of-the-program",
               },
               {
                 id: 2,
-                NameSubMenu: "Who is the programme for",
+                NameSubMenu: "P-UAP: ¿A quién va dirigido el programa?",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-who-is-the-program-for",
               },
               {
                 id: 3,
-                NameSubMenu: "Portrait of a graduate",
+                NameSubMenu: "P-UAP: Retrato de un graduado",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-portrait-of-a-graduate",
               },
               {
                 id: 4,
-                NameSubMenu: "Necessary basic knowledge",
+                NameSubMenu: "P-UAP: Conocimientos básicos requeridos",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-necessary-knowledge",
               },
               {
                 id: 5,
-                NameSubMenu: "P-UAP and school education",
+                NameSubMenu: "P-UAP y educación escolar",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-and-school-education",
               },
               {
                 id: 6,
-                NameSubMenu: "Preparing a portfolio",
+                NameSubMenu: "P-UAP: Preparar un portafolio",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-preparing-a-portfolio",
               },
@@ -103,35 +103,35 @@ export const es = {
           },
           {
             id: 2,
-            TitleSubMenu: "Curriculum P-UAP",
+            TitleSubMenu: "Contenido P-UAP",
             ListSubMenu: [
               {
                 id: 1,
-                NameSubMenu: "Programme content",
+                NameSubMenu: "P-UAP: Contenido del programa",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-curriculum",
               },
               {
                 id: 2,
-                NameSubMenu: "Module: Research",
+                NameSubMenu: "Módulo: Investigación",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-module-research",
               },
               {
                 id: 3,
-                NameSubMenu: "Module: Project activity",
+                NameSubMenu: "Módulo: Proyecto de trabajo",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-module-project-activities",
               },
               {
                 id: 4,
-                NameSubMenu: "Module: Academic Writing",
+                NameSubMenu: "Módulo: Escritura académica",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-module-academic-writing",
               },
               {
                 id: 5,
-                NameSubMenu: "Module: Statistical data processing",
+                NameSubMenu: "Módulo: Tratamiento estadístico de datos",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-module-statistical-data-processing",
               },
@@ -139,29 +139,29 @@ export const es = {
           },
           {
             id: 3,
-            TitleSubMenu: "Educational process",
+            TitleSubMenu: "Proceso de formación",
             ListSubMenu: [
               {
                 id: 1,
-                NameSubMenu: "Duration of learning",
+                NameSubMenu: "P-UAP: Duración de la formación",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-duration-of-learning",
               },
               {
                 id: 2,
-                NameSubMenu: "Online and Offline learning",
+                NameSubMenu: "P-UAP: Formación online y offline",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-online-and-offline-learning",
               },
               {
                 id: 3,
-                NameSubMenu: "Theoretical learning",
+                NameSubMenu: "P-UAP: Teoría de la formación",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-theoretical-training",
               },
               {
                 id: 4,
-                NameSubMenu: "Practical work",
+                NameSubMenu: "P-UAP: Trabajo práctico",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-practical-work",
               },
@@ -171,82 +171,82 @@ export const es = {
         LandingMenu: [
           {
             id: 1,
-            TitleLandingMenu: "Request a presentation of the programme",
+            TitleLandingMenu: "Solicitar una presentación del programa",
             TextLandingMenu:
-              "We will hold a free online presentation of the programme for schools and universities. We will answer questions.",
+              "Haremos una presentación gratuita en línea del programa para centros escolares y universidades. Responderemos a preguntas.",
             UrlLandingMenu:
               "/pre-university-academic-programme/puap-request-a-presentation-of-the-program",
           },
           {
             id: 2,
-            TitleLandingMenu: "All educational services",
+            TitleLandingMenu: "Todos los servicios educativos",
             TextLandingMenu:
-              "Learning, seminars and consultations for schools and students",
+              "Formación, seminarios y asesoramiento para centros escolares y estudiantes",
             UrlLandingMenu: "/services",
           },
           {
             id: 3,
-            TitleLandingMenu: "Portfolio for the university",
+            TitleLandingMenu: "Portafolio para la universidad",
             TextLandingMenu:
-              "What does the portfolio include? How to prepare a portfolio for a university?",
+              "¿Qué incluye un portafolio? ¿Cómo preparo un portafolio para la admisión a la universidad?",
             UrlLandingMenu: "/pre-university-academic-programme/puap-portfolio",
           },
           {
             id: 4,
-            TitleLandingMenu: "Online learning",
-            TextLandingMenu: "Detailed description of online learning",
+            TitleLandingMenu: "Formación online",
+            TextLandingMenu: "Descripción detallada de la formación online",
             UrlLandingMenu:
               "/pre-university-academic-programme/puap-online-learning",
           },
           {
             id: 5,
-            TitleLandingMenu: "Ask a question",
-            TextLandingMenu: "We will answer all the questions",
+            TitleLandingMenu: "Formule una pregunta",
+            TextLandingMenu: "Responderemos a todas sus preguntas",
             UrlLandingMenu: "/ask-a-question",
           },
         ],
       },
       {
         id: 2,
-        NameMenu: "For schools and teachers",
+        NameMenu: "Para escuelas y profesores",
         SubMenu: [
           {
             id: 1,
-            TitleSubMenu: "About programme P-UAP",
+            TitleSubMenu: "Sobre el programa P-UAP",
             ListSubMenu: [
               {
                 id: 1,
-                NameSubMenu: "Relevance of the programme",
+                NameSubMenu: "P-UAP: Relevancia del programa",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-relevance-of-the-program",
               },
               {
                 id: 2,
-                NameSubMenu: "Who is the programme for",
+                NameSubMenu: "P-UAP: ¿A quién va dirigido el programa?",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-who-is-the-program-for",
               },
               {
                 id: 3,
-                NameSubMenu: "Portrait of a graduate",
+                NameSubMenu: "P-UAP: Retrato de un graduado",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-portrait-of-a-graduate",
               },
               {
                 id: 4,
-                NameSubMenu: "Necessary basic knowledge",
+                NameSubMenu: "P-UAP: Conocimientos básicos requeridos",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-necessary-knowledge",
               },
               {
                 id: 5,
-                NameSubMenu: "P-UAP and school education",
+                NameSubMenu: "P-UAP y educación escolar",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-and-school-education",
               },
               {
                 id: 6,
-                NameSubMenu: "Preparing a portfolio",
+                NameSubMenu: "P-UAP: Preparar un portafolio",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-preparing-a-portfolio",
               },
@@ -254,35 +254,35 @@ export const es = {
           },
           {
             id: 2,
-            TitleSubMenu: "Schools and teachers",
+            TitleSubMenu: "A las escuelas y los profesores",
             ListSubMenu: [
               {
                 id: 1,
-                NameSubMenu: "Request a presentation of the programme",
+                NameSubMenu: "Solicitar una presentación del programa",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-request-a-presentation-of-the-program",
               },
               {
                 id: 2,
-                NameSubMenu: "P-UAP: How to implement the programme at school?",
+                NameSubMenu: "P-UAP: ¿Cómo aplicar el programa en la escuela?",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-how-to-implement-the-program-at-school",
               },
               {
                 id: 3,
-                NameSubMenu: "Relevance for teachers",
+                NameSubMenu: "P-UAP: Pertinencia para los profesores",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-relevance-for-teachers",
               },
               {
                 id: 4,
-                NameSubMenu: "Relevance for schools",
+                NameSubMenu: "P-UAP: Importancia para las escuelas",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-relevance-for-the-school",
               },
               {
                 id: 5,
-                NameSubMenu: "P-UAP: Implementation options at school",
+                NameSubMenu: "P-UAP: Opciones para aplicar el programa en la escuela",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-implementation-options-at-school",
               },
@@ -290,26 +290,26 @@ export const es = {
           },
           {
             id: 3,
-            TitleSubMenu: "Additional services",
+            TitleSubMenu: "Servicios adicionales",
             ListSubMenu: [
               {
                 id: 1,
-                NameSubMenu: "Supervising programme",
+                NameSubMenu: "El programa de supervisión",
                 UrlSubMenu: "/supervisor",
               },
               {
                 id: 2,
-                NameSubMenu: "Consulting support",
+                NameSubMenu: "Apoyo consultivo",
                 UrlSubMenu: "/student-consultation",
               },
               {
                 id: 3,
-                NameSubMenu: "Learning courses",
+                NameSubMenu: "Cursos de formación",
                 UrlSubMenu: "/courses",
               },
               {
                 id: 4,
-                NameSubMenu: "Workshops for schools and teachers",
+                NameSubMenu: "Talleres para escuelas y profesores",
                 UrlSubMenu: "/seminars",
               },
             ],
@@ -318,68 +318,68 @@ export const es = {
         LandingMenu: [
           {
             id: 1,
-            TitleLandingMenu: "The content of the P-UAP programme",
-            TextLandingMenu: "Programme description, content and objectives",
+            TitleLandingMenu: "Contenido del P-UAP programa",
+            TextLandingMenu: "Descripción, contenido y objetivos del programa P-UAP",
             UrlLandingMenu:
               "/pre-university-academic-programme/puap-curriculum",
           },
           {
             id: 2,
-            TitleLandingMenu: "All educational services",
+            TitleLandingMenu: "Todos los servicios educativos",
             TextLandingMenu:
-              "Learning, seminars and consultations for schools and students",
+              "Formación, seminarios y asesoramiento para centros escolares y estudiantes",
             UrlLandingMenu: "/services",
           },
           {
             id: 3,
-            TitleLandingMenu: "Portfolio for the university",
+            TitleLandingMenu: "Portafolio para la universidad",
             TextLandingMenu:
-              "What does the portfolio include? How to prepare a portfolio for a university?",
+              "¿Qué incluye un portafolio? ¿Cómo preparo un portafolio para la admisión a la universidad?",
             UrlLandingMenu: "/pre-university-academic-programme/puap-portfolio",
           },
           {
             id: 4,
-            TitleLandingMenu: "Ask a question",
-            TextLandingMenu: "We will answer all the questions",
+            TitleLandingMenu: "Formule una pregunta",
+            TextLandingMenu: "Responderemos a todas sus preguntas",
             UrlLandingMenu: "/ask-a-question",
           },
         ],
       },
       {
         id: 3,
-        NameMenu: "Online learning. Consultations",
+        NameMenu: "Formación en Online. Asesoramiento.",
         SubMenu: [
           {
             id: 1,
-            TitleSubMenu: "Curriculum P-UAP",
+            TitleSubMenu: "Contenido P-UAP",
             ListSubMenu: [
               {
                 id: 1,
-                NameSubMenu: "Programme content",
+                NameSubMenu: "P-UAP: Contenido del programa",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-curriculum",
               },
               {
                 id: 2,
-                NameSubMenu: "Module: Research",
+                NameSubMenu: "Módulo: Investigación",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-module-research",
               },
               {
                 id: 3,
-                NameSubMenu: "Module: Project activity",
+                NameSubMenu: "Módulo: Proyecto de trabajo",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-module-project-activities",
               },
               {
                 id: 4,
-                NameSubMenu: "Module: Academic Writing",
+                NameSubMenu: "Módulo: Escritura académica",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-module-academic-writing",
               },
               {
                 id: 5,
-                NameSubMenu: "Module: Statistical data processing",
+                NameSubMenu: "Módulo: Tratamiento estadístico de datos",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-module-statistical-data-processing",
               },
@@ -387,23 +387,23 @@ export const es = {
           },
           {
             id: 2,
-            TitleSubMenu: "Online learning",
+            TitleSubMenu: "Formación online",
             ListSubMenu: [
               {
                 id: 1,
-                NameSubMenu: "P-UAP: Online learning",
+                NameSubMenu: "P-UAP: Formación online",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-online-learning",
               },
               {
                 id: 2,
-                NameSubMenu: "How to start Online learning?",
+                NameSubMenu: "P-UAP: ¿Cómo empiezo un curso en online?",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-how-to-start-online-learning",
               },
               {
                 id: 3,
-                NameSubMenu: "Request for online learning",
+                NameSubMenu: "P-UAP: Solicitud de formación en online",
                 UrlSubMenu:
                   "/pre-university-academic-programme/puap-request-for-online-learning",
               },
@@ -411,26 +411,26 @@ export const es = {
           },
           {
             id: 3,
-            TitleSubMenu: "Additional services",
+            TitleSubMenu: "Servicios adicionales",
             ListSubMenu: [
               {
                 id: 1,
-                NameSubMenu: "Supervising programme",
+                NameSubMenu: "El programa de supervisión",
                 UrlSubMenu: "/supervisor",
               },
               {
                 id: 2,
-                NameSubMenu: "Consulting support",
+                NameSubMenu: "Apoyo consultivo",
                 UrlSubMenu: "/student-consultation",
               },
               {
                 id: 3,
-                NameSubMenu: "Courses programme",
+                NameSubMenu: "Cursos de formación",
                 UrlSubMenu: "/courses",
               },
               {
                 id: 4,
-                NameSubMenu: "Thematic seminars",
+                NameSubMenu: "Talleres para escuelas y profesores",
                 UrlSubMenu: "/seminars",
               },
             ],
@@ -439,22 +439,22 @@ export const es = {
         LandingMenu: [
           {
             id: 1,
-            TitleLandingMenu: "All educational services",
+            TitleLandingMenu: "Todos los servicios educativos",
             TextLandingMenu:
-              "Learning, seminars and consultations for schools and students",
+              "Formación, seminarios y asesoramiento para centros escolares y estudiantes",
             UrlLandingMenu: "/services",
           },
           {
             id: 2,
-            TitleLandingMenu: "Portfolio for the university",
+            TitleLandingMenu: "Portafolio para la universidad",
             TextLandingMenu:
-              "What does the portfolio include? How to prepare a portfolio for a university?",
+              "¿Qué incluye un portafolio? ¿Cómo preparo un portafolio para la admisión a la universidad?",
             UrlLandingMenu: "/pre-university-academic-programme/puap-portfolio",
           },
           {
             id: 3,
-            TitleLandingMenu: "Ask a question",
-            TextLandingMenu: "We will answer all the questions",
+            TitleLandingMenu: "Formule una pregunta",
+            TextLandingMenu: "Responderemos a todas sus preguntas",
             UrlLandingMenu: "/ask-a-question",
           },
         ],
