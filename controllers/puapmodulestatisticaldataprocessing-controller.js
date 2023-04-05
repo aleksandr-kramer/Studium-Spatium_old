@@ -22,18 +22,17 @@ const getPagePuapmodulestatisticaldataprocessingEn = async (req, res) => {
     const footerdata = await Footer_en.findOne({
       _id: "641b83bdbd16bd51f6942478",
     });
-    const puapmodulestatisticalpagedataprocessingpagedata =
-      await Page_en.findOne({
-        pagename: "puap-relevance-of-the-program",
-      })
-        .populate("landingmonolink")
-        .populate("landingmultilink");
+    const puapmodulestatisticaldataprocessingpagedata = await Page_en.findOne({
+      pagename: "puap-module-statistical-data-processing",
+    })
+      .populate("landingmonolink")
+      .populate("landingmultilink");
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
-      puapmodulestatisticalpagedataprocessingpagedata,
+      puapmodulestatisticaldataprocessingpagedata,
     });
   } catch (error) {
     console.log(error);
@@ -50,18 +49,17 @@ const getPagePuapmodulestatisticaldataprocessingEs = async (req, res) => {
     const footerdata = await Footer_es.findOne({
       _id: "641b83bdbd16bd51f6942478",
     });
-    const puapmodulestatisticalpagedataprocessingpagedata =
-      await Page_es.findOne({
-        pagename: "puap-relevance-of-the-program",
-      })
-        .populate("landingmonolink")
-        .populate("landingmultilink");
+    const puapmodulestatisticaldataprocessingpagedata = await Page_es.findOne({
+      pagename: "puap-module-statistical-data-processing",
+    })
+      .populate("landingmonolink")
+      .populate("landingmultilink");
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
-      puapmodulestatisticalpagedataprocessingpagedata,
+      puapmodulestatisticaldataprocessingpagedata,
     });
   } catch (error) {
     console.log(error);
@@ -78,18 +76,17 @@ const getPagePuapmodulestatisticaldataprocessingRu = async (req, res) => {
     const footerdata = await Footer_ru.findOne({
       _id: "641b83bdbd16bd51f6942478",
     });
-    const puapmodulestatisticalpagedataprocessingpagedata =
-      await Page_ru.findOne({
-        pagename: "puap-relevance-of-the-program",
-      })
-        .populate("landingmonolink")
-        .populate("landingmultilink");
+    const puapmodulestatisticaldataprocessingpagedata = await Page_ru.findOne({
+      pagename: "puap-module-statistical-data-processing",
+    })
+      .populate("landingmonolink")
+      .populate("landingmultilink");
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
-      puapmodulestatisticalpagedataprocessingpagedata,
+      puapmodulestatisticaldataprocessingpagedata,
     });
   } catch (error) {
     console.log(error);

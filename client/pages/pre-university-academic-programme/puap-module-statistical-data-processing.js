@@ -1,7 +1,7 @@
 // Стандартные для всех страниц импорты. Меняем при необходимости путь до файла
 // ------------------------------------------
 import MainLayout from "../../components/MainLayout/MainLayout";
-import styles from "../../styles/pages/Index.module.scss";
+import styles from "../../styles/pages/Puap-module.module.scss";
 import FirstScreenImage from "../../components/FirstScreenImage/FirstScreenImage";
 import FirstScreenVideo from "../../components/FirstScreenVideo/FirstScreenVideo";
 import FixLinks from "../../components/FixLinks/FixLinks";
@@ -19,7 +19,7 @@ import Faq from "../../components/Faq/Faq";
 import { landingmonolinkbgcolorsmoky } from "../../constants/stylesconstants";
 // ------------------------------------------
 
-export default function Pageerror({ data }) {
+export default function Puapmodulestatisticaldataprocessing({ data }) {
   return (
     <MainLayout
       // ------------------------------------------
@@ -42,36 +42,73 @@ export default function Pageerror({ data }) {
       // ------------------------------------------
       // Переменные значения для конкретных страниц сайта
       // ------------------------------------------
-      title={data.indexpagedata.meta.title}
-      keywords={data.indexpagedata.meta.keywords}
-      description={data.indexpagedata.meta.description}
+      title={data.puapmodulestatisticaldataprocessingpagedata.meta.title}
+      keywords={data.puapmodulestatisticaldataprocessingpagedata.meta.keywords}
+      description={
+        data.puapmodulestatisticaldataprocessingpagedata.meta.description
+      }
     >
       {/* Блок первого экрана для каждой страницы (выбор из трёх вариантов)*/}
       {/* Начало */}
 
-      {data.indexpagedata.firstscreen.firstscreentype === "video" ? (
+      {data.puapmodulestatisticaldataprocessingpagedata.firstscreen
+        .firstscreentype === "video" ? (
         <section className={styles.main__firstscreenvideo}>
           <div className={styles.main__firstscreenvideo__container}>
             <FirstScreenVideo
-              h1title={data.indexpagedata.firstscreen.h1title}
-              h1subtitle={data.indexpagedata.firstscreen.h1subtitle}
-              altimage={data.indexpagedata.firstscreen.imagealt}
-              nameimage={data.indexpagedata.firstscreen.imagename}
-              urlvideo={data.indexpagedata.firstscreen.urlvideo}
-              titlevideo={data.indexpagedata.firstscreen.titlevideo}
-              videobuttontitle={data.indexpagedata.firstscreen.videobuttontitle}
+              h1title={
+                data.puapmodulestatisticaldataprocessingpagedata.firstscreen
+                  .h1title
+              }
+              h1subtitle={
+                data.puapmodulestatisticaldataprocessingpagedata.firstscreen
+                  .h1subtitle
+              }
+              altimage={
+                data.puapmodulestatisticaldataprocessingpagedata.firstscreen
+                  .imagealt
+              }
+              nameimage={
+                data.puapmodulestatisticaldataprocessingpagedata.firstscreen
+                  .imagename
+              }
+              urlvideo={
+                data.puapmodulestatisticaldataprocessingpagedata.firstscreen
+                  .urlvideo
+              }
+              titlevideo={
+                data.puapmodulestatisticaldataprocessingpagedata.firstscreen
+                  .titlevideo
+              }
+              videobuttontitle={
+                data.puapmodulestatisticaldataprocessingpagedata.firstscreen
+                  .videobuttontitle
+              }
               socialnetworkdata={data.socialnetworkdata}
             />
           </div>
         </section>
-      ) : data.indexpagedata.firstscreen.firstscreentype === "image" ? (
+      ) : data.puapmodulestatisticaldataprocessingpagedata.firstscreen
+          .firstscreentype === "image" ? (
         <section className={styles.main__firstscreenimage}>
           <div className={styles.main__firstscreenimage__container}>
             <FirstScreenImage
-              h1title={data.indexpagedata.firstscreen.h1title}
-              h1subtitle={data.indexpagedata.firstscreen.h1subtitle}
-              altimage={data.indexpagedata.firstscreen.imagealt}
-              nameimage={data.indexpagedata.firstscreen.imagename}
+              h1title={
+                data.puapmodulestatisticaldataprocessingpagedata.firstscreen
+                  .h1title
+              }
+              h1subtitle={
+                data.puapmodulestatisticaldataprocessingpagedata.firstscreen
+                  .h1subtitle
+              }
+              altimage={
+                data.puapmodulestatisticaldataprocessingpagedata.firstscreen
+                  .imagealt
+              }
+              nameimage={
+                data.puapmodulestatisticaldataprocessingpagedata.firstscreen
+                  .imagename
+              }
               socialnetworkdata={data.socialnetworkdata}
             />
           </div>
@@ -87,23 +124,32 @@ export default function Pageerror({ data }) {
 
       {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
 
-      {data.indexpagedata.landingmonolink.length !== 0 ? (
+      {data.puapmodulestatisticaldataprocessingpagedata.landingmonolink
+        .length !== 0 ? (
         <section className={styles.main__landingmonolink}>
           <div className={styles.main__landingmonolink__container}>
             <LandingMonoLink
-              landingmonolinkdata={data.indexpagedata.landingmonolink}
+              landingmonolinkdata={
+                data.puapmodulestatisticaldataprocessingpagedata.landingmonolink
+              }
               uilandingmonolinkbgcolor={landingmonolinkbgcolorsmoky}
             />
           </div>
         </section>
       ) : null}
 
-      {Object.keys(data.indexpagedata.faq).length !== 0 ? (
+      {Object.keys(data.puapmodulestatisticaldataprocessingpagedata.faq)
+        .length !== 0 ? (
         <section className={styles.main__faq}>
           <div className={styles.main__faq__container}>
             <Faq
-              title={data.indexpagedata.faq.faqtitle}
-              faqdata={data.indexpagedata.faq.questionanswer}
+              title={
+                data.puapmodulestatisticaldataprocessingpagedata.faq.faqtitle
+              }
+              faqdata={
+                data.puapmodulestatisticaldataprocessingpagedata.faq
+                  .questionanswer
+              }
             />
           </div>
           <div className={styles.main__faq__patternbig}></div>
@@ -111,11 +157,15 @@ export default function Pageerror({ data }) {
         </section>
       ) : null}
 
-      {data.indexpagedata.landingmultilink.length !== 0 ? (
+      {data.puapmodulestatisticaldataprocessingpagedata.landingmultilink
+        .length !== 0 ? (
         <section className={styles.main__landingmultilink}>
           <div className={styles.main__landingmultilink__container}>
             <LandingMultiLink
-              listlandingmultilink={data.indexpagedata.landingmultilink}
+              listlandingmultilink={
+                data.puapmodulestatisticaldataprocessingpagedata
+                  .landingmultilink
+              }
             />
           </div>
           <div
@@ -127,8 +177,13 @@ export default function Pageerror({ data }) {
         </section>
       ) : null}
 
-      {data.indexpagedata.landingmultilink !== 0 ? (
-        <FixLinks fixlinkdata={data.indexpagedata.landingmultilink} />
+      {data.puapmodulestatisticaldataprocessingpagedata.landingmultilink !==
+      0 ? (
+        <FixLinks
+          fixlinkdata={
+            data.puapmodulestatisticaldataprocessingpagedata.landingmultilink
+          }
+        />
       ) : null}
     </MainLayout>
   );
@@ -140,7 +195,9 @@ export default function Pageerror({ data }) {
 
 export async function getStaticProps({ locale }) {
   const lang = locale;
-  const res = await fetch(`${process.env.FETCH_URL}:5000/api/index_${lang}`);
+  const res = await fetch(
+    `${process.env.FETCH_URL}:5000/api/puapmodulestatisticaldataprocessing_${lang}`
+  );
   const data = await res.json();
   return { props: { data } };
 }
