@@ -1,0 +1,100 @@
+@import "../mixins.scss";
+@import "../constants.scss";
+
+.main {
+  &__firstscreenvideo {
+    @include block-margin-bottom;
+  }
+  &__firstscreenvideo__container {
+    @include page-container;
+  }
+  &__firstscreenimage {
+    @include block-margin-bottom;
+  }
+
+  &__firstscreenimage__container {
+    @include page-container;
+  }
+
+  &__ordercomponent {
+    @include block-margin-bottom;
+  }
+  &__ordercomponent__container {
+    @include page-container;
+  }
+
+  &__stepcomponent {
+    @include block-margin-bottom;
+  }
+  &__stepcomponent__container {
+    @include page-container;
+  }
+  &__stepcomponenttitle {
+    @include h2-style;
+    text-align: center;
+    margin: 0 auto;
+  }
+  &__h2componentaboutconsultation {
+    @include block-margin-bottom;
+  }
+  &__h2componentaboutconsultation__container {
+    @include page-container;
+  }
+  &__landingmonolink {
+    @include block-margin-bottom;
+  }
+  &__landingmonolink__container {
+    @include page-container;
+  }
+  &__faq {
+    @include block-margin-bottom;
+    position: relative;
+    background-color: $bg-color-dark;
+  }
+  &__faq__container {
+    @include page-container;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__faq__patternbig {
+    @include bigpattern-style;
+    background-image: url(../../public/uipictures/pattern_white_pointer.png);
+    top: 30%;
+    right: 9%;
+    @include d1440px {
+      right: 3%;
+    }
+    @include p1150px {
+      right: 2%;
+    }
+  }
+  &__faq__patternsmall {
+    @include smallpattern-style;
+    background-image: url(../../public/uipictures/pattern_white_pointer.png);
+    bottom: 10%;
+    left: 6%;
+    @include p920px {
+      left: 2%;
+    }
+  }
+  &__landingmultilink {
+    position: relative;
+    @include block-margin-bottom;
+  }
+  &__landingmultilink__container {
+    @include page-container;
+  }
+  &__landingmultilink__patternsmall__top {
+    @include smallpattern-style;
+    background-image: url(../../public/uipictures/pattern_black_pointer.png);
+    top: 10%;
+    right: 9%;
+  }
+  &__landingmultilink__patternsmall__bottom {
+    @include smallpattern-style;
+    background-image: url(../../public/uipictures/pattern_black_pointer.png);
+    bottom: 10%;
+    left: 9%;
+  }
+}

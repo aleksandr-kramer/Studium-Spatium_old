@@ -1,13 +1,13 @@
 // Стандартные для всех страниц импорты. Меняем при необходимости путь до файла
 // ------------------------------------------
-import MainLayout from "../components/MainLayout/MainLayout";
-import styles from "../styles/pages/Index.module.scss";
-import FirstScreenImage from "../components/FirstScreenImage/FirstScreenImage";
-import FirstScreenVideo from "../components/FirstScreenVideo/FirstScreenVideo";
-import FixLinks from "../components/FixLinks/FixLinks";
-import LandingMultiLink from "../components/LandingMultiLink/LandingMultiLink";
-import LandingMonoLink from "../components/LandingMonoLink/LandingMonoLink";
-import Faq from "../components/Faq/Faq";
+import MainLayout from "../../components/MainLayout/MainLayout";
+import styles from "../../styles/pages/Consultation.module.scss";
+import FirstScreenImage from "../../components/FirstScreenImage/FirstScreenImage";
+import FirstScreenVideo from "../../components/FirstScreenVideo/FirstScreenVideo";
+import FixLinks from "../../components/FixLinks/FixLinks";
+import LandingMultiLink from "../../components/LandingMultiLink/LandingMultiLink";
+import LandingMonoLink from "../../components/LandingMonoLink/LandingMonoLink";
+import Faq from "../../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
@@ -16,10 +16,10 @@ import Faq from "../components/Faq/Faq";
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
 // ------------------------------------------
-import { landingmonolinkbgcolorsmoky } from "../constants/stylesconstants";
+import { landingmonolinkbgcolorsmoky } from "../../constants/stylesconstants";
 // ------------------------------------------
 
-export default function Pageerror({ data }) {
+export default function Consultation({ data }) {
   return (
     <MainLayout
       // ------------------------------------------
@@ -42,36 +42,38 @@ export default function Pageerror({ data }) {
       // ------------------------------------------
       // Переменные значения для конкретных страниц сайта
       // ------------------------------------------
-      title={data.indexpagedata.meta.title}
-      keywords={data.indexpagedata.meta.keywords}
-      description={data.indexpagedata.meta.description}
+      title={data.consultationpagedata.meta.title}
+      keywords={data.consultationpagedata.meta.keywords}
+      description={data.consultationpagedata.meta.description}
     >
       {/* Блок первого экрана для каждой страницы (выбор из трёх вариантов)*/}
       {/* Начало */}
 
-      {data.indexpagedata.firstscreen.firstscreentype === "video" ? (
+      {data.consultationpagedata.firstscreen.firstscreentype === "video" ? (
         <section className={styles.main__firstscreenvideo}>
           <div className={styles.main__firstscreenvideo__container}>
             <FirstScreenVideo
-              h1title={data.indexpagedata.firstscreen.h1title}
-              h1subtitle={data.indexpagedata.firstscreen.h1subtitle}
-              altimage={data.indexpagedata.firstscreen.imagealt}
-              nameimage={data.indexpagedata.firstscreen.imagename}
-              urlvideo={data.indexpagedata.firstscreen.urlvideo}
-              titlevideo={data.indexpagedata.firstscreen.titlevideo}
-              videobuttontitle={data.indexpagedata.firstscreen.videobuttontitle}
+              h1title={data.consultationpagedata.firstscreen.h1title}
+              h1subtitle={data.consultationpagedata.firstscreen.h1subtitle}
+              altimage={data.consultationpagedata.firstscreen.imagealt}
+              nameimage={data.consultationpagedata.firstscreen.imagename}
+              urlvideo={data.consultationpagedata.firstscreen.urlvideo}
+              titlevideo={data.consultationpagedata.firstscreen.titlevideo}
+              videobuttontitle={
+                data.consultationpagedata.firstscreen.videobuttontitle
+              }
               socialnetworkdata={data.socialnetworkdata}
             />
           </div>
         </section>
-      ) : data.indexpagedata.firstscreen.firstscreentype === "image" ? (
+      ) : data.consultationpagedata.firstscreen.firstscreentype === "image" ? (
         <section className={styles.main__firstscreenimage}>
           <div className={styles.main__firstscreenimage__container}>
             <FirstScreenImage
-              h1title={data.indexpagedata.firstscreen.h1title}
-              h1subtitle={data.indexpagedata.firstscreen.h1subtitle}
-              altimage={data.indexpagedata.firstscreen.imagealt}
-              nameimage={data.indexpagedata.firstscreen.imagename}
+              h1title={data.consultationpagedata.firstscreen.h1title}
+              h1subtitle={data.consultationpagedata.firstscreen.h1subtitle}
+              altimage={data.consultationpagedata.firstscreen.imagealt}
+              nameimage={data.consultationpagedata.firstscreen.imagename}
               socialnetworkdata={data.socialnetworkdata}
             />
           </div>
@@ -87,23 +89,23 @@ export default function Pageerror({ data }) {
 
       {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
 
-      {data.indexpagedata.landingmonolink.length !== 0 ? (
+      {data.consultationpagedata.landingmonolink.length !== 0 ? (
         <section className={styles.main__landingmonolink}>
           <div className={styles.main__landingmonolink__container}>
             <LandingMonoLink
-              landingmonolinkdata={data.indexpagedata.landingmonolink}
+              landingmonolinkdata={data.consultationpagedata.landingmonolink}
               uilandingmonolinkbgcolor={landingmonolinkbgcolorsmoky}
             />
           </div>
         </section>
       ) : null}
 
-      {Object.keys(data.indexpagedata.faq).length !== 0 ? (
+      {Object.keys(data.consultationpagedata.faq).length !== 0 ? (
         <section className={styles.main__faq}>
           <div className={styles.main__faq__container}>
             <Faq
-              title={data.indexpagedata.faq.faqtitle}
-              faqdata={data.indexpagedata.faq.questionanswer}
+              title={data.consultationpagedata.faq.faqtitle}
+              faqdata={data.consultationpagedata.faq.questionanswer}
             />
           </div>
           <div className={styles.main__faq__patternbig}></div>
@@ -111,11 +113,11 @@ export default function Pageerror({ data }) {
         </section>
       ) : null}
 
-      {data.indexpagedata.landingmultilink.length !== 0 ? (
+      {data.consultationpagedata.landingmultilink.length !== 0 ? (
         <section className={styles.main__landingmultilink}>
           <div className={styles.main__landingmultilink__container}>
             <LandingMultiLink
-              listlandingmultilink={data.indexpagedata.landingmultilink}
+              listlandingmultilink={data.consultationpagedata.landingmultilink}
             />
           </div>
           <div
@@ -127,8 +129,8 @@ export default function Pageerror({ data }) {
         </section>
       ) : null}
 
-      {data.indexpagedata.landingmultilink !== 0 ? (
-        <FixLinks fixlinkdata={data.indexpagedata.landingmultilink} />
+      {data.consultationpagedata.landingmultilink !== 0 ? (
+        <FixLinks fixlinkdata={data.consultationpagedata.landingmultilink} />
       ) : null}
     </MainLayout>
   );
@@ -140,7 +142,9 @@ export default function Pageerror({ data }) {
 
 export async function getStaticProps({ locale }) {
   const lang = locale;
-  const res = await fetch(`${process.env.FETCH_URL}:5000/api/index_${lang}`);
+  const res = await fetch(
+    `${process.env.FETCH_URL}:5000/api/consultation_${lang}`
+  );
   const data = await res.json();
   return { props: { data } };
 }

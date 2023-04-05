@@ -1,13 +1,13 @@
 // Стандартные для всех страниц импорты. Меняем при необходимости путь до файла
 // ------------------------------------------
-import MainLayout from "../components/MainLayout/MainLayout";
-import styles from "../styles/pages/Index.module.scss";
-import FirstScreenImage from "../components/FirstScreenImage/FirstScreenImage";
-import FirstScreenVideo from "../components/FirstScreenVideo/FirstScreenVideo";
-import FixLinks from "../components/FixLinks/FixLinks";
-import LandingMultiLink from "../components/LandingMultiLink/LandingMultiLink";
-import LandingMonoLink from "../components/LandingMonoLink/LandingMonoLink";
-import Faq from "../components/Faq/Faq";
+import MainLayout from "../../components/MainLayout/MainLayout";
+import styles from "../../styles/pages/Personal-supervisor.module.scss";
+import FirstScreenImage from "../../components/FirstScreenImage/FirstScreenImage";
+import FirstScreenVideo from "../../components/FirstScreenVideo/FirstScreenVideo";
+import FixLinks from "../../components/FixLinks/FixLinks";
+import LandingMultiLink from "../../components/LandingMultiLink/LandingMultiLink";
+import LandingMonoLink from "../../components/LandingMonoLink/LandingMonoLink";
+import Faq from "../../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
@@ -16,10 +16,10 @@ import Faq from "../components/Faq/Faq";
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
 // ------------------------------------------
-import { landingmonolinkbgcolorsmoky } from "../constants/stylesconstants";
+import { landingmonolinkbgcolorsmoky } from "../../constants/stylesconstants";
 // ------------------------------------------
 
-export default function Pageerror({ data }) {
+export default function Personalsupervisor({ data }) {
   return (
     <MainLayout
       // ------------------------------------------
@@ -42,36 +42,46 @@ export default function Pageerror({ data }) {
       // ------------------------------------------
       // Переменные значения для конкретных страниц сайта
       // ------------------------------------------
-      title={data.indexpagedata.meta.title}
-      keywords={data.indexpagedata.meta.keywords}
-      description={data.indexpagedata.meta.description}
+      title={data.personalsupervisorpagedata.meta.title}
+      keywords={data.personalsupervisorpagedata.meta.keywords}
+      description={data.personalsupervisorpagedata.meta.description}
     >
       {/* Блок первого экрана для каждой страницы (выбор из трёх вариантов)*/}
       {/* Начало */}
 
-      {data.indexpagedata.firstscreen.firstscreentype === "video" ? (
+      {data.personalsupervisorpagedata.firstscreen.firstscreentype ===
+      "video" ? (
         <section className={styles.main__firstscreenvideo}>
           <div className={styles.main__firstscreenvideo__container}>
             <FirstScreenVideo
-              h1title={data.indexpagedata.firstscreen.h1title}
-              h1subtitle={data.indexpagedata.firstscreen.h1subtitle}
-              altimage={data.indexpagedata.firstscreen.imagealt}
-              nameimage={data.indexpagedata.firstscreen.imagename}
-              urlvideo={data.indexpagedata.firstscreen.urlvideo}
-              titlevideo={data.indexpagedata.firstscreen.titlevideo}
-              videobuttontitle={data.indexpagedata.firstscreen.videobuttontitle}
+              h1title={data.personalsupervisorpagedata.firstscreen.h1title}
+              h1subtitle={
+                data.personalsupervisorpagedata.firstscreen.h1subtitle
+              }
+              altimage={data.personalsupervisorpagedata.firstscreen.imagealt}
+              nameimage={data.personalsupervisorpagedata.firstscreen.imagename}
+              urlvideo={data.personalsupervisorpagedata.firstscreen.urlvideo}
+              titlevideo={
+                data.personalsupervisorpagedata.firstscreen.titlevideo
+              }
+              videobuttontitle={
+                data.personalsupervisorpagedata.firstscreen.videobuttontitle
+              }
               socialnetworkdata={data.socialnetworkdata}
             />
           </div>
         </section>
-      ) : data.indexpagedata.firstscreen.firstscreentype === "image" ? (
+      ) : data.personalsupervisorpagedata.firstscreen.firstscreentype ===
+        "image" ? (
         <section className={styles.main__firstscreenimage}>
           <div className={styles.main__firstscreenimage__container}>
             <FirstScreenImage
-              h1title={data.indexpagedata.firstscreen.h1title}
-              h1subtitle={data.indexpagedata.firstscreen.h1subtitle}
-              altimage={data.indexpagedata.firstscreen.imagealt}
-              nameimage={data.indexpagedata.firstscreen.imagename}
+              h1title={data.personalsupervisorpagedata.firstscreen.h1title}
+              h1subtitle={
+                data.personalsupervisorpagedata.firstscreen.h1subtitle
+              }
+              altimage={data.personalsupervisorpagedata.firstscreen.imagealt}
+              nameimage={data.personalsupervisorpagedata.firstscreen.imagename}
               socialnetworkdata={data.socialnetworkdata}
             />
           </div>
@@ -87,23 +97,25 @@ export default function Pageerror({ data }) {
 
       {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
 
-      {data.indexpagedata.landingmonolink.length !== 0 ? (
+      {data.personalsupervisorpagedata.landingmonolink.length !== 0 ? (
         <section className={styles.main__landingmonolink}>
           <div className={styles.main__landingmonolink__container}>
             <LandingMonoLink
-              landingmonolinkdata={data.indexpagedata.landingmonolink}
+              landingmonolinkdata={
+                data.personalsupervisorpagedata.landingmonolink
+              }
               uilandingmonolinkbgcolor={landingmonolinkbgcolorsmoky}
             />
           </div>
         </section>
       ) : null}
 
-      {Object.keys(data.indexpagedata.faq).length !== 0 ? (
+      {Object.keys(data.personalsupervisorpagedata.faq).length !== 0 ? (
         <section className={styles.main__faq}>
           <div className={styles.main__faq__container}>
             <Faq
-              title={data.indexpagedata.faq.faqtitle}
-              faqdata={data.indexpagedata.faq.questionanswer}
+              title={data.personalsupervisorpagedata.faq.faqtitle}
+              faqdata={data.personalsupervisorpagedata.faq.questionanswer}
             />
           </div>
           <div className={styles.main__faq__patternbig}></div>
@@ -111,11 +123,13 @@ export default function Pageerror({ data }) {
         </section>
       ) : null}
 
-      {data.indexpagedata.landingmultilink.length !== 0 ? (
+      {data.personalsupervisorpagedata.landingmultilink.length !== 0 ? (
         <section className={styles.main__landingmultilink}>
           <div className={styles.main__landingmultilink__container}>
             <LandingMultiLink
-              listlandingmultilink={data.indexpagedata.landingmultilink}
+              listlandingmultilink={
+                data.personalsupervisorpagedata.landingmultilink
+              }
             />
           </div>
           <div
@@ -127,8 +141,10 @@ export default function Pageerror({ data }) {
         </section>
       ) : null}
 
-      {data.indexpagedata.landingmultilink !== 0 ? (
-        <FixLinks fixlinkdata={data.indexpagedata.landingmultilink} />
+      {data.personalsupervisorpagedata.landingmultilink !== 0 ? (
+        <FixLinks
+          fixlinkdata={data.personalsupervisorpagedata.landingmultilink}
+        />
       ) : null}
     </MainLayout>
   );
@@ -140,7 +156,9 @@ export default function Pageerror({ data }) {
 
 export async function getStaticProps({ locale }) {
   const lang = locale;
-  const res = await fetch(`${process.env.FETCH_URL}:5000/api/index_${lang}`);
+  const res = await fetch(
+    `${process.env.FETCH_URL}:5000/api/personalsupervisor_${lang}`
+  );
   const data = await res.json();
   return { props: { data } };
 }
