@@ -55,6 +55,18 @@ const puapSchema = new Schema({
       },
     ],
   },
+  puaprelevancearticle: [
+    {
+      id: Number,
+      title: String,
+      text: [
+        {
+          id: Number,
+          paragraph: String,
+        },
+      ],
+    },
+  ],
 });
 
 const Puap_en = mongoose.model("Puap_en", puapSchema, "puap_en");

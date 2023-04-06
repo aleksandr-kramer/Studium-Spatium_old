@@ -12,6 +12,7 @@ const pageSchema = new Schema({
     enum: ["landing", "info", "feedback", "service"],
   },
   pageurl: String,
+  pagereference: String,
   parentcategory: {
     type: String,
     enum: [
