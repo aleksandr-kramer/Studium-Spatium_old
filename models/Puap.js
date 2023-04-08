@@ -10,6 +10,7 @@ const puapSchema = new Schema({
         paragraph: String,
       },
     ],
+    moduletitle: String,
   },
   implementationprogramme: [],
   modulespuap: [
@@ -47,6 +48,15 @@ const puapSchema = new Schema({
   programmeworks: [],
   requestprogrammepresentation: {},
   whatdoesthepuap: {
+    title: String,
+    text: [
+      {
+        id: Number,
+        paragraph: String,
+      },
+    ],
+  },
+  relevancepuapforschoolandstudent: {
     title: String,
     text: [
       {

@@ -12,11 +12,23 @@ import Faq from "../../components/Faq/Faq";
 // Импорты для конкретных страниц
 // ------------------------------------------
 
+import H2Component from "../../components/H2Component/H2Component";
+import ThematicPointList from "../../components/ThematicPointList/ThematicPointList";
+import LinkText from "../../components/LinkText/LinkText";
+import DescriptionOfNodes from "../../components/DescriptionOfNodes/DescriptionOfNodes";
+import selectTranslate from "../../utils/selectTranslate";
+
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
 // ------------------------------------------
-import { landingmonolinkbgcolorsmoky } from "../../constants/stylesconstants";
+import {
+  h2componentbordertrue,
+  h2componentborderfalse,
+  h2componentbgthemewhite,
+  h2componentbgthemeblack,
+  landingmonolinkbgcolorsmoky,
+} from "../../constants/stylesconstants";
 // ------------------------------------------
 
 export default function Puapcurriculum({ data }) {
@@ -86,6 +98,63 @@ export default function Puapcurriculum({ data }) {
 
       {/* ------------ блоки для конкретной страницы (начало) ------------ */}
 
+      <section className={styles.main__h2component}>
+        <div className={styles.main__h2component__container}>
+          <H2Component
+            H2Title={data.puapdata.relevancepuapforschoolandstudent.title}
+            H2ComponentSubtitle={
+              data.puapdata.relevancepuapforschoolandstudent.text
+            }
+            H2ComponentUIBorder={h2componentbordertrue}
+            H2ComponentUITheme={h2componentbgthemewhite}
+          />
+        </div>
+      </section>
+      <section className={styles.main__descriptionofnodes}>
+        <div className={styles.main__descriptionofnodes__patternbigtop}></div>
+        <div
+          className={styles.main__descriptionofnodes__patternsmallbottom}
+        ></div>
+        <div className={styles.main__descriptionofnodes__container}>
+          <DescriptionOfNodes
+            descriptionofnodestitle={data.puapdata.aboutpuap.moduletitle}
+            linktextstate={"greenishtransporent"}
+            descriptionofnodesdata={data.puapdata.modulespuap}
+          />
+        </div>
+      </section>
+
+      <section className={styles.main__aboutportfolio}>
+        <div className={styles.main__aboutportfolio__container}>
+          <H2Component
+            H2Title={data.puapdata.whatdoesthepuap.title}
+            H2ComponentSubtitle={data.puapdata.whatdoesthepuap.text}
+            H2ComponentUIBorder={h2componentborderfalse}
+            H2ComponentUITheme={h2componentbgthemeblack}
+          />
+        </div>
+        <div className={styles.main__aboutportfolio__borderbottom}></div>
+        <div className={styles.main__thematicpointlist__container}>
+          <ThematicPointList
+            PointListTitle={
+              data.portfoliodata.portfoliocomponents.portfoliocomponentstitle
+            }
+            ThematicPointlistItems={
+              data.portfoliodata.portfoliocomponents.portfoliolist
+            }
+          />
+          <div className={styles.main__thematicpointlist__linktext}>
+            <LinkText
+              linktextstate={"whitewhite"}
+              linktexturl={data.portfoliodata.portfoliourl}
+              linktextcontent={data.portfoliodata.portfoliotexturl}
+            />
+          </div>
+        </div>
+        <div className={styles.main__aboutportfolio__patternbig}></div>
+        <div className={styles.main__aboutportfolio__patternsmall}></div>
+      </section>
+
       {/* ------------ блоки для конкретной страницы (конец) ------------ */}
 
       {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
@@ -149,5 +218,6 @@ export async function getStaticProps({ locale }) {
     `${process.env.FETCH_URL}:5000/api/puapcurriculum_${lang}`
   );
   const data = await res.json();
+  console.log(data.portfoliodata.portfoliotexturl);
   return { props: { data } };
 }

@@ -8,21 +8,21 @@ export default function DescriptionOfNodes({
   descriptionofnodesdata,
 }) {
   const descriptionofnodesitems = descriptionofnodesdata.map(
-    ({ id, Name, LinkContent, Link, GeneralInfo }) => (
+    ({ id, namemodule, textlink, urllink, generalaboutmodule }) => (
       <li key={id} className={styles.DescriptionOfNodes__item}>
         <div className={styles.DescriptionOfNodes__namenode}>
           <span className={styles.DescriptionOfNodes__numbernode}>{id}</span>
-          <p className={styles.DescriptionOfNodes__titlenode}>{Name}</p>
+          <p className={styles.DescriptionOfNodes__titlenode}>{namemodule}</p>
         </div>
 
         <div className={styles.DescriptionOfNodes__linktext}>
           <LinkText
-            linktexturl={Link}
+            linktexturl={urllink}
             linktextstate={linktextstate}
-            linktextcontent={LinkContent}
+            linktextcontent={textlink}
           />
         </div>
-        <DescriptionNode descriptionnodelist={GeneralInfo} />
+        <DescriptionNode descriptionnodelist={generalaboutmodule} />
       </li>
     )
   );

@@ -5,7 +5,7 @@ const portfolioSchema = new Schema({
   portfoliourl: String,
   portfoliotexturl: String,
   portfoliocomponents: {
-    portfoliocomponentstitie: String,
+    portfoliocomponentstitle: String,
     portfoliolist: [
       {
         id: Number,
