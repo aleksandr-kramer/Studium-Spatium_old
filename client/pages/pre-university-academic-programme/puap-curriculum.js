@@ -218,6 +218,5 @@ export async function getStaticProps({ locale }) {
     `${process.env.FETCH_URL}:5000/api/puapcurriculum_${lang}`
   );
   const data = await res.json();
-  console.log(data.portfoliodata.portfoliotexturl);
   return { props: { data } };
 }
