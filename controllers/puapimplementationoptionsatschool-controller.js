@@ -11,6 +11,7 @@ const { Footer_en, Footer_es, Footer_ru } = require("../models/Footer");
 const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
+const { Article_en, Article_es, Article_ru } = require("../models/Article");
 
 const getPagePuapimplementationoptionsatschoolEn = async (req, res) => {
   try {
@@ -27,12 +28,21 @@ const getPagePuapimplementationoptionsatschoolEn = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const articledata = await Article_en.findOne({
+      _id: "64308071bb5bf2345c2677c6",
+    });
+    const infopagenavigationdata = await Page_en.find({
+      thematiccategory: "schools-and-teachers",
+      pagename: { $ne: "puap-implementation-options-at-school" },
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       puapimplementationoptionsatschoolpagedata,
+      articledata,
+      infopagenavigationdata,
     });
   } catch (error) {
     console.log(error);
@@ -54,12 +64,21 @@ const getPagePuapimplementationoptionsatschoolEs = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const articledata = await Article_es.findOne({
+      _id: "64308071bb5bf2345c2677c6",
+    });
+    const infopagenavigationdata = await Page_es.find({
+      thematiccategory: "schools-and-teachers",
+      pagename: { $ne: "puap-implementation-options-at-school" },
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       puapimplementationoptionsatschoolpagedata,
+      articledata,
+      infopagenavigationdata,
     });
   } catch (error) {
     console.log(error);
@@ -81,12 +100,21 @@ const getPagePuapimplementationoptionsatschoolRu = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const articledata = await Article_ru.findOne({
+      _id: "64308071bb5bf2345c2677c6",
+    });
+    const infopagenavigationdata = await Page_ru.find({
+      thematiccategory: "schools-and-teachers",
+      pagename: { $ne: "puap-implementation-options-at-school" },
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       puapimplementationoptionsatschoolpagedata,
+      articledata,
+      infopagenavigationdata,
     });
   } catch (error) {
     console.log(error);

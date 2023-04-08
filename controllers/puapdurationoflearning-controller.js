@@ -11,6 +11,7 @@ const { Footer_en, Footer_es, Footer_ru } = require("../models/Footer");
 const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
+const { Article_en, Article_es, Article_ru } = require("../models/Article");
 
 const getPagePuapdurationoflearningEn = async (req, res) => {
   try {
@@ -27,12 +28,21 @@ const getPagePuapdurationoflearningEn = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const articledata = await Article_en.findOne({
+      _id: "64308785bb5bf2345c2677ca",
+    });
+    const infopagenavigationdata = await Page_en.find({
+      thematiccategory: "educational-process",
+      pagename: { $ne: "puap-duration-of-learning" },
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       puapdurationoflearningpagedata,
+      articledata,
+      infopagenavigationdata,
     });
   } catch (error) {
     console.log(error);
@@ -54,12 +64,21 @@ const getPagePuapdurationoflearningEs = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const articledata = await Article_es.findOne({
+      _id: "64308785bb5bf2345c2677ca",
+    });
+    const infopagenavigationdata = await Page_es.find({
+      thematiccategory: "educational-process",
+      pagename: { $ne: "puap-duration-of-learning" },
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       puapdurationoflearningpagedata,
+      articledata,
+      infopagenavigationdata,
     });
   } catch (error) {
     console.log(error);
@@ -81,12 +100,21 @@ const getPagePuapdurationoflearningRu = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const articledata = await Article_ru.findOne({
+      _id: "64308785bb5bf2345c2677ca",
+    });
+    const infopagenavigationdata = await Page_ru.find({
+      thematiccategory: "educational-process",
+      pagename: { $ne: "puap-duration-of-learning" },
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       puapdurationoflearningpagedata,
+      articledata,
+      infopagenavigationdata,
     });
   } catch (error) {
     console.log(error);

@@ -7,20 +7,20 @@ export default function ContentInfoPages({
   contentinfopagesarticledata,
 }) {
   const contentinfopagesnavitems = contentinfopagesnavdata.map(
-    ({ id, NameSubMenu, UrlSubMenu }) => (
-      <li key={id} className={styles.ContentInfoPages__item}>
-        <Link href={UrlSubMenu} className={styles.ContentInfoPages__linktext}>
-          {NameSubMenu}
+    ({ _id, pageurl, pagereference }) => (
+      <li key={_id} className={styles.ContentInfoPages__item}>
+        <Link href={pageurl} className={styles.ContentInfoPages__linktext}>
+          {pagereference}
         </Link>
       </li>
     )
   );
   const contentinfopagesarticleitems = contentinfopagesarticledata.map(
-    ({ id, Title, Text }) => (
+    ({ id, title, text }) => (
       <div key={id} className={styles.ContentInfoPages__articleblock}>
-        <h2 className={styles.ContentInfoPages__articletitle}>{Title}</h2>
+        <h2 className={styles.ContentInfoPages__articletitle}>{title}</h2>
         <ParagraphList
-          ParagraphItems={Text}
+          ParagraphItems={text}
           paragraphliststate="fontcolorbasecenter"
         />
       </div>

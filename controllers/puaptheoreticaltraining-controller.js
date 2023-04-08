@@ -11,6 +11,7 @@ const { Footer_en, Footer_es, Footer_ru } = require("../models/Footer");
 const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
+const { Article_en, Article_es, Article_ru } = require("../models/Article");
 
 const getPagePuaptheoreticaltrainingEn = async (req, res) => {
   try {
@@ -27,12 +28,21 @@ const getPagePuaptheoreticaltrainingEn = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const articledata = await Article_en.findOne({
+      _id: "64309098bb5bf2345c2677d2",
+    });
+    const infopagenavigationdata = await Page_en.find({
+      thematiccategory: "educational-process",
+      pagename: { $ne: "puap-theoretical-training" },
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       puaptheoreticaltrainingpagedata,
+      articledata,
+      infopagenavigationdata,
     });
   } catch (error) {
     console.log(error);
@@ -54,12 +64,21 @@ const getPagePuaptheoreticaltrainingEs = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const articledata = await Article_es.findOne({
+      _id: "64309098bb5bf2345c2677d2",
+    });
+    const infopagenavigationdata = await Page_es.find({
+      thematiccategory: "educational-process",
+      pagename: { $ne: "puap-theoretical-training" },
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       puaptheoreticaltrainingpagedata,
+      articledata,
+      infopagenavigationdata,
     });
   } catch (error) {
     console.log(error);
@@ -81,12 +100,21 @@ const getPagePuaptheoreticaltrainingRu = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const articledata = await Article_ru.findOne({
+      _id: "64309098bb5bf2345c2677d2",
+    });
+    const infopagenavigationdata = await Page_ru.find({
+      thematiccategory: "educational-process",
+      pagename: { $ne: "puap-theoretical-training" },
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       puaptheoreticaltrainingpagedata,
+      articledata,
+      infopagenavigationdata,
     });
   } catch (error) {
     console.log(error);

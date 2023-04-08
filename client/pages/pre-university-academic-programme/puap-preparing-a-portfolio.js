@@ -1,5 +1,6 @@
 // Стандартные для всех страниц импорты. Меняем при необходимости путь до файла
 // ------------------------------------------
+
 import MainLayout from "../../components/MainLayout/MainLayout";
 import styles from "../../styles/pages/Info-pages.module.scss";
 import FirstScreenImage from "../../components/FirstScreenImage/FirstScreenImage";
@@ -11,7 +12,7 @@ import Faq from "../../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
-
+import ContentInfoPages from "../../components/ContentInfoPages/ContentInfoPages";
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
@@ -103,6 +104,15 @@ export default function Puappreparingaportfolio({ data }) {
       {/* Конец */}
 
       {/* ------------ блоки для конкретной страницы (начало) ------------ */}
+
+      <section className={styles.main__contentinfopages}>
+        <div className={styles.main__contentinfopages__container}>
+          <ContentInfoPages
+            contentinfopagesnavdata={data.infopagenavigationdata}
+            contentinfopagesarticledata={data.articledata.article}
+          />
+        </div>
+      </section>
 
       {/* ------------ блоки для конкретной страницы (конец) ------------ */}
 
