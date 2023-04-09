@@ -11,12 +11,18 @@ import Faq from "../../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
-
+import H2Component from "../../components/H2Component/H2Component";
+import H2ColumnList from "../../components/H2ColumnList/H2ColumnList";
+import ListOfTopic from "../../components/ListOfTopic/ListOfTopic";
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
 // ------------------------------------------
-import { landingmonolinkbgcolorsmoky } from "../../constants/stylesconstants";
+import {
+  h2componentbordertrue,
+  h2componentbgthemewhite,
+  landingmonolinkbgcolorsmoky,
+} from "../../constants/stylesconstants";
 // ------------------------------------------
 
 export default function Puapmoduleresearch({ data }) {
@@ -92,6 +98,35 @@ export default function Puapmoduleresearch({ data }) {
       {/* Конец */}
 
       {/* ------------ блоки для конкретной страницы (начало) ------------ */}
+
+      <section className={styles.main__h2component}>
+        <div className={styles.main__h2component__container}>
+          <H2Component
+            H2Title={data.puapdata.modulespuap[0].titleaboutmodule}
+            H2ComponentSubtitle={data.puapdata.modulespuap[0].aboutmodule}
+            H2ComponentUIBorder={h2componentbordertrue}
+            H2ComponentUITheme={h2componentbgthemewhite}
+          />
+        </div>
+      </section>
+
+      <section className={styles.main__h2columnlist}>
+        <div className={styles.main__h2columnlist__patternsmall}></div>
+        <div className={styles.main__h2columnlist__container}>
+          <H2ColumnList
+            nameofmodule={data.puapdata.modulespuap[0].namemodule}
+            h2columnlistdata={data.puapdata.modulespuap[0].generalaboutmodule}
+          />
+        </div>
+      </section>
+
+      <section className={styles.main__listoftopic}>
+        <div className={styles.main__listoftopic__container}>
+          <ListOfTopic
+            listoftopicdata={data.puapdata.modulespuap[0].listoftopicmodule}
+          />
+        </div>
+      </section>
 
       {/* ------------ блоки для конкретной страницы (конец) ------------ */}
 

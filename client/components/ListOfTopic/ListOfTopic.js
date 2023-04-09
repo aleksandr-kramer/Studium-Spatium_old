@@ -3,12 +3,12 @@ import Image from "next/image";
 
 export default function ListOfTopic({ listoftopicdata }) {
   const listoftopicitem = listoftopicdata.map(
-    ({ id, Title, Duration, ImageName }) => (
+    ({ id, title, duration, imagename }) => (
       <li key={id} className={styles.ListOfTopic__item}>
         <div className={styles.ListOfTopic__image}>
           <Image
-            src={`/images/${ImageName}`}
-            alt={Title}
+            src={`/images/${imagename}`}
+            alt={title}
             height={200}
             width={260}
             style={{
@@ -17,8 +17,8 @@ export default function ListOfTopic({ listoftopicdata }) {
             }}
           />
         </div>
-        <p className={styles.ListOfTopic__title}>{Title}</p>
-        <p className={styles.ListOfTopic__info}>{Duration}</p>
+        <p className={styles.ListOfTopic__title}>{title}</p>
+        <p className={styles.ListOfTopic__info}>{duration}</p>
       </li>
     )
   );

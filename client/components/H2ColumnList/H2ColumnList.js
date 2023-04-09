@@ -2,11 +2,11 @@ import styles from "./H2ColumnList.module.scss";
 
 export default function H2ColumnList({ nameofmodule, h2columnlistdata }) {
   const h2columnlistitems = h2columnlistdata.map(
-    ({ id, NodeTitle, NodeText }) => (
+    ({ id, nodetitle, nodetext }) => (
       <li key={id} className={styles.H2ColumnList__item}>
         <p className={styles.H2ColumnList__itemtext}>
-          <span className={styles.H2ColumnList__itemtitle}>{NodeTitle}</span>{" "}
-          {NodeText}
+          <span className={styles.H2ColumnList__itemtitle}>{nodetitle}</span>{" "}
+          {nodetext}
         </p>
       </li>
     )
