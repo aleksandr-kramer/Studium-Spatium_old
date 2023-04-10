@@ -7,7 +7,7 @@ export default function StepComponent({
   stepcomponentdata,
 }) {
   const stepcomponentitem = stepcomponentdata.map(
-    ({ id, Title, Text, Url, UrlText, ImageName }) => (
+    ({ id, title, text, url, texturl, imagename }) => (
       <li key={id} className={styles.StepComponent__item}>
         <div className={styles.StepComponent__steppoint}>
           <p className={styles.StepComponent__stepkey}>{stepcomponentword}</p>
@@ -15,8 +15,8 @@ export default function StepComponent({
         </div>
         <div className={styles.StepComponent__image}>
           <Image
-            src={`/images/${ImageName}`}
-            alt={Title}
+            src={`/images/${imagename}`}
+            alt={title}
             height={150}
             width={167}
             style={{
@@ -27,18 +27,16 @@ export default function StepComponent({
         </div>
         <div className={styles.StepComponent__line}></div>
         <div className={styles.StepComponent__stepcontent}>
-          <p className={styles.StepComponent__title}>{Title}</p>
-          <p className={styles.StepComponent__text}>{Text}</p>
+          <p className={styles.StepComponent__title}>{title}</p>
+          <p className={styles.StepComponent__text}>{text}</p>
         </div>
 
-        {UrlText ? (
+        {texturl ? (
           <div className={styles.StepComponent__linkbutton}>
-            <Link href={Url} className={styles.StepComponent__link}>
-              <a>
-                <div className={styles.StepComponent__button}>
-                  <p className={styles.StepComponent__linktext}>{UrlText}</p>
-                </div>
-              </a>
+            <Link href={url} className={styles.StepComponent__link}>
+              <div className={styles.StepComponent__button}>
+                <p className={styles.StepComponent__linktext}>{texturl}</p>
+              </div>
             </Link>
           </div>
         ) : null}

@@ -11,12 +11,17 @@ import Faq from "../../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
-
+import H2Component from "../../components/H2Component/H2Component";
+import StepComponent from "../../components/StepComponent/StepComponent";
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
 // ------------------------------------------
-import { landingmonolinkbgcolorsmoky } from "../../constants/stylesconstants";
+import {
+  h2componentborderfalse,
+  h2componentbgthemesmoky,
+  landingmonolinkbgcolorsmoky,
+} from "../../constants/stylesconstants";
 // ------------------------------------------
 
 export default function Puaphowtoimplementtheprogramatschool({ data }) {
@@ -119,6 +124,27 @@ export default function Puaphowtoimplementtheprogramatschool({ data }) {
       {/* Конец */}
 
       {/* ------------ блоки для конкретной страницы (начало) ------------ */}
+
+      <section className={styles.main__h2component}>
+        <div className={styles.main__h2component__container}>
+          <H2Component
+            H2Title={data.puapdata.relevancepuapforschoolandstudent.title}
+            H2ComponentSubtitle={
+              data.puapdata.relevancepuapforschoolandstudent.text
+            }
+            H2ComponentUIBorder={h2componentborderfalse}
+            H2ComponentUITheme={h2componentbgthemesmoky}
+          />
+        </div>
+      </section>
+      <section className={styles.main__stepcomponent}>
+        <div className={styles.main__stepcomponent__container}>
+          <StepComponent
+            stepcomponentword={data.optiondata.stepcomponentword}
+            stepcomponentdata={data.puapdata.implementationprogramme}
+          />
+        </div>
+      </section>
 
       {/* ------------ блоки для конкретной страницы (конец) ------------ */}
 

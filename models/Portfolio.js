@@ -4,6 +4,8 @@ const Schema = mongoose.Schema;
 const portfolioSchema = new Schema({
   portfoliourl: String,
   portfoliotexturl: String,
+  puaptexturl: String,
+  puapurl: String,
   portfoliocomponents: {
     portfoliocomponentstitle: String,
     portfoliolist: [
@@ -12,7 +14,23 @@ const portfolioSchema = new Schema({
         portfoliolistnumber: String,
         portfoliolistlongname: String,
         portfoliolistshotrname: String,
-        portfoliolisttext: String,
+        isportfoliolisttext: Boolean,
+        text: [
+          {
+            id: Number,
+            paragraph: String,
+          },
+        ],
+      },
+    ],
+  },
+  portfolioimagename: String,
+  aboutportfolio: {
+    title: String,
+    text: [
+      {
+        id: Number,
+        paragraph: String,
       },
     ],
   },

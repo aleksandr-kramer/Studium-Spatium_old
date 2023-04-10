@@ -11,12 +11,22 @@ import Faq from "../../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
-
+import H2Component from "../../components/H2Component/H2Component";
+import Image from "next/image";
+import ThematicPointList from "../../components/ThematicPointList/ThematicPointList";
+import LinkText from "../../components/LinkText/LinkText";
+import ParagraphGrid from "../../components/ParagraphGrid/ParagraphGrid";
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
 // ------------------------------------------
-import { landingmonolinkbgcolorsmoky } from "../../constants/stylesconstants";
+import {
+  h2componentbordertrue,
+  h2componentbgthemewhite,
+  h2componentbgthemeblack,
+  h2componentborderfalse,
+  landingmonolinkbgcolorsmoky,
+} from "../../constants/stylesconstants";
 // ------------------------------------------
 
 export default function Puapportfolio({ data }) {
@@ -84,6 +94,64 @@ export default function Puapportfolio({ data }) {
       {/* Конец */}
 
       {/* ------------ блоки для конкретной страницы (начало) ------------ */}
+
+      <section className={styles.main__h2component}>
+        <div className={styles.main__h2component__container}>
+          <H2Component
+            H2Title={data.portfoliodata.aboutportfolio.title}
+            H2ComponentSubtitle={data.portfoliodata.aboutportfolio.text}
+            H2ComponentUIBorder={h2componentbordertrue}
+            H2ComponentUITheme={h2componentbgthemewhite}
+          />
+        </div>
+      </section>
+      <section className={styles.main__aboutportfolio}>
+        <div className={styles.main__aboutportfolio__container}>
+          <H2Component
+            H2Title={data.puapdata.whatdoesthepuap.title}
+            H2ComponentSubtitle={data.puapdata.whatdoesthepuap.text}
+            H2ComponentUIBorder={h2componentborderfalse}
+            H2ComponentUITheme={h2componentbgthemeblack}
+          />
+        </div>
+        <div className={styles.main__aboutportfolio__borderbottom}></div>
+        <div className={styles.main__thematicpointlist__container}>
+          <ThematicPointList
+            PointListTitle={
+              data.portfoliodata.portfoliocomponents.portfoliocomponentstitle
+            }
+            ThematicPointlistItems={
+              data.portfoliodata.portfoliocomponents.portfoliolist
+            }
+          />
+          <div className={styles.main__thematicpointlist__linktext}>
+            <LinkText
+              linktextstate={"whitewhite"}
+              linktexturl={data.portfoliodata.puapurl}
+              linktextcontent={data.portfoliodata.puaptexturl}
+            />
+          </div>
+        </div>
+        <div className={styles.main__aboutportfolio__patternbig}></div>
+        <div className={styles.main__aboutportfolio__patternsmall}></div>
+      </section>
+      <section className={styles.main__diplomimage}>
+        <Image
+          src={`/images/${data.portfoliodata.portfolioimagename}`}
+          alt={data.portfoliodata.portfoliotexturl}
+          fill
+        />
+      </section>
+
+      <section className={styles.main__paragraphgrid}>
+        <div className={styles.main__paragraphgrid__container}>
+          <ParagraphGrid
+            paragraphgriddata={data.portfoliodata.portfoliocomponents.portfoliolist.filter(
+              (e) => e.isportfoliolisttext
+            )}
+          />
+        </div>
+      </section>
 
       {/* ------------ блоки для конкретной страницы (конец) ------------ */}
 
