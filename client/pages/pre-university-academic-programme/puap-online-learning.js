@@ -11,12 +11,23 @@ import Faq from "../../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
-
+import H2Component from "../../components/H2Component/H2Component";
+import ThematicPointList from "../../components/ThematicPointList/ThematicPointList";
+import LinkText from "../../components/LinkText/LinkText";
+import DescriptionOfNodes from "../../components/DescriptionOfNodes/DescriptionOfNodes";
+import OrderComponent from "../../components/OrderComponent/OrderComponent";
+import OrderChildrenList from "../../components/OrderChildrenList/OrderChildrenList";
+import ParagraphGrid from "../../components/ParagraphGrid/ParagraphGrid";
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
 // ------------------------------------------
-import { landingmonolinkbgcolorsmoky } from "../../constants/stylesconstants";
+import {
+  h2componentbgthemesmoky,
+  h2componentborderfalse,
+  h2componentbgthemeblack,
+  landingmonolinkbgcolorsmoky,
+} from "../../constants/stylesconstants";
 // ------------------------------------------
 
 export default function Puaponlinelearning({ data }) {
@@ -92,6 +103,104 @@ export default function Puaponlinelearning({ data }) {
       {/* Конец */}
 
       {/* ------------ блоки для конкретной страницы (начало) ------------ */}
+
+      <section className={styles.main__ordercomponent}>
+        <div className={styles.main__ordercomponent__container}>
+          <OrderComponent
+            orderblankinfodata={
+              data.puapdata.onlinelearning.onlinelearningdetails.order
+            }
+            orderblankbuttondata={
+              data.puapdata.onlinelearning.onlinelearningdetails.orderlink
+            }
+            fees={data.optiondata.fees}
+            price={data.puapdata.onlinelearning.onlinelearningdetails.price}
+            currency={data.optiondata.currency}
+            currencyrate={data.optiondata.currencyrate}
+            priceperiod={
+              data.puapdata.onlinelearning.onlinelearningdetails.priceperiod
+            }
+          >
+            <OrderChildrenList
+              onlinelearningincludedtitle={
+                data.puapdata.onlinelearning.onlinelearningdetails
+                  .onlinelearningincludedtitle
+              }
+              orderchildrenlistdata={
+                data.puapdata.onlinelearning.onlinelearningdetails
+                  .onlinelearningincluded
+              }
+            />
+          </OrderComponent>
+        </div>
+      </section>
+      <section className={styles.main__descriptionofnodes}>
+        <div className={styles.main__descriptionofnodes__patternbigtop}></div>
+        <div
+          className={styles.main__descriptionofnodes__patternsmallbottom}
+        ></div>
+        <div className={styles.main__descriptionofnodes__container}>
+          <DescriptionOfNodes
+            descriptionofnodestitle={data.puapdata.aboutpuap.moduletitle}
+            linktextstate={"greenishtransporent"}
+            descriptionofnodesdata={data.puapdata.modulespuap}
+          />
+        </div>
+      </section>
+
+      <section className={styles.main__paragraphgrid}>
+        <div className={styles.main__paragraphgrid__container}>
+          <ParagraphGrid
+            paragraphgriddata={data.portfoliodata.portfoliocomponents.portfoliolist.filter(
+              (e) => e.isportfoliolisttext
+            )}
+          />
+        </div>
+      </section>
+
+      <section className={styles.main__supervisor}>
+        <div className={styles.main__supervisor__container}>
+          <div className={styles.main__supervisor__patternsmalltop}></div>
+          <div className={styles.main__supervisor__patternsmallbottom}></div>
+          <H2Component
+            H2Title={data.supervisordata.whyneedsupervisor.title}
+            H2ComponentSubtitle={data.supervisordata.whyneedsupervisor.text}
+            H2ComponentUIBorder={h2componentborderfalse}
+            H2ComponentUITheme={h2componentbgthemesmoky}
+          />
+        </div>
+      </section>
+
+      <section className={styles.main__aboutportfolio}>
+        <div className={styles.main__aboutportfolio__container}>
+          <H2Component
+            H2Title={data.puapdata.whatdoesthepuap.title}
+            H2ComponentSubtitle={data.puapdata.whatdoesthepuap.text}
+            H2ComponentUIBorder={h2componentborderfalse}
+            H2ComponentUITheme={h2componentbgthemeblack}
+          />
+        </div>
+        <div className={styles.main__aboutportfolio__borderbottom}></div>
+        <div className={styles.main__thematicpointlist__container}>
+          <ThematicPointList
+            PointListTitle={
+              data.portfoliodata.portfoliocomponents.portfoliocomponentstitle
+            }
+            ThematicPointlistItems={
+              data.portfoliodata.portfoliocomponents.portfoliolist
+            }
+          />
+          <div className={styles.main__thematicpointlist__linktext}>
+            <LinkText
+              linktextstate={"whitewhite"}
+              linktexturl={data.portfoliodata.portfoliourl}
+              linktextcontent={data.portfoliodata.portfoliotexturl}
+            />
+          </div>
+        </div>
+        <div className={styles.main__aboutportfolio__patternbig}></div>
+        <div className={styles.main__aboutportfolio__patternsmall}></div>
+      </section>
 
       {/* ------------ блоки для конкретной страницы (конец) ------------ */}
 

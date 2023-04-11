@@ -13,11 +13,11 @@ export default function OrderComponent({
   priceperiod,
 }) {
   const orderblankbuttonitems = orderblankbuttondata.map(
-    ({ id, LinkContent, LinkUrl }) => (
+    ({ id, linkcontent, linkurl }) => (
       <li key={id} className={styles.OrderComponent__buttonitem}>
-        <Link href={LinkUrl} className={styles.OrderComponent__buttonlink}>
+        <Link href={linkurl} className={styles.OrderComponent__buttonlink}>
           <div className={styles.OrderComponent__button}>
-            <p className={styles.OrderComponent__buttontext}>{LinkContent}</p>
+            <p className={styles.OrderComponent__buttontext}>{linkcontent}</p>
           </div>
         </Link>
       </li>
@@ -25,12 +25,12 @@ export default function OrderComponent({
   );
 
   const orderblankinfoitems = orderblankinfodata.map(
-    ({ id, OrderText, ImageName }) => (
+    ({ id, ordertext, imagename }) => (
       <li key={id} className={styles.OrderComponent__blankinfoitem}>
         <div className={styles.OrderComponent__blankinfoimage}>
           <Image
-            src={`/icons/${ImageName}`}
-            alt={OrderText}
+            src={`/icons/${imagename}`}
+            alt={ordertext}
             height={24}
             width={24}
             style={{
@@ -39,7 +39,7 @@ export default function OrderComponent({
             }}
           />
         </div>
-        <p className={styles.OrderComponent__blankinfotext}>{OrderText}</p>
+        <p className={styles.OrderComponent__blankinfotext}>{ordertext}</p>
       </li>
     )
   );

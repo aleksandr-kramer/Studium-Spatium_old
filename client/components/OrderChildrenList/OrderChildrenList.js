@@ -5,9 +5,9 @@ export default function OrderChildrenList({
   orderchildrenlistdata,
 }) {
   const orderchildrenlistitems = orderchildrenlistdata.map(
-    ({ id, Paragraph }) => (
+    ({ id, paragraph }) => (
       <li key={id} className={styles.OrderChildrenList__item}>
-        <p className={styles.OrderChildrenList__text}>{Paragraph}</p>
+        <p className={styles.OrderChildrenList__text}>{paragraph}</p>
         <p className={styles.OrderChildrenList__textid}>{id}</p>
       </li>
     )

@@ -11,7 +11,8 @@ import Faq from "../../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
-
+import FeedbackComponent from "../../components/feedback/FeedbackComponent";
+import FormChildrenRequestPresentation from "../../components/FormChildrenRequestPresentation/FormChildrenRequestPresentation";
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
@@ -120,12 +121,66 @@ export default function Puaprequestapresentationoftheprogram({ data }) {
 
       {/* ------------ блоки для конкретной страницы (начало) ------------ */}
 
+      <section className={styles.main__coursepresentation}>
+        <div className={styles.main__coursepresentation__container}>
+          <FeedbackComponent
+            title={data.puapdata.requestprogrammepresentation.title}
+            feedbackcomponenttextdata={
+              data.puapdata.requestprogrammepresentation.text
+            }
+            feedbackcomponentabouticondata={
+              data.puapdata.requestprogrammepresentation.abouticonspoint
+            }
+            // test={
+            //   selectTranslate().CourseContent.RequestPresentation.Form.Input[0]
+            //     .Tag
+            // }
+          >
+            <FormChildrenRequestPresentation
+              inputformchildrenrequestpresentationdata={
+                data.puapdata.requestprogrammepresentation.form.input
+              }
+              textareatrue={
+                data.puapdata.requestprogrammepresentation.form.textarea
+                  .istextarea
+              }
+              textareaplaceholder={
+                data.puapdata.requestprogrammepresentation.form.textarea
+                  .placeholder
+              }
+              buttonattachfiletrue={
+                data.puapdata.requestprogrammepresentation.form.buttonattachfile
+                  .isbuttonattachfile
+              }
+              buttonattachfiletype={
+                data.puapdata.requestprogrammepresentation.form.buttonattachfile
+                  .type
+              }
+              buttonattachfiletext={
+                data.puapdata.requestprogrammepresentation.form.buttonattachfile
+                  .buttontext
+              }
+              buttonattachfilename={
+                data.puapdata.requestprogrammepresentation.form.buttonattachfile
+                  .filenametext
+              }
+              buttonsendtype={
+                data.puapdata.requestprogrammepresentation.form.buttonsend.type
+              }
+              buttonsendtext={
+                data.puapdata.requestprogrammepresentation.form.buttonsend
+                  .buttontext
+              }
+            />
+          </FeedbackComponent>
+        </div>
+      </section>
+
       {/* ------------ блоки для конкретной страницы (конец) ------------ */}
 
       {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
 
-      {data.puaprequestapresentationoftheprogrampagedata.landingmonolink
-        .length !== 0 ? (
+      {data.puaprequestapresentationoftheprogrampagedata.islandingmonolink ? (
         <section className={styles.main__landingmonolink}>
           <div className={styles.main__landingmonolink__container}>
             <LandingMonoLink
@@ -139,8 +194,7 @@ export default function Puaprequestapresentationoftheprogram({ data }) {
         </section>
       ) : null}
 
-      {Object.keys(data.puaprequestapresentationoftheprogrampagedata.faq)
-        .length !== 0 ? (
+      {data.puaprequestapresentationoftheprogrampagedata.isfaq ? (
         <section className={styles.main__faq}>
           <div className={styles.main__faq__container}>
             <Faq
@@ -158,8 +212,7 @@ export default function Puaprequestapresentationoftheprogram({ data }) {
         </section>
       ) : null}
 
-      {data.puaprequestapresentationoftheprogrampagedata.landingmultilink
-        .length !== 0 ? (
+      {data.puaprequestapresentationoftheprogrampagedata.islandingmultilink ? (
         <section className={styles.main__landingmultilink}>
           <div className={styles.main__landingmultilink__container}>
             <LandingMultiLink
@@ -178,8 +231,7 @@ export default function Puaprequestapresentationoftheprogram({ data }) {
         </section>
       ) : null}
 
-      {data.puaprequestapresentationoftheprogrampagedata.landingmultilink !==
-      0 ? (
+      {data.puaprequestapresentationoftheprogrampagedata.islandingmultilink ? (
         <FixLinks
           fixlinkdata={
             data.puaprequestapresentationoftheprogrampagedata.landingmultilink

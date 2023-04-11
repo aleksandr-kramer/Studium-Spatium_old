@@ -8,19 +8,19 @@ export default function FeedbackComponent({
   children,
 }) {
   const feedbackcomponenttextitems = feedbackcomponenttextdata.map(
-    ({ id, Paragraph }) => (
+    ({ id, paragraph }) => (
       <p key={id} className={styles.FeedbackComponent__paragraph}>
-        {Paragraph}
+        {paragraph}
       </p>
     )
   );
   const feedbackcomponentabouticonitems = feedbackcomponentabouticondata.map(
-    ({ id, ImageName, Title }) => (
+    ({ id, imagename, title }) => (
       <li key={id} className={styles.FeedbackComponent__aboutitem}>
         <div className={styles.FeedbackComponent__icon}>
           <Image
-            src={`/icons/${ImageName}`}
-            alt={Title}
+            src={`/icons/${imagename}`}
+            alt={title}
             height={40}
             width={40}
             style={{
@@ -29,7 +29,7 @@ export default function FeedbackComponent({
             }}
           />
         </div>
-        <p className={styles.FeedbackComponent__icontitle}>{Title}</p>
+        <p className={styles.FeedbackComponent__icontitle}>{title}</p>
       </li>
     )
   );

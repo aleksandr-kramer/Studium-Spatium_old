@@ -36,6 +36,9 @@ const pageSchema = new Schema({
       "none",
     ],
   },
+  isfaq: Boolean,
+  islandingmonolink: Boolean,
+  islandingmultilink: Boolean,
   robotstxt: Boolean,
   meta: {
     title: String,

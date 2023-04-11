@@ -11,6 +11,8 @@ const { Footer_en, Footer_es, Footer_ru } = require("../models/Footer");
 const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
+const { Puap_en, Puap_es, Puap_ru } = require("../models/Puap");
+const { Option_en, Option_es, Option_ru } = require("../models/Option");
 
 const getPagePuaphowtostartonlinelearningEn = async (req, res) => {
   try {
@@ -27,12 +29,18 @@ const getPagePuaphowtostartonlinelearningEn = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const puapdata = await Puap_en.findOne({ _id: "6422f5345b70a17cd50b7a82" });
+    const optiondata = await Option_en.findOne({
+      _id: "6432e3e2988ba8f14dd15a62",
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       puaphowtostartonlinelearningpagedata,
+      puapdata,
+      optiondata,
     });
   } catch (error) {
     console.log(error);
@@ -54,12 +62,18 @@ const getPagePuaphowtostartonlinelearningEs = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const puapdata = await Puap_es.findOne({ _id: "6422f5345b70a17cd50b7a82" });
+    const optiondata = await Option_es.findOne({
+      _id: "6432e3e2988ba8f14dd15a62",
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       puaphowtostartonlinelearningpagedata,
+      puapdata,
+      optiondata,
     });
   } catch (error) {
     console.log(error);
@@ -81,12 +95,18 @@ const getPagePuaphowtostartonlinelearningRu = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const puapdata = await Puap_ru.findOne({ _id: "6422f5345b70a17cd50b7a82" });
+    const optiondata = await Option_ru.findOne({
+      _id: "6432e3e2988ba8f14dd15a62",
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       puaphowtostartonlinelearningpagedata,
+      puapdata,
+      optiondata,
     });
   } catch (error) {
     console.log(error);

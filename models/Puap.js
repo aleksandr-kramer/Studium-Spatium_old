@@ -44,9 +44,84 @@ const puapSchema = new Schema({
       ],
     },
   ],
-  onlinelearning: {},
+  onlinelearning: {
+    howtostartonlinelearning: [
+      {
+        id: String,
+        title: String,
+        text: String,
+        url: String,
+        texturl: String,
+        imagename: String,
+      },
+    ],
+    onlinelearningdetails: {
+      price: Number,
+      priceperiod: String,
+      onlinelearningincludedtitle: String,
+      onlinelearningincluded: [
+        {
+          id: String,
+          paragraph: String,
+        },
+      ],
+      order: [
+        {
+          id: Number,
+          ordertext: String,
+          imagename: String,
+        },
+      ],
+      orderlink: [
+        {
+          id: Number,
+          linkcontent: String,
+          linkurl: String,
+        },
+      ],
+    },
+  },
   programmeworks: [],
-  requestprogrammepresentation: {},
+  requestprogrammepresentation: {
+    title: String,
+    text: [
+      {
+        id: Number,
+        paragraph: String,
+      },
+    ],
+    abouticonspoint: [
+      {
+        id: Number,
+        imagename: String,
+        title: String,
+      },
+    ],
+    form: {
+      input: [
+        {
+          id: Number,
+          tag: String,
+          fieldtype: String,
+          placeholder: String,
+        },
+      ],
+      textarea: {
+        istextarea: Boolean,
+        placeholder: String,
+      },
+      buttonattachfile: {
+        isbuttonattachfile: Boolean,
+        fieldtype: String,
+        buttontext: String,
+        filenametext: String,
+      },
+      buttonsend: {
+        fieldtype: String,
+        buttontext: String,
+      },
+    },
+  },
   whatdoesthepuap: {
     title: String,
     text: [

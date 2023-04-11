@@ -13,11 +13,11 @@ export default function FormChildrenRequestPresentation({
 }) {
   const inputformchildrenrequestpresentationitems =
     inputformchildrenrequestpresentationdata.map(
-      ({ id, Type, Placeholder }) => (
+      ({ id, fieldtype, placeholder }) => (
         <input
           key={id}
-          type={Type}
-          placeholder={Placeholder}
+          type={fieldtype}
+          placeholder={placeholder}
           className={styles.FormChildrenRequestPresentation__input}
         />
       )
