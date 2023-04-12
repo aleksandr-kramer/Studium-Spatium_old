@@ -80,6 +80,46 @@ const puapSchema = new Schema({
         },
       ],
     },
+    requestonlinelearning: {
+      title: String,
+      text: [
+        {
+          id: Number,
+          paragraph: String,
+        },
+      ],
+      abouticonspoint: [
+        {
+          id: Number,
+          imagename: String,
+          title: String,
+        },
+      ],
+      form: {
+        input: [
+          {
+            id: Number,
+            tag: String,
+            fieldtype: String,
+            placeholder: String,
+          },
+        ],
+        textarea: {
+          istextarea: Boolean,
+          placeholder: String,
+        },
+        buttonattachfile: {
+          isbuttonattachfile: Boolean,
+          buttontext: String,
+          filenametext: String,
+          fieldtype: String,
+        },
+        buttonsend: {
+          fieldtype: String,
+          buttontext: String,
+        },
+      },
+    },
   },
   programmeworks: [],
   requestprogrammepresentation: {

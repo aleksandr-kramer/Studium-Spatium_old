@@ -11,7 +11,8 @@ import Faq from "../../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
-
+import FeedbackComponent from "../../components/feedback/FeedbackComponent";
+import FormChildrenRequestPresentation from "../../components/FormChildrenRequestPresentation/FormChildrenRequestPresentation";
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
@@ -108,12 +109,63 @@ export default function Puaprequestforonlinelearning({ data }) {
 
       {/* ------------ блоки для конкретной страницы (начало) ------------ */}
 
+      <section className={styles.main__coursepresentation}>
+        <div className={styles.main__coursepresentation__container}>
+          <FeedbackComponent
+            title={data.puapdata.onlinelearning.requestonlinelearning.title}
+            feedbackcomponenttextdata={
+              data.puapdata.onlinelearning.requestonlinelearning.text
+            }
+            feedbackcomponentabouticondata={
+              data.puapdata.onlinelearning.requestonlinelearning.abouticonspoint
+            }
+          >
+            <FormChildrenRequestPresentation
+              inputformchildrenrequestpresentationdata={
+                data.puapdata.onlinelearning.requestonlinelearning.form.input
+              }
+              textareatrue={
+                data.puapdata.onlinelearning.requestonlinelearning.form.textarea
+                  .istextarea
+              }
+              textareaplaceholder={
+                data.puapdata.onlinelearning.requestonlinelearning.form.textarea
+                  .placeholder
+              }
+              buttonattachfiletrue={
+                data.puapdata.onlinelearning.requestonlinelearning.form
+                  .buttonattachfile.isbuttonattachfile
+              }
+              buttonattachfiletype={
+                data.puapdata.onlinelearning.requestonlinelearning.form
+                  .buttonattachfile.type
+              }
+              buttonattachfiletext={
+                data.puapdata.onlinelearning.requestonlinelearning.form
+                  .buttonattachfile.buttontext
+              }
+              buttonattachfilename={
+                data.puapdata.onlinelearning.requestonlinelearning.form
+                  .buttonattachfile.filenametext
+              }
+              buttonsendtype={
+                data.puapdata.onlinelearning.requestonlinelearning.form
+                  .buttonsend.type
+              }
+              buttonsendtext={
+                data.puapdata.onlinelearning.requestonlinelearning.form
+                  .buttonsend.buttontext
+              }
+            />
+          </FeedbackComponent>
+        </div>
+      </section>
+
       {/* ------------ блоки для конкретной страницы (конец) ------------ */}
 
       {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
 
-      {data.puaprequestforonlinelearningpagedata.landingmonolink.length !==
-      0 ? (
+      {data.puaprequestforonlinelearningpagedata.islandingmonolink ? (
         <section className={styles.main__landingmonolink}>
           <div className={styles.main__landingmonolink__container}>
             <LandingMonoLink
@@ -126,8 +178,7 @@ export default function Puaprequestforonlinelearning({ data }) {
         </section>
       ) : null}
 
-      {Object.keys(data.puaprequestforonlinelearningpagedata.faq).length !==
-      0 ? (
+      {data.puaprequestforonlinelearningpagedata.isfaq ? (
         <section className={styles.main__faq}>
           <div className={styles.main__faq__container}>
             <Faq
@@ -142,8 +193,7 @@ export default function Puaprequestforonlinelearning({ data }) {
         </section>
       ) : null}
 
-      {data.puaprequestforonlinelearningpagedata.landingmultilink.length !==
-      0 ? (
+      {data.puaprequestforonlinelearningpagedata.islandingmultilink ? (
         <section className={styles.main__landingmultilink}>
           <div className={styles.main__landingmultilink__container}>
             <LandingMultiLink
@@ -161,7 +211,7 @@ export default function Puaprequestforonlinelearning({ data }) {
         </section>
       ) : null}
 
-      {data.puaprequestforonlinelearningpagedata.landingmultilink !== 0 ? (
+      {data.puaprequestforonlinelearningpagedata.islandingmultilink ? (
         <FixLinks
           fixlinkdata={
             data.puaprequestforonlinelearningpagedata.landingmultilink

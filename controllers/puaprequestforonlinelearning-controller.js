@@ -11,6 +11,7 @@ const { Footer_en, Footer_es, Footer_ru } = require("../models/Footer");
 const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
+const { Puap_en, Puap_es, Puap_ru } = require("../models/Puap");
 
 const getPagePuaprequestforonlinelearningEn = async (req, res) => {
   try {
@@ -27,12 +28,14 @@ const getPagePuaprequestforonlinelearningEn = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const puapdata = await Puap_en.findOne({ _id: "6422f5345b70a17cd50b7a82" });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       puaprequestforonlinelearningpagedata,
+      puapdata,
     });
   } catch (error) {
     console.log(error);
@@ -54,12 +57,14 @@ const getPagePuaprequestforonlinelearningEs = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const puapdata = await Puap_es.findOne({ _id: "6422f5345b70a17cd50b7a82" });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       puaprequestforonlinelearningpagedata,
+      puapdata,
     });
   } catch (error) {
     console.log(error);
@@ -81,12 +86,14 @@ const getPagePuaprequestforonlinelearningRu = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const puapdata = await Puap_ru.findOne({ _id: "6422f5345b70a17cd50b7a82" });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       puaprequestforonlinelearningpagedata,
+      puapdata,
     });
   } catch (error) {
     console.log(error);

@@ -131,10 +131,6 @@ export default function Puaprequestapresentationoftheprogram({ data }) {
             feedbackcomponentabouticondata={
               data.puapdata.requestprogrammepresentation.abouticonspoint
             }
-            // test={
-            //   selectTranslate().CourseContent.RequestPresentation.Form.Input[0]
-            //     .Tag
-            // }
           >
             <FormChildrenRequestPresentation
               inputformchildrenrequestpresentationdata={
