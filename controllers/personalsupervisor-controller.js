@@ -11,6 +11,12 @@ const { Footer_en, Footer_es, Footer_ru } = require("../models/Footer");
 const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
+const { Option_en, Option_es, Option_ru } = require("../models/Option");
+const {
+  Supervisor_en,
+  Supervisor_es,
+  Supervisor_ru,
+} = require("../models/Supervisor");
 
 const getPagePersonalsupervisorEn = async (req, res) => {
   try {
@@ -27,12 +33,20 @@ const getPagePersonalsupervisorEn = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const optiondata = await Option_en.findOne({
+      _id: "6432e3e2988ba8f14dd15a62",
+    });
+    const supervisordata = await Supervisor_en.findOne({
+      _id: "64359131988ba8f14dd15ae9",
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       personalsupervisorpagedata,
+      optiondata,
+      supervisordata,
     });
   } catch (error) {
     console.log(error);
@@ -54,12 +68,20 @@ const getPagePersonalsupervisorEs = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const optiondata = await Option_es.findOne({
+      _id: "6432e3e2988ba8f14dd15a62",
+    });
+    const supervisordata = await Supervisor_es.findOne({
+      _id: "64359131988ba8f14dd15ae9",
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       personalsupervisorpagedata,
+      optiondata,
+      supervisordata,
     });
   } catch (error) {
     console.log(error);
@@ -81,12 +103,20 @@ const getPagePersonalsupervisorRu = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const optiondata = await Option_ru.findOne({
+      _id: "6432e3e2988ba8f14dd15a62",
+    });
+    const supervisordata = await Supervisor_ru.findOne({
+      _id: "64359131988ba8f14dd15ae9",
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       personalsupervisorpagedata,
+      optiondata,
+      supervisordata,
     });
   } catch (error) {
     console.log(error);

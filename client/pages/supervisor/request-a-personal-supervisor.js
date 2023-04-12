@@ -11,6 +11,8 @@ import Faq from "../../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
+import FeedbackComponent from "../../components/feedback/FeedbackComponent";
+import FormChildrenRequestPresentation from "../../components/FormChildrenRequestPresentation/FormChildrenRequestPresentation";
 
 // ------------------------------------------
 
@@ -108,11 +110,58 @@ export default function Requestapersonalsupervisor({ data }) {
 
       {/* ------------ блоки для конкретной страницы (начало) ------------ */}
 
+      <section className={styles.main__coursepresentation}>
+        <div className={styles.main__coursepresentation__container}>
+          <FeedbackComponent
+            title={data.supervisordata.requestsupervisor.title}
+            feedbackcomponenttextdata={
+              data.supervisordata.requestsupervisor.text
+            }
+            feedbackcomponentabouticondata={
+              data.supervisordata.requestsupervisor.abouticonspoint
+            }
+          >
+            <FormChildrenRequestPresentation
+              inputformchildrenrequestpresentationdata={
+                data.supervisordata.requestsupervisor.form.input
+              }
+              textareatrue={
+                data.supervisordata.requestsupervisor.form.textarea.istextarea
+              }
+              textareaplaceholder={
+                data.supervisordata.requestsupervisor.form.textarea.placeholder
+              }
+              buttonattachfiletrue={
+                data.supervisordata.requestsupervisor.form.buttonattachfile
+                  .isbuttonattachfile
+              }
+              buttonattachfiletype={
+                data.supervisordata.requestsupervisor.form.buttonattachfile.type
+              }
+              buttonattachfiletext={
+                data.supervisordata.requestsupervisor.form.buttonattachfile
+                  .buttontext
+              }
+              buttonattachfilename={
+                data.supervisordata.requestsupervisor.form.buttonattachfile
+                  .filenametext
+              }
+              buttonsendtype={
+                data.supervisordata.requestsupervisor.form.buttonsend.type
+              }
+              buttonsendtext={
+                data.supervisordata.requestsupervisor.form.buttonsend.buttontext
+              }
+            />
+          </FeedbackComponent>
+        </div>
+      </section>
+
       {/* ------------ блоки для конкретной страницы (конец) ------------ */}
 
       {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
 
-      {data.requestapersonalsupervisorpagedata.landingmonolink.length !== 0 ? (
+      {data.requestapersonalsupervisorpagedata.islandingmonolink ? (
         <section className={styles.main__landingmonolink}>
           <div className={styles.main__landingmonolink__container}>
             <LandingMonoLink
@@ -125,7 +174,7 @@ export default function Requestapersonalsupervisor({ data }) {
         </section>
       ) : null}
 
-      {Object.keys(data.requestapersonalsupervisorpagedata.faq).length !== 0 ? (
+      {data.requestapersonalsupervisorpagedata.isfaq ? (
         <section className={styles.main__faq}>
           <div className={styles.main__faq__container}>
             <Faq
@@ -140,7 +189,7 @@ export default function Requestapersonalsupervisor({ data }) {
         </section>
       ) : null}
 
-      {data.requestapersonalsupervisorpagedata.landingmultilink.length !== 0 ? (
+      {data.requestapersonalsupervisorpagedata.islandingmultilink ? (
         <section className={styles.main__landingmultilink}>
           <div className={styles.main__landingmultilink__container}>
             <LandingMultiLink
@@ -158,7 +207,7 @@ export default function Requestapersonalsupervisor({ data }) {
         </section>
       ) : null}
 
-      {data.requestapersonalsupervisorpagedata.landingmultilink !== 0 ? (
+      {data.requestapersonalsupervisorpagedata.islandingmultilink ? (
         <FixLinks
           fixlinkdata={data.requestapersonalsupervisorpagedata.landingmultilink}
         />

@@ -11,12 +11,19 @@ import Faq from "../../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
-
+import H2Component from "../../components/H2Component/H2Component";
+import OrderComponent from "../../components/OrderComponent/OrderComponent";
+import StepComponent from "../../components/StepComponent/StepComponent";
+import OrderChildrenImageText from "../../components/OrderChildrenImageText/OrderChildrenImageText";
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
 // ------------------------------------------
-import { landingmonolinkbgcolorsmoky } from "../../constants/stylesconstants";
+import {
+  h2componentbgthemesmoky,
+  h2componentborderfalse,
+  landingmonolinkbgcolorsmoky,
+} from "../../constants/stylesconstants";
 // ------------------------------------------
 
 export default function Personalsupervisor({ data }) {
@@ -93,11 +100,61 @@ export default function Personalsupervisor({ data }) {
 
       {/* ------------ блоки для конкретной страницы (начало) ------------ */}
 
+      <section className={styles.main__ordercomponent}>
+        <div className={styles.main__ordercomponent__container}>
+          <OrderComponent
+            // orderblankinfodata={selectTranslate().Supervising.Order}
+            orderblankinfodata={data.supervisordata.supervisordetails.order}
+            orderblankbuttondata={
+              data.supervisordata.supervisordetails.orderlink
+            }
+            // orderblankbuttondata={selectTranslate().Supervising.OrderLink}
+            fees={data.optiondata.fees}
+            price={data.supervisordata.supervisordetails.price}
+            currency={data.optiondata.currency}
+            currencyrate={data.optiondata.currencyrate}
+            priceperiod={data.supervisordata.supervisordetails.priceperiod}
+          >
+            <OrderChildrenImageText
+              Title={
+                data.supervisordata.supervisordetails.supervisorincludedtitle
+              }
+              orderchildrenimagetextdata={
+                data.supervisordata.supervisordetails.supervisorincluded
+              }
+            />
+          </OrderComponent>
+        </div>
+      </section>
+      <section className={styles.main__stepcomponent}>
+        <div className={styles.main__stepcomponent__container}>
+          <h2 className={styles.main__stepcomponenttitle}>
+            {data.supervisordata.howtostartsupervisor.howtostartsupervisortitle}
+          </h2>
+          <StepComponent
+            stepcomponentword={data.optiondata.stepcomponentword}
+            stepcomponentdata={
+              data.supervisordata.howtostartsupervisor.howtostartsupervisorstep
+            }
+          />
+        </div>
+      </section>
+      <section className={styles.main__h2componentaboutsupervising}>
+        <div className={styles.main__h2componentaboutsupervising__container}>
+          <H2Component
+            H2Title={data.supervisordata.whyneedsupervisor.title}
+            H2ComponentSubtitle={data.supervisordata.whyneedsupervisor.text}
+            H2ComponentUIBorder={h2componentborderfalse}
+            H2ComponentUITheme={h2componentbgthemesmoky}
+          />
+        </div>
+      </section>
+
       {/* ------------ блоки для конкретной страницы (конец) ------------ */}
 
       {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
 
-      {data.personalsupervisorpagedata.landingmonolink.length !== 0 ? (
+      {data.personalsupervisorpagedata.islandingmonolink ? (
         <section className={styles.main__landingmonolink}>
           <div className={styles.main__landingmonolink__container}>
             <LandingMonoLink
@@ -110,7 +167,7 @@ export default function Personalsupervisor({ data }) {
         </section>
       ) : null}
 
-      {Object.keys(data.personalsupervisorpagedata.faq).length !== 0 ? (
+      {data.personalsupervisorpagedata.isfaq ? (
         <section className={styles.main__faq}>
           <div className={styles.main__faq__container}>
             <Faq
@@ -123,7 +180,7 @@ export default function Personalsupervisor({ data }) {
         </section>
       ) : null}
 
-      {data.personalsupervisorpagedata.landingmultilink.length !== 0 ? (
+      {data.personalsupervisorpagedata.islandingmultilink ? (
         <section className={styles.main__landingmultilink}>
           <div className={styles.main__landingmultilink__container}>
             <LandingMultiLink
@@ -141,7 +198,7 @@ export default function Personalsupervisor({ data }) {
         </section>
       ) : null}
 
-      {data.personalsupervisorpagedata.landingmultilink !== 0 ? (
+      {data.personalsupervisorpagedata.islandingmultilink ? (
         <FixLinks
           fixlinkdata={data.personalsupervisorpagedata.landingmultilink}
         />

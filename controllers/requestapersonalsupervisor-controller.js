@@ -11,6 +11,11 @@ const { Footer_en, Footer_es, Footer_ru } = require("../models/Footer");
 const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
+const {
+  Supervisor_en,
+  Supervisor_es,
+  Supervisor_ru,
+} = require("../models/Supervisor");
 
 const getPageRequestapersonalsupervisorEn = async (req, res) => {
   try {
@@ -27,12 +32,16 @@ const getPageRequestapersonalsupervisorEn = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const supervisordata = await Supervisor_en.findOne({
+      _id: "64359131988ba8f14dd15ae9",
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       requestapersonalsupervisorpagedata,
+      supervisordata,
     });
   } catch (error) {
     console.log(error);
@@ -54,12 +63,17 @@ const getPageRequestapersonalsupervisorEs = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const supervisordata = await Supervisor_es.findOne({
+      _id: "64359131988ba8f14dd15ae9",
+    });
+
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       requestapersonalsupervisorpagedata,
+      supervisordata,
     });
   } catch (error) {
     console.log(error);
@@ -81,12 +95,16 @@ const getPageRequestapersonalsupervisorRu = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const supervisordata = await Supervisor_ru.findOne({
+      _id: "64359131988ba8f14dd15ae9",
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       requestapersonalsupervisorpagedata,
+      supervisordata,
     });
   } catch (error) {
     console.log(error);

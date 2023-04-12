@@ -6,12 +6,12 @@ export default function OrderChildrenImageText({
   orderchildrenimagetextdata,
 }) {
   const orderchildrenimagetextitems = orderchildrenimagetextdata.map(
-    ({ id, Title, Paragraph, ImageName }) => (
+    ({ id, title, paragraph, imagename }) => (
       <li key={id} className={styles.OrderChildrenImageText__item}>
         <div className={styles.OrderChildrenImageText__image}>
           <Image
-            src={`/icons/${ImageName}`}
-            alt={Title}
+            src={`/icons/${imagename}`}
+            alt={title}
             height={54}
             width={54}
             style={{
@@ -20,8 +20,8 @@ export default function OrderChildrenImageText({
             }}
           />
         </div>
-        <p className={styles.OrderChildrenImageText__itemtitle}>{Title}</p>
-        <p className={styles.OrderChildrenImageText__itemtext}>{Paragraph}</p>
+        <p className={styles.OrderChildrenImageText__itemtitle}>{title}</p>
+        <p className={styles.OrderChildrenImageText__itemtext}>{paragraph}</p>
       </li>
     )
   );
