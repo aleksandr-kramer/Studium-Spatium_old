@@ -2,12 +2,12 @@ import styles from "./OrderChildrenParagraph.module.scss";
 
 export default function OrderChildrenParagraph({ orderchildrenparagraphdata }) {
   const orderchildrenparagraphitems = orderchildrenparagraphdata.map(
-    ({ id, NodeTitle, NodeText }) => (
+    ({ id, nodetitle, nodetext }) => (
       <p key={id} className={styles.OrderChildrenParagraph__text}>
         <span className={styles.OrderChildrenParagraph__title}>
-          {NodeTitle}{" "}
+          {nodetitle}{" "}
         </span>
-        {NodeText}
+        {nodetext}
       </p>
     )
   );

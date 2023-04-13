@@ -11,6 +11,7 @@ const { Footer_en, Footer_es, Footer_ru } = require("../models/Footer");
 const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
+const { Course_en, Course_es, Course_ru } = require("../models/Course");
 
 const getPageRequestacourseEn = async (req, res) => {
   try {
@@ -27,12 +28,16 @@ const getPageRequestacourseEn = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const coursedata = await Course_en.findOne({
+      _id: "643725c2988ba8f14dd15b57",
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       requestacoursepagedata,
+      coursedata,
     });
   } catch (error) {
     console.log(error);
@@ -54,12 +59,16 @@ const getPageRequestacourseEs = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const coursedata = await Course_es.findOne({
+      _id: "643725c2988ba8f14dd15b57",
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       requestacoursepagedata,
+      coursedata,
     });
   } catch (error) {
     console.log(error);
@@ -81,12 +90,16 @@ const getPageRequestacourseRu = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const coursedata = await Course_ru.findOne({
+      _id: "643725c2988ba8f14dd15b57",
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       requestacoursepagedata,
+      coursedata,
     });
   } catch (error) {
     console.log(error);

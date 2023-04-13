@@ -8,10 +8,13 @@ import FixLinks from "../../components/FixLinks/FixLinks";
 import LandingMultiLink from "../../components/LandingMultiLink/LandingMultiLink";
 import LandingMonoLink from "../../components/LandingMonoLink/LandingMonoLink";
 import Faq from "../../components/Faq/Faq";
+
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
-
+import OrderComponent from "../../components/OrderComponent/OrderComponent";
+import OrderChildrenParagraph from "../../components/OrderChildrenParagraph/OrderChildrenParagraph";
+import DescriptionOfPoints from "../../components/DescriptionOfPoints/DescriptionOfPoints";
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
@@ -108,11 +111,43 @@ export default function Courseenglishthroughscience({ data }) {
 
       {/* ------------ блоки для конкретной страницы (начало) ------------ */}
 
+      <section className={styles.main__ordercomponent}>
+        <div className={styles.main__ordercomponent__container}>
+          <OrderComponent
+            orderblankinfodata={data.coursedata.listcourse[0].order}
+            orderblankbuttondata={data.coursedata.listcourse[0].orderlink}
+            fees={data.optiondata.fees}
+            price={data.coursedata.listcourse[0].price}
+            currency={data.optiondata.currency}
+            currencyrate={data.optiondata.currencyrate}
+            priceperiod={data.coursedata.listcourse[0].priceperiod}
+          >
+            <OrderChildrenParagraph
+              orderchildrenparagraphdata={
+                data.coursedata.listcourse[0].generalaboutmodule
+              }
+            />
+          </OrderComponent>
+        </div>
+      </section>
+      <section className={styles.main__descriptionofpoints}>
+        <div className={styles.main__descriptionofpoints__patternbigtop}></div>
+        <div
+          className={styles.main__descriptionofpoints__patternsmallbottom}
+        ></div>
+        <div className={styles.main__descriptionofpoints__container}>
+          <DescriptionOfPoints
+            Name={data.coursedata.listcourse[0].namemodule}
+            descriptionofpointsdata={data.coursedata.listcourse[0].listoftopics}
+          />
+        </div>
+      </section>
+
       {/* ------------ блоки для конкретной страницы (конец) ------------ */}
 
       {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
 
-      {data.courseenglishthroughsciencepagedata.landingmonolink.length !== 0 ? (
+      {data.courseenglishthroughsciencepagedata.islandingmonolink ? (
         <section className={styles.main__landingmonolink}>
           <div className={styles.main__landingmonolink__container}>
             <LandingMonoLink
@@ -125,8 +160,7 @@ export default function Courseenglishthroughscience({ data }) {
         </section>
       ) : null}
 
-      {Object.keys(data.courseenglishthroughsciencepagedata.faq).length !==
-      0 ? (
+      {data.courseenglishthroughsciencepagedata.isfaq ? (
         <section className={styles.main__faq}>
           <div className={styles.main__faq__container}>
             <Faq
@@ -141,8 +175,7 @@ export default function Courseenglishthroughscience({ data }) {
         </section>
       ) : null}
 
-      {data.courseenglishthroughsciencepagedata.landingmultilink.length !==
-      0 ? (
+      {data.courseenglishthroughsciencepagedata.islandingmultilink ? (
         <section className={styles.main__landingmultilink}>
           <div className={styles.main__landingmultilink__container}>
             <LandingMultiLink
@@ -160,7 +193,7 @@ export default function Courseenglishthroughscience({ data }) {
         </section>
       ) : null}
 
-      {data.courseenglishthroughsciencepagedata.landingmultilink !== 0 ? (
+      {data.courseenglishthroughsciencepagedata.islandingmultilink ? (
         <FixLinks
           fixlinkdata={
             data.courseenglishthroughsciencepagedata.landingmultilink

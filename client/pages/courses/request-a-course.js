@@ -11,7 +11,8 @@ import Faq from "../../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
-
+import FeedbackComponent from "../../components/feedback/FeedbackComponent";
+import FormChildrenRequestPresentation from "../../components/FormChildrenRequestPresentation/FormChildrenRequestPresentation";
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
@@ -86,11 +87,62 @@ export default function Requestacourse({ data }) {
 
       {/* ------------ блоки для конкретной страницы (начало) ------------ */}
 
+      <section className={styles.main__coursepresentation}>
+        <div className={styles.main__coursepresentation__container}>
+          <FeedbackComponent
+            title={data.coursedata.listcourse[0].requestcourse.title}
+            feedbackcomponenttextdata={
+              data.coursedata.listcourse[0].requestcourse.text
+            }
+            feedbackcomponentabouticondata={
+              data.coursedata.listcourse[0].requestcourse.abouticonspoint
+            }
+          >
+            <FormChildrenRequestPresentation
+              inputformchildrenrequestpresentationdata={
+                data.coursedata.listcourse[0].requestcourse.form.input
+              }
+              textareatrue={
+                data.coursedata.listcourse[0].requestcourse.form.textarea
+                  .istextarea
+              }
+              textareaplaceholder={
+                data.coursedata.listcourse[0].requestcourse.form.textarea
+                  .placeholder
+              }
+              buttonattachfiletrue={
+                data.coursedata.listcourse[0].requestcourse.form
+                  .buttonattachfile.isbuttonattachfile
+              }
+              buttonattachfiletype={
+                data.coursedata.listcourse[0].requestcourse.form
+                  .buttonattachfile.type
+              }
+              buttonattachfiletext={
+                data.coursedata.listcourse[0].requestcourse.form
+                  .buttonattachfile.buttontext
+              }
+              buttonattachfilename={
+                data.coursedata.listcourse[0].requestcourse.form
+                  .buttonattachfile.filenametext
+              }
+              buttonsendtype={
+                data.coursedata.listcourse[0].requestcourse.form.buttonsend.type
+              }
+              buttonsendtext={
+                data.coursedata.listcourse[0].requestcourse.form.buttonsend
+                  .buttontext
+              }
+            />
+          </FeedbackComponent>
+        </div>
+      </section>
+
       {/* ------------ блоки для конкретной страницы (конец) ------------ */}
 
       {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
 
-      {data.requestacoursepagedata.landingmonolink.length !== 0 ? (
+      {data.requestacoursepagedata.islandingmonolink ? (
         <section className={styles.main__landingmonolink}>
           <div className={styles.main__landingmonolink__container}>
             <LandingMonoLink
@@ -101,7 +153,7 @@ export default function Requestacourse({ data }) {
         </section>
       ) : null}
 
-      {Object.keys(data.requestacoursepagedata.faq).length !== 0 ? (
+      {data.requestacoursepagedata.isfaq ? (
         <section className={styles.main__faq}>
           <div className={styles.main__faq__container}>
             <Faq
@@ -114,7 +166,7 @@ export default function Requestacourse({ data }) {
         </section>
       ) : null}
 
-      {data.requestacoursepagedata.landingmultilink.length !== 0 ? (
+      {data.requestacoursepagedata.islandingmultilink ? (
         <section className={styles.main__landingmultilink}>
           <div className={styles.main__landingmultilink__container}>
             <LandingMultiLink
@@ -132,7 +184,7 @@ export default function Requestacourse({ data }) {
         </section>
       ) : null}
 
-      {data.requestacoursepagedata.landingmultilink !== 0 ? (
+      {data.requestacoursepagedata.islandingmultilink ? (
         <FixLinks fixlinkdata={data.requestacoursepagedata.landingmultilink} />
       ) : null}
     </MainLayout>

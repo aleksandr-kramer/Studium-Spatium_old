@@ -4,7 +4,7 @@ import ParagraphList from "../ParagraphList/ParagraphList";
 
 export default function DescriptionOfPoints({ Name, descriptionofpointsdata }) {
   const descriptionofpointsitems = descriptionofpointsdata.map(
-    ({ id, Duration, Title, TextAboutTopic }) => (
+    ({ id, duration, title, textabouttopic }) => (
       <li key={id} className={styles.DescriptionOfPoints__item}>
         <div className={styles.DescriptionOfPoints__duration}>
           <div className={styles.DescriptionOfPoints__durationimage}>
@@ -19,13 +19,13 @@ export default function DescriptionOfPoints({ Name, descriptionofpointsdata }) {
               }}
             />
           </div>
-          <p className={styles.DescriptionOfPoints__durationtext}>{Duration}</p>
+          <p className={styles.DescriptionOfPoints__durationtext}>{duration}</p>
         </div>
         <p className={styles.DescriptionOfPoints__numberthemetext}>{id}</p>
-        <h3 className={styles.DescriptionOfPoints__namethemetext}>{Title}</h3>
+        <h3 className={styles.DescriptionOfPoints__namethemetext}>{title}</h3>
         <div className={styles.DescriptionOfPoints__paragraphlist}>
           <ParagraphList
-            ParagraphItems={TextAboutTopic}
+            ParagraphItems={textabouttopic}
             paragraphliststate="fontcolorbaseleft"
           />
         </div>
