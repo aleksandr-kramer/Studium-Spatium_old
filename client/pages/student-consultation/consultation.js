@@ -11,12 +11,19 @@ import Faq from "../../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
-
+import H2Component from "../../components/H2Component/H2Component";
+import OrderComponent from "../../components/OrderComponent/OrderComponent";
+import StepComponent from "../../components/StepComponent/StepComponent";
+import OrderChildrenH2Component from "../../components/OrderChildrenH2Component/OrderChildrenH2Component";
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
 // ------------------------------------------
-import { landingmonolinkbgcolorsmoky } from "../../constants/stylesconstants";
+import {
+  h2componentbgthemesmoky,
+  h2componentborderfalse,
+  landingmonolinkbgcolorsmoky,
+} from "../../constants/stylesconstants";
 // ------------------------------------------
 
 export default function Consultation({ data }) {
@@ -85,11 +92,62 @@ export default function Consultation({ data }) {
 
       {/* ------------ блоки для конкретной страницы (начало) ------------ */}
 
+      <section className={styles.main__ordercomponent}>
+        <div className={styles.main__ordercomponent__container}>
+          <OrderComponent
+            orderblankinfodata={data.consultationdata.consultationdetails.order}
+            orderblankbuttondata={
+              data.consultationdata.consultationdetails.orderlink
+            }
+            fees={data.optiondata.fees}
+            price={data.consultationdata.consultationdetails.price}
+            currency={data.optiondata.currency}
+            currencyrate={data.optiondata.currencyrate}
+            priceperiod={data.consultationdata.consultationdetails.priceperiod}
+          >
+            <OrderChildrenH2Component
+              Title={data.consultationdata.aboutconsultation.title}
+              ParagraphItems={data.consultationdata.aboutconsultation.text}
+              paragraphliststate="fontcolorbasecenter"
+            />
+          </OrderComponent>
+        </div>
+      </section>
+      <section className={styles.main__stepcomponent}>
+        <div className={styles.main__stepcomponent__container}>
+          <h2 className={styles.main__stepcomponenttitle}>
+            {
+              data.consultationdata.howtogetconsultation
+                .howtogetconsultationtitle
+            }
+          </h2>
+          <StepComponent
+            stepcomponentword={data.optiondata.stepcomponentword}
+            stepcomponentdata={
+              data.consultationdata.howtogetconsultation
+                .howtogetconsultationstep
+            }
+          />
+        </div>
+      </section>
+      <section className={styles.main__h2componentaboutconsultation}>
+        <div className={styles.main__h2componentaboutconsultation__container}>
+          <H2Component
+            H2Title={data.consultationdata.whatgiveconsultation.title}
+            H2ComponentSubtitle={
+              data.consultationdata.whatgiveconsultation.text
+            }
+            H2ComponentUIBorder={h2componentborderfalse}
+            H2ComponentUITheme={h2componentbgthemesmoky}
+          />
+        </div>
+      </section>
+
       {/* ------------ блоки для конкретной страницы (конец) ------------ */}
 
       {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
 
-      {data.consultationpagedata.landingmonolink.length !== 0 ? (
+      {data.consultationpagedata.islandingmonolink ? (
         <section className={styles.main__landingmonolink}>
           <div className={styles.main__landingmonolink__container}>
             <LandingMonoLink
@@ -100,7 +158,7 @@ export default function Consultation({ data }) {
         </section>
       ) : null}
 
-      {Object.keys(data.consultationpagedata.faq).length !== 0 ? (
+      {data.consultationpagedata.isfaq ? (
         <section className={styles.main__faq}>
           <div className={styles.main__faq__container}>
             <Faq
@@ -113,7 +171,7 @@ export default function Consultation({ data }) {
         </section>
       ) : null}
 
-      {data.consultationpagedata.landingmultilink.length !== 0 ? (
+      {data.consultationpagedata.islandingmultilink ? (
         <section className={styles.main__landingmultilink}>
           <div className={styles.main__landingmultilink__container}>
             <LandingMultiLink
@@ -129,7 +187,7 @@ export default function Consultation({ data }) {
         </section>
       ) : null}
 
-      {data.consultationpagedata.landingmultilink !== 0 ? (
+      {data.consultationpagedata.islandingmultilink ? (
         <FixLinks fixlinkdata={data.consultationpagedata.landingmultilink} />
       ) : null}
     </MainLayout>

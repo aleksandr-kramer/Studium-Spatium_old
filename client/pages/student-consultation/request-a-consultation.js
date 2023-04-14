@@ -11,6 +11,8 @@ import Faq from "../../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
+import FeedbackComponent from "../../components/feedback/FeedbackComponent";
+import FormChildrenRequestPresentation from "../../components/FormChildrenRequestPresentation/FormChildrenRequestPresentation";
 
 // ------------------------------------------
 
@@ -97,11 +99,62 @@ export default function Requestaconsultation({ data }) {
 
       {/* ------------ блоки для конкретной страницы (начало) ------------ */}
 
+      <section className={styles.main__coursepresentation}>
+        <div className={styles.main__coursepresentation__container}>
+          <FeedbackComponent
+            title={data.consultationdata.requestconsultation.title}
+            feedbackcomponenttextdata={
+              data.consultationdata.requestconsultation.text
+            }
+            feedbackcomponentabouticondata={
+              data.consultationdata.requestconsultation.abouticonspoint
+            }
+          >
+            <FormChildrenRequestPresentation
+              inputformchildrenrequestpresentationdata={
+                data.consultationdata.requestconsultation.form.input
+              }
+              textareatrue={
+                data.consultationdata.requestconsultation.form.textarea
+                  .istextarea
+              }
+              textareaplaceholder={
+                data.consultationdata.requestconsultation.form.textarea
+                  .placeholder
+              }
+              buttonattachfiletrue={
+                data.consultationdata.requestconsultation.form.buttonattachfile
+                  .isbuttonattachfile
+              }
+              buttonattachfiletype={
+                data.consultationdata.requestconsultation.form.buttonattachfile
+                  .type
+              }
+              buttonattachfiletext={
+                data.consultationdata.requestconsultation.form.buttonattachfile
+                  .buttontext
+              }
+              buttonattachfilename={
+                data.consultationdata.requestconsultation.form.buttonattachfile
+                  .filenametext
+              }
+              buttonsendtype={
+                data.consultationdata.requestconsultation.form.buttonsend.type
+              }
+              buttonsendtext={
+                data.consultationdata.requestconsultation.form.buttonsend
+                  .buttontext
+              }
+            />
+          </FeedbackComponent>
+        </div>
+      </section>
+
       {/* ------------ блоки для конкретной страницы (конец) ------------ */}
 
       {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
 
-      {data.requestaconsultationpagedata.landingmonolink.length !== 0 ? (
+      {data.requestaconsultationpagedata.islandingmonolink ? (
         <section className={styles.main__landingmonolink}>
           <div className={styles.main__landingmonolink__container}>
             <LandingMonoLink
@@ -114,7 +167,7 @@ export default function Requestaconsultation({ data }) {
         </section>
       ) : null}
 
-      {Object.keys(data.requestaconsultationpagedata.faq).length !== 0 ? (
+      {data.requestaconsultationpagedata.isfaq ? (
         <section className={styles.main__faq}>
           <div className={styles.main__faq__container}>
             <Faq
@@ -127,7 +180,7 @@ export default function Requestaconsultation({ data }) {
         </section>
       ) : null}
 
-      {data.requestaconsultationpagedata.landingmultilink.length !== 0 ? (
+      {data.requestaconsultationpagedata.islandingmultilink ? (
         <section className={styles.main__landingmultilink}>
           <div className={styles.main__landingmultilink__container}>
             <LandingMultiLink
@@ -145,7 +198,7 @@ export default function Requestaconsultation({ data }) {
         </section>
       ) : null}
 
-      {data.requestaconsultationpagedata.landingmultilink !== 0 ? (
+      {data.requestaconsultationpagedata.islandingmultilink ? (
         <FixLinks
           fixlinkdata={data.requestaconsultationpagedata.landingmultilink}
         />

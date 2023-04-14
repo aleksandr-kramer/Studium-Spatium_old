@@ -11,6 +11,12 @@ const { Footer_en, Footer_es, Footer_ru } = require("../models/Footer");
 const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
+const {
+  Consultation_en,
+  Consultation_es,
+  Consultation_ru,
+} = require("../models/Consultation");
+const { Option_en, Option_es, Option_ru } = require("../models/Option");
 
 const getPageConsultationEn = async (req, res) => {
   try {
@@ -27,12 +33,20 @@ const getPageConsultationEn = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const consultationdata = await Consultation_en.findOne({
+      _id: "6439071d51fc13be92817261",
+    });
+    const optiondata = await Option_en.findOne({
+      _id: "6432e3e2988ba8f14dd15a62",
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       consultationpagedata,
+      consultationdata,
+      optiondata,
     });
   } catch (error) {
     console.log(error);
@@ -54,12 +68,20 @@ const getPageConsultationEs = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const consultationdata = await Consultation_es.findOne({
+      _id: "6439071d51fc13be92817261",
+    });
+    const optiondata = await Option_es.findOne({
+      _id: "6432e3e2988ba8f14dd15a62",
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       consultationpagedata,
+      consultationdata,
+      optiondata,
     });
   } catch (error) {
     console.log(error);
@@ -81,12 +103,20 @@ const getPageConsultationRu = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const consultationdata = await Consultation_ru.findOne({
+      _id: "6439071d51fc13be92817261",
+    });
+    const optiondata = await Option_ru.findOne({
+      _id: "6432e3e2988ba8f14dd15a62",
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       consultationpagedata,
+      consultationdata,
+      optiondata,
     });
   } catch (error) {
     console.log(error);

@@ -11,6 +11,11 @@ const { Footer_en, Footer_es, Footer_ru } = require("../models/Footer");
 const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
+const {
+  Consultation_en,
+  Consultation_es,
+  Consultation_ru,
+} = require("../models/Consultation");
 
 const getPageRequestaconsultationEn = async (req, res) => {
   try {
@@ -27,12 +32,16 @@ const getPageRequestaconsultationEn = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const consultationdata = await Consultation_en.findOne({
+      _id: "6439071d51fc13be92817261",
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       requestaconsultationpagedata,
+      consultationdata,
     });
   } catch (error) {
     console.log(error);
@@ -54,12 +63,16 @@ const getPageRequestaconsultationEs = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const consultationdata = await Consultation_es.findOne({
+      _id: "6439071d51fc13be92817261",
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       requestaconsultationpagedata,
+      consultationdata,
     });
   } catch (error) {
     console.log(error);
@@ -81,12 +94,16 @@ const getPageRequestaconsultationRu = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const consultationdata = await Consultation_ru.findOne({
+      _id: "6439071d51fc13be92817261",
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       requestaconsultationpagedata,
+      consultationdata,
     });
   } catch (error) {
     console.log(error);
