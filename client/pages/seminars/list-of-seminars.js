@@ -11,12 +11,17 @@ import Faq from "../../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
-
+import H2Component from "../../components/H2Component/H2Component";
+import DescriptionOfNodes from "../../components/DescriptionOfNodes/DescriptionOfNodes";
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
 // ------------------------------------------
-import { landingmonolinkbgcolorsmoky } from "../../constants/stylesconstants";
+import {
+  h2componentbordertrue,
+  h2componentbgthemewhite,
+  landingmonolinkbgcolorsmoky,
+} from "../../constants/stylesconstants";
 // ------------------------------------------
 
 export default function Listofseminars({ data }) {
@@ -86,11 +91,40 @@ export default function Listofseminars({ data }) {
 
       {/* ------------ блоки для конкретной страницы (начало) ------------ */}
 
+      <section className={styles.main__h2component}>
+        <div className={styles.main__h2component__container}>
+          <H2Component
+            H2Title={data.seminardata.aboutseminars.aboutseminarstitle}
+            H2ComponentSubtitle={
+              data.seminardata.aboutseminars.aboutseminarstext
+            }
+            H2ComponentUIBorder={h2componentbordertrue}
+            H2ComponentUITheme={h2componentbgthemewhite}
+          />
+        </div>
+      </section>
+      <section className={styles.main__descriptionofnodes}>
+        <div className={styles.main__descriptionofnodes__patternbigtop}></div>
+        <div
+          className={styles.main__descriptionofnodes__patternsmallbottom}
+        ></div>
+
+        <div className={styles.main__descriptionofnodes__container}>
+          <DescriptionOfNodes
+            descriptionofnodestitle={
+              data.seminardata.aboutseminars.listseminarstitle
+            }
+            linktextstate={"greenishtransporent"}
+            descriptionofnodesdata={data.seminardata.listseminars}
+          />
+        </div>
+      </section>
+
       {/* ------------ блоки для конкретной страницы (конец) ------------ */}
 
       {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
 
-      {data.listofseminarspagedata.landingmonolink.length !== 0 ? (
+      {data.listofseminarspagedata.islandingmonolink ? (
         <section className={styles.main__landingmonolink}>
           <div className={styles.main__landingmonolink__container}>
             <LandingMonoLink
@@ -101,7 +135,7 @@ export default function Listofseminars({ data }) {
         </section>
       ) : null}
 
-      {Object.keys(data.listofseminarspagedata.faq).length !== 0 ? (
+      {data.listofseminarspagedata.isfaq ? (
         <section className={styles.main__faq}>
           <div className={styles.main__faq__container}>
             <Faq
@@ -114,7 +148,7 @@ export default function Listofseminars({ data }) {
         </section>
       ) : null}
 
-      {data.listofseminarspagedata.landingmultilink.length !== 0 ? (
+      {data.listofseminarspagedata.islandingmultilink ? (
         <section className={styles.main__landingmultilink}>
           <div className={styles.main__landingmultilink__container}>
             <LandingMultiLink
@@ -132,7 +166,7 @@ export default function Listofseminars({ data }) {
         </section>
       ) : null}
 
-      {data.listofseminarspagedata.landingmultilink !== 0 ? (
+      {data.listofseminarspagedata.islandingmultilink ? (
         <FixLinks fixlinkdata={data.listofseminarspagedata.landingmultilink} />
       ) : null}
     </MainLayout>

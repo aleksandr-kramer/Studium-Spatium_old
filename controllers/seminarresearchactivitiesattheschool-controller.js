@@ -11,6 +11,8 @@ const { Footer_en, Footer_es, Footer_ru } = require("../models/Footer");
 const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
+const { Seminar_en, Seminar_es, Seminar_ru } = require("../models/Seminar");
+const { Option_en, Option_es, Option_ru } = require("../models/Option");
 
 const getPageSeminarresearchactivitiesattheschoolEn = async (req, res) => {
   try {
@@ -27,12 +29,20 @@ const getPageSeminarresearchactivitiesattheschoolEn = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const seminardata = await Seminar_en.findOne({
+      _id: "6439f29351fc13be92817284",
+    });
+    const optiondata = await Option_en.findOne({
+      _id: "6432e3e2988ba8f14dd15a62",
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       seminarresearchactivitiesattheschoolpagedata,
+      seminardata,
+      optiondata,
     });
   } catch (error) {
     console.log(error);
@@ -54,12 +64,20 @@ const getPageSeminarresearchactivitiesattheschoolEs = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const seminardata = await Seminar_es.findOne({
+      _id: "6439f29351fc13be92817284",
+    });
+    const optiondata = await Option_es.findOne({
+      _id: "6432e3e2988ba8f14dd15a62",
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       seminarresearchactivitiesattheschoolpagedata,
+      seminardata,
+      optiondata,
     });
   } catch (error) {
     console.log(error);
@@ -81,12 +99,20 @@ const getPageSeminarresearchactivitiesattheschoolRu = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const seminardata = await Seminar_ru.findOne({
+      _id: "6439f29351fc13be92817284",
+    });
+    const optiondata = await Option_ru.findOne({
+      _id: "6432e3e2988ba8f14dd15a62",
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       seminarresearchactivitiesattheschoolpagedata,
+      seminardata,
+      optiondata,
     });
   } catch (error) {
     console.log(error);
