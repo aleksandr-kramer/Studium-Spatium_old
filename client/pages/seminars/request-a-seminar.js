@@ -11,7 +11,8 @@ import Faq from "../../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
-
+import FeedbackComponent from "../../components/feedback/FeedbackComponent";
+import FormChildrenRequestPresentation from "../../components/FormChildrenRequestPresentation/FormChildrenRequestPresentation";
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
@@ -86,11 +87,63 @@ export default function Requestaseminar({ data }) {
 
       {/* ------------ блоки для конкретной страницы (начало) ------------ */}
 
+      <section className={styles.main__coursepresentation}>
+        <div className={styles.main__coursepresentation__container}>
+          <FeedbackComponent
+            title={data.seminardata.listseminars[0].requestseminar.title}
+            feedbackcomponenttextdata={
+              data.seminardata.listseminars[0].requestseminar.text
+            }
+            feedbackcomponentabouticondata={
+              data.seminardata.listseminars[0].requestseminar.abouticonspoint
+            }
+          >
+            <FormChildrenRequestPresentation
+              inputformchildrenrequestpresentationdata={
+                data.seminardata.listseminars[0].requestseminar.form.input
+              }
+              textareatrue={
+                data.seminardata.listseminars[0].requestseminar.form.textarea
+                  .istextarea
+              }
+              textareaplaceholder={
+                data.seminardata.listseminars[0].requestseminar.form.textarea
+                  .placeholder
+              }
+              buttonattachfiletrue={
+                data.seminardata.listseminars[0].requestseminar.form
+                  .buttonattachfile.isbuttonattachfile
+              }
+              buttonattachfiletype={
+                data.seminardata.listseminars[0].requestseminar.form
+                  .buttonattachfile.type
+              }
+              buttonattachfiletext={
+                data.seminardata.listseminars[0].requestseminar.form
+                  .buttonattachfile.buttontext
+              }
+              buttonattachfilename={
+                data.seminardata.listseminars[0].requestseminar.form
+                  .buttonattachfile.filenametext
+              }
+              buttonsendtype={
+                data.seminardata.listseminars[0].requestseminar.form.buttonsend
+                  .type
+              }
+              buttonsendtext={
+                data.seminardata.listseminars[0].requestseminar.form.buttonsend
+                  .buttontext
+              }
+            />
+          </FeedbackComponent>
+        </div>
+      </section>
+
       {/* ------------ блоки для конкретной страницы (конец) ------------ */}
 
       {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
 
-      {data.requestaseminarpagedata.landingmonolink.length !== 0 ? (
+      {data.requestaseminarpagedata.islandingmonolink ? (
         <section className={styles.main__landingmonolink}>
           <div className={styles.main__landingmonolink__container}>
             <LandingMonoLink
@@ -101,7 +154,7 @@ export default function Requestaseminar({ data }) {
         </section>
       ) : null}
 
-      {Object.keys(data.requestaseminarpagedata.faq).length !== 0 ? (
+      {data.requestaseminarpagedata.isfaq ? (
         <section className={styles.main__faq}>
           <div className={styles.main__faq__container}>
             <Faq
@@ -114,7 +167,7 @@ export default function Requestaseminar({ data }) {
         </section>
       ) : null}
 
-      {data.requestaseminarpagedata.landingmultilink.length !== 0 ? (
+      {data.requestaseminarpagedata.islandingmultilink ? (
         <section className={styles.main__landingmultilink}>
           <div className={styles.main__landingmultilink__container}>
             <LandingMultiLink
@@ -132,7 +185,7 @@ export default function Requestaseminar({ data }) {
         </section>
       ) : null}
 
-      {data.requestaseminarpagedata.landingmultilink !== 0 ? (
+      {data.requestaseminarpagedata.islandingmultilink ? (
         <FixLinks fixlinkdata={data.requestaseminarpagedata.landingmultilink} />
       ) : null}
     </MainLayout>
