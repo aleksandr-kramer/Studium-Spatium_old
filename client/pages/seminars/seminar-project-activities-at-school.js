@@ -11,7 +11,9 @@ import Faq from "../../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
-
+import OrderComponent from "../../components/OrderComponent/OrderComponent";
+import OrderChildrenParagraph from "../../components/OrderChildrenParagraph/OrderChildrenParagraph";
+import DescriptionOfPoints from "../../components/DescriptionOfPoints/DescriptionOfPoints";
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
@@ -119,13 +121,45 @@ export default function Seminarprojectactivitiesatschool({ data }) {
       {/* Конец */}
 
       {/* ------------ блоки для конкретной страницы (начало) ------------ */}
+      <section className={styles.main__ordercomponent}>
+        <div className={styles.main__ordercomponent__container}>
+          <OrderComponent
+            orderblankinfodata={data.seminardata.listseminars[2].order}
+            orderblankbuttondata={data.seminardata.listseminars[2].orderlink}
+            fees={data.optiondata.fees}
+            price={data.seminardata.listseminars[2].price}
+            currency={data.optiondata.currency}
+            currencyrate={data.optiondata.currencyrate}
+            priceperiod={data.seminardata.listseminars[2].priceperiod}
+          >
+            <OrderChildrenParagraph
+              orderchildrenparagraphdata={
+                data.seminardata.listseminars[2].generalaboutmodule
+              }
+            />
+          </OrderComponent>
+        </div>
+      </section>
+      <section className={styles.main__descriptionofpoints}>
+        <div className={styles.main__descriptionofpoints__patternbigtop}></div>
+        <div
+          className={styles.main__descriptionofpoints__patternsmallbottom}
+        ></div>
+        <div className={styles.main__descriptionofpoints__container}>
+          <DescriptionOfPoints
+            Name={data.seminardata.listseminars[2].namemodule}
+            descriptionofpointsdata={
+              data.seminardata.listseminars[2].listoftopics
+            }
+          />
+        </div>
+      </section>
 
       {/* ------------ блоки для конкретной страницы (конец) ------------ */}
 
       {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
 
-      {data.seminarprojectactivitiesatschoolpagedata.landingmonolink.length !==
-      0 ? (
+      {data.seminarprojectactivitiesatschoolpagedata.islandingmonolink ? (
         <section className={styles.main__landingmonolink}>
           <div className={styles.main__landingmonolink__container}>
             <LandingMonoLink
@@ -138,8 +172,7 @@ export default function Seminarprojectactivitiesatschool({ data }) {
         </section>
       ) : null}
 
-      {Object.keys(data.seminarprojectactivitiesatschoolpagedata.faq).length !==
-      0 ? (
+      {data.seminarprojectactivitiesatschoolpagedata.isfaq ? (
         <section className={styles.main__faq}>
           <div className={styles.main__faq__container}>
             <Faq
@@ -154,8 +187,7 @@ export default function Seminarprojectactivitiesatschool({ data }) {
         </section>
       ) : null}
 
-      {data.seminarprojectactivitiesatschoolpagedata.landingmultilink.length !==
-      0 ? (
+      {data.seminarprojectactivitiesatschoolpagedata.islandingmultilink ? (
         <section className={styles.main__landingmultilink}>
           <div className={styles.main__landingmultilink__container}>
             <LandingMultiLink
@@ -173,7 +205,7 @@ export default function Seminarprojectactivitiesatschool({ data }) {
         </section>
       ) : null}
 
-      {data.seminarprojectactivitiesatschoolpagedata.landingmultilink !== 0 ? (
+      {data.seminarprojectactivitiesatschoolpagedata.islandingmultilink ? (
         <FixLinks
           fixlinkdata={
             data.seminarprojectactivitiesatschoolpagedata.landingmultilink

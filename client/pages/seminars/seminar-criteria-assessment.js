@@ -11,7 +11,9 @@ import Faq from "../../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
-
+import OrderComponent from "../../components/OrderComponent/OrderComponent";
+import OrderChildrenParagraph from "../../components/OrderChildrenParagraph/OrderChildrenParagraph";
+import DescriptionOfPoints from "../../components/DescriptionOfPoints/DescriptionOfPoints";
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
@@ -107,12 +109,45 @@ export default function Seminarcriteriaassessment({ data }) {
       {/* Конец */}
 
       {/* ------------ блоки для конкретной страницы (начало) ------------ */}
+      <section className={styles.main__ordercomponent}>
+        <div className={styles.main__ordercomponent__container}>
+          <OrderComponent
+            orderblankinfodata={data.seminardata.listseminars[4].order}
+            orderblankbuttondata={data.seminardata.listseminars[4].orderlink}
+            fees={data.optiondata.fees}
+            price={data.seminardata.listseminars[4].price}
+            currency={data.optiondata.currency}
+            currencyrate={data.optiondata.currencyrate}
+            priceperiod={data.seminardata.listseminars[4].priceperiod}
+          >
+            <OrderChildrenParagraph
+              orderchildrenparagraphdata={
+                data.seminardata.listseminars[4].generalaboutmodule
+              }
+            />
+          </OrderComponent>
+        </div>
+      </section>
+      <section className={styles.main__descriptionofpoints}>
+        <div className={styles.main__descriptionofpoints__patternbigtop}></div>
+        <div
+          className={styles.main__descriptionofpoints__patternsmallbottom}
+        ></div>
+        <div className={styles.main__descriptionofpoints__container}>
+          <DescriptionOfPoints
+            Name={data.seminardata.listseminars[4].namemodule}
+            descriptionofpointsdata={
+              data.seminardata.listseminars[4].listoftopics
+            }
+          />
+        </div>
+      </section>
 
       {/* ------------ блоки для конкретной страницы (конец) ------------ */}
 
       {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
 
-      {data.seminarcriteriaassessmentpagedata.landingmonolink.length !== 0 ? (
+      {data.seminarcriteriaassessmentpagedata.islandingmonolink ? (
         <section className={styles.main__landingmonolink}>
           <div className={styles.main__landingmonolink__container}>
             <LandingMonoLink
@@ -125,7 +160,7 @@ export default function Seminarcriteriaassessment({ data }) {
         </section>
       ) : null}
 
-      {Object.keys(data.seminarcriteriaassessmentpagedata.faq).length !== 0 ? (
+      {data.seminarcriteriaassessmentpagedata.isfaq ? (
         <section className={styles.main__faq}>
           <div className={styles.main__faq__container}>
             <Faq
@@ -140,7 +175,7 @@ export default function Seminarcriteriaassessment({ data }) {
         </section>
       ) : null}
 
-      {data.seminarcriteriaassessmentpagedata.landingmultilink.length !== 0 ? (
+      {data.seminarcriteriaassessmentpagedata.islandingmultilink ? (
         <section className={styles.main__landingmultilink}>
           <div className={styles.main__landingmultilink__container}>
             <LandingMultiLink
@@ -158,7 +193,7 @@ export default function Seminarcriteriaassessment({ data }) {
         </section>
       ) : null}
 
-      {data.seminarcriteriaassessmentpagedata.landingmultilink !== 0 ? (
+      {data.seminarcriteriaassessmentpagedata.islandingmultilink ? (
         <FixLinks
           fixlinkdata={data.seminarcriteriaassessmentpagedata.landingmultilink}
         />
