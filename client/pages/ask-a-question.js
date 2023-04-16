@@ -11,7 +11,8 @@ import Faq from "../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
-
+import FeedbackComponent from "../../components/feedback/FeedbackComponent";
+import FormChildrenRequestPresentation from "../../components/FormChildrenRequestPresentation/FormChildrenRequestPresentation";
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
@@ -84,6 +85,48 @@ export default function Askaquestion({ data }) {
       {/* Конец */}
 
       {/* ------------ блоки для конкретной страницы (начало) ------------ */}
+
+      <section className={styles.main__contact}>
+        <div className={styles.main__contact__container}>
+          <FeedbackComponent
+            title={selectTranslate().Contact.Title}
+            feedbackcomponenttextdata={selectTranslate().Contact.Text}
+            feedbackcomponentabouticondata={
+              selectTranslate().Contact.AboutIconsPoint
+            }
+            test={selectTranslate().Contact.Form.Input[0].Tag}
+          >
+            <FormChildrenRequestPresentation
+              inputformchildrenrequestpresentationdata={
+                selectTranslate().Contact.Form.Input
+              }
+              textareatrue={
+                selectTranslate().Contact.Form.TextArea.TextAreaTrue
+              }
+              textareaplaceholder={
+                selectTranslate().Contact.Form.TextArea.Placeholder
+              }
+              buttonattachfiletrue={
+                selectTranslate().Contact.Form.ButtonAttachFile
+                  .ButtonAttachFileTrue
+              }
+              buttonattachfiletype={
+                selectTranslate().Contact.Form.ButtonAttachFile.Type
+              }
+              buttonattachfiletext={
+                selectTranslate().Contact.Form.ButtonAttachFile.ButtonText
+              }
+              buttonattachfilename={
+                selectTranslate().Contact.Form.ButtonAttachFile.FileNameText
+              }
+              buttonsendtype={selectTranslate().Contact.Form.ButtonSend.Type}
+              buttonsendtext={
+                selectTranslate().Contact.Form.ButtonSend.ButtonText
+              }
+            />
+          </FeedbackComponent>
+        </div>
+      </section>
 
       {/* ------------ блоки для конкретной страницы (конец) ------------ */}
 
