@@ -11,12 +11,17 @@ import Faq from "../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
-
+import H2Component from "../components/H2Component/H2Component";
+import DescriptionOfNodes from "../components/DescriptionOfNodes/DescriptionOfNodes";
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
 // ------------------------------------------
-import { landingmonolinkbgcolorsmoky } from "../constants/stylesconstants";
+import {
+  h2componentbordertrue,
+  h2componentbgthemewhite,
+  landingmonolinkbgcolorsmoky,
+} from "../constants/stylesconstants";
 // ------------------------------------------
 
 export default function Services({ data }) {
@@ -85,11 +90,42 @@ export default function Services({ data }) {
 
       {/* ------------ блоки для конкретной страницы (начало) ------------ */}
 
+      <section className={styles.main__h2component}>
+        <div className={styles.main__h2component__container}>
+          <H2Component
+            H2Title={data.servicedata.pageofservices.descriptionservice.title}
+            H2ComponentSubtitle={
+              data.servicedata.pageofservices.descriptionservice.text
+            }
+            H2ComponentUIBorder={h2componentbordertrue}
+            H2ComponentUITheme={h2componentbgthemewhite}
+          />
+        </div>
+      </section>
+      <section className={styles.main__descriptionofnodes}>
+        <div className={styles.main__descriptionofnodes__patternbigtop}></div>
+        <div
+          className={styles.main__descriptionofnodes__patternsmallbottom}
+        ></div>
+
+        <div className={styles.main__descriptionofnodes__container}>
+          <DescriptionOfNodes
+            descriptionofnodestitle={
+              data.servicedata.pageofservices.descriptionservice.modulestitle
+            }
+            linktextstate={"greenishtransporent"}
+            descriptionofnodesdata={
+              data.servicedata.pageofservices.modulesservice
+            }
+          />
+        </div>
+      </section>
+
       {/* ------------ блоки для конкретной страницы (конец) ------------ */}
 
       {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
 
-      {data.servicespagedata.landingmonolink.length !== 0 ? (
+      {data.servicespagedata.islandingmonolink ? (
         <section className={styles.main__landingmonolink}>
           <div className={styles.main__landingmonolink__container}>
             <LandingMonoLink
@@ -100,7 +136,7 @@ export default function Services({ data }) {
         </section>
       ) : null}
 
-      {Object.keys(data.servicespagedata.faq).length !== 0 ? (
+      {data.servicespagedata.isfaq ? (
         <section className={styles.main__faq}>
           <div className={styles.main__faq__container}>
             <Faq
@@ -113,7 +149,7 @@ export default function Services({ data }) {
         </section>
       ) : null}
 
-      {data.servicespagedata.landingmultilink.length !== 0 ? (
+      {data.servicespagedata.islandingmultilink ? (
         <section className={styles.main__landingmultilink}>
           <div className={styles.main__landingmultilink__container}>
             <LandingMultiLink
@@ -129,7 +165,7 @@ export default function Services({ data }) {
         </section>
       ) : null}
 
-      {data.servicespagedata.landingmultilink !== 0 ? (
+      {data.servicespagedata.islandingmultilink ? (
         <FixLinks fixlinkdata={data.servicespagedata.landingmultilink} />
       ) : null}
     </MainLayout>
