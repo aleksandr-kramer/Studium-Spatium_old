@@ -11,8 +11,8 @@ import Faq from "../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
-import FeedbackComponent from "../../components/feedback/FeedbackComponent";
-import FormChildrenRequestPresentation from "../../components/FormChildrenRequestPresentation/FormChildrenRequestPresentation";
+import FeedbackComponent from "../components/feedback/FeedbackComponent";
+import FormChildrenRequestPresentation from "../components/FormChildrenRequestPresentation/FormChildrenRequestPresentation";
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
@@ -89,39 +89,40 @@ export default function Askaquestion({ data }) {
       <section className={styles.main__contact}>
         <div className={styles.main__contact__container}>
           <FeedbackComponent
-            title={selectTranslate().Contact.Title}
-            feedbackcomponenttextdata={selectTranslate().Contact.Text}
+            title={data.servicedata.request[0].title}
+            feedbackcomponenttextdata={data.servicedata.request[0].text}
             feedbackcomponentabouticondata={
-              selectTranslate().Contact.AboutIconsPoint
+              data.servicedata.request[0].abouticonspoint
             }
-            test={selectTranslate().Contact.Form.Input[0].Tag}
           >
             <FormChildrenRequestPresentation
               inputformchildrenrequestpresentationdata={
-                selectTranslate().Contact.Form.Input
+                data.servicedata.request[0].form.input
               }
               textareatrue={
-                selectTranslate().Contact.Form.TextArea.TextAreaTrue
+                data.servicedata.request[0].form.textarea.istextarea
               }
               textareaplaceholder={
-                selectTranslate().Contact.Form.TextArea.Placeholder
+                data.servicedata.request[0].form.textarea.placeholder
               }
               buttonattachfiletrue={
-                selectTranslate().Contact.Form.ButtonAttachFile
-                  .ButtonAttachFileTrue
+                data.servicedata.request[0].form.buttonattachfile
+                  .isbuttonattachfile
               }
               buttonattachfiletype={
-                selectTranslate().Contact.Form.ButtonAttachFile.Type
+                data.servicedata.request[0].form.buttonattachfile.fieldtype
               }
               buttonattachfiletext={
-                selectTranslate().Contact.Form.ButtonAttachFile.ButtonText
+                data.servicedata.request[0].form.buttonattachfile.buttontext
               }
               buttonattachfilename={
-                selectTranslate().Contact.Form.ButtonAttachFile.FileNameText
+                data.servicedata.request[0].form.buttonattachfile.filenametext
               }
-              buttonsendtype={selectTranslate().Contact.Form.ButtonSend.Type}
+              buttonsendtype={
+                data.servicedata.request[0].form.buttonsend.fieldtype
+              }
               buttonsendtext={
-                selectTranslate().Contact.Form.ButtonSend.ButtonText
+                data.servicedata.request[0].form.buttonsend.buttontext
               }
             />
           </FeedbackComponent>
@@ -132,7 +133,7 @@ export default function Askaquestion({ data }) {
 
       {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
 
-      {data.askaquestionpagedata.landingmonolink.length !== 0 ? (
+      {data.askaquestionpagedata.islandingmonolink ? (
         <section className={styles.main__landingmonolink}>
           <div className={styles.main__landingmonolink__container}>
             <LandingMonoLink
@@ -143,7 +144,7 @@ export default function Askaquestion({ data }) {
         </section>
       ) : null}
 
-      {Object.keys(data.askaquestionpagedata.faq).length !== 0 ? (
+      {data.askaquestionpagedata.isfaq ? (
         <section className={styles.main__faq}>
           <div className={styles.main__faq__container}>
             <Faq
@@ -156,7 +157,7 @@ export default function Askaquestion({ data }) {
         </section>
       ) : null}
 
-      {data.askaquestionpagedata.landingmultilink.length !== 0 ? (
+      {data.askaquestionpagedata.islandingmultilink ? (
         <section className={styles.main__landingmultilink}>
           <div className={styles.main__landingmultilink__container}>
             <LandingMultiLink
@@ -172,7 +173,7 @@ export default function Askaquestion({ data }) {
         </section>
       ) : null}
 
-      {data.askaquestionpagedata.landingmultilink !== 0 ? (
+      {data.askaquestionpagedata.islandingmultilink ? (
         <FixLinks fixlinkdata={data.askaquestionpagedata.landingmultilink} />
       ) : null}
     </MainLayout>

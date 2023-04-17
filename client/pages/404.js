@@ -11,7 +11,7 @@ import Faq from "../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
-
+import Page404 from "../components/Page404/Page404";
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
@@ -83,11 +83,22 @@ export default function Error({ data }) {
 
       {/* ------------ блоки для конкретной страницы (начало) ------------ */}
 
+      <section className={styles.main__pagenotfound}>
+        <div className={styles.main__pagenotfound__container}>
+          <Page404
+            ImageName={data.servicedata.servisepage[0].imagename}
+            H2Title={data.servicedata.servisepage[0].h2title}
+            H1Title={data.servicedata.servisepage[0].h1title}
+            page404textdata={data.servicedata.servisepage[0].text}
+          />
+        </div>
+      </section>
+
       {/* ------------ блоки для конкретной страницы (конец) ------------ */}
 
       {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
 
-      {data.errorpagedata.landingmonolink.length !== 0 ? (
+      {data.errorpagedata.islandingmonolink ? (
         <section className={styles.main__landingmonolink}>
           <div className={styles.main__landingmonolink__container}>
             <LandingMonoLink
@@ -98,7 +109,7 @@ export default function Error({ data }) {
         </section>
       ) : null}
 
-      {Object.keys(data.errorpagedata.faq).length !== 0 ? (
+      {data.errorpagedata.isfaq ? (
         <section className={styles.main__faq}>
           <div className={styles.main__faq__container}>
             <Faq
@@ -111,7 +122,7 @@ export default function Error({ data }) {
         </section>
       ) : null}
 
-      {data.errorpagedata.landingmultilink.length !== 0 ? (
+      {data.errorpagedata.islandingmultilink ? (
         <section className={styles.main__landingmultilink}>
           <div className={styles.main__landingmultilink__container}>
             <LandingMultiLink
@@ -127,7 +138,7 @@ export default function Error({ data }) {
         </section>
       ) : null}
 
-      {data.errorpagedata.landingmultilink !== 0 ? (
+      {data.errorpagedata.islandingmultilink ? (
         <FixLinks fixlinkdata={data.errorpagedata.landingmultilink} />
       ) : null}
     </MainLayout>

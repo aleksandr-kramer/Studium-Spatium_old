@@ -11,6 +11,7 @@ const { Footer_en, Footer_es, Footer_ru } = require("../models/Footer");
 const Page_en = require("../models/Page_en");
 const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
+const { Service_en, Service_es, Service_ru } = require("../models/Service");
 
 const getPageAuthportfolioEn = async (req, res) => {
   try {
@@ -27,12 +28,16 @@ const getPageAuthportfolioEn = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const servicedata = await Service_en.findOne({
+      _id: "643c392a51fc13be92817344",
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       authportfoliopagedata,
+      servicedata,
     });
   } catch (error) {
     console.log(error);
@@ -54,12 +59,16 @@ const getPageAuthportfolioEs = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const servicedata = await Service_es.findOne({
+      _id: "643c392a51fc13be92817344",
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       authportfoliopagedata,
+      servicedata,
     });
   } catch (error) {
     console.log(error);
@@ -81,12 +90,16 @@ const getPageAuthportfolioRu = async (req, res) => {
     })
       .populate("landingmonolink")
       .populate("landingmultilink");
+    const servicedata = await Service_ru.findOne({
+      _id: "643c392a51fc13be92817344",
+    });
     res.json({
       logodata,
       socialnetworkdata,
       navigationdata,
       footerdata,
       authportfoliopagedata,
+      servicedata,
     });
   } catch (error) {
     console.log(error);

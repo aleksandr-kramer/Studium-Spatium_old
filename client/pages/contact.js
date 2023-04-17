@@ -11,7 +11,9 @@ import Faq from "../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
-
+import FeedbackComponent from "../components/feedback/FeedbackComponent";
+import FormChildrenRequestPresentation from "../components/FormChildrenRequestPresentation/FormChildrenRequestPresentation";
+import ContactEmail from "../components/ContactEmail/ContactEmail";
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
@@ -85,11 +87,62 @@ export default function Contact({ data }) {
 
       {/* ------------ блоки для конкретной страницы (начало) ------------ */}
 
+      <section className={styles.main__contact}>
+        <div className={styles.main__contact__container}>
+          <FeedbackComponent
+            title={data.servicedata.request[4].title}
+            feedbackcomponenttextdata={data.servicedata.request[4].text}
+            feedbackcomponentabouticondata={
+              data.servicedata.request[4].abouticonspoint
+            }
+          >
+            <FormChildrenRequestPresentation
+              inputformchildrenrequestpresentationdata={
+                data.servicedata.request[4].form.input
+              }
+              textareatrue={
+                data.servicedata.request[4].form.textarea.istextarea
+              }
+              textareaplaceholder={
+                data.servicedata.request[4].form.textarea.placeholder
+              }
+              buttonattachfiletrue={
+                data.servicedata.request[4].form.buttonattachfile
+                  .isbuttonattachfile
+              }
+              buttonattachfiletype={
+                data.servicedata.request[4].form.buttonattachfile.fieldtype
+              }
+              buttonattachfiletext={
+                data.servicedata.request[4].form.buttonattachfile.buttontext
+              }
+              buttonattachfilename={
+                data.servicedata.request[4].form.buttonattachfile.filenametext
+              }
+              buttonsendtype={
+                data.servicedata.request[4].form.buttonsend.fieldtype
+              }
+              buttonsendtext={
+                data.servicedata.request[4].form.buttonsend.buttontext
+              }
+            />
+          </FeedbackComponent>
+        </div>
+      </section>
+      <section className={styles.main__email}>
+        <div className={styles.main__email__container}>
+          <ContactEmail
+            Title={data.servicedata.contacts.contactstitle}
+            contactemaildata={data.servicedata.contacts.emailcontact}
+          />
+        </div>
+      </section>
+
       {/* ------------ блоки для конкретной страницы (конец) ------------ */}
 
       {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
 
-      {data.contactpagedata.landingmonolink.length !== 0 ? (
+      {data.contactpagedata.islandingmonolink ? (
         <section className={styles.main__landingmonolink}>
           <div className={styles.main__landingmonolink__container}>
             <LandingMonoLink
@@ -100,7 +153,7 @@ export default function Contact({ data }) {
         </section>
       ) : null}
 
-      {Object.keys(data.contactpagedata.faq).length !== 0 ? (
+      {data.contactpagedata.isfaq ? (
         <section className={styles.main__faq}>
           <div className={styles.main__faq__container}>
             <Faq
@@ -113,7 +166,7 @@ export default function Contact({ data }) {
         </section>
       ) : null}
 
-      {data.contactpagedata.landingmultilink.length !== 0 ? (
+      {data.contactpagedata.islandingmultilink ? (
         <section className={styles.main__landingmultilink}>
           <div className={styles.main__landingmultilink__container}>
             <LandingMultiLink
@@ -129,7 +182,7 @@ export default function Contact({ data }) {
         </section>
       ) : null}
 
-      {data.contactpagedata.landingmultilink !== 0 ? (
+      {data.contactpagedata.islandingmultilink ? (
         <FixLinks fixlinkdata={data.contactpagedata.landingmultilink} />
       ) : null}
     </MainLayout>

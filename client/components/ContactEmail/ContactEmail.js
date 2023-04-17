@@ -1,11 +1,11 @@
 import styles from "./ContactEmail.module.scss";
 
 export default function ContactEmail({ Title, contactemaildata }) {
-  const contactemailitems = contactemaildata.map(({ id, Text, Email }) => (
+  const contactemailitems = contactemaildata.map(({ id, text, email }) => (
     <li key={id} className={styles.ContactEmail__item}>
-      <p className={styles.ContactEmail__itemtitle}>{Text}</p>
-      <a className={styles.ContactEmail__itememail} href={`mailto: ${Email}`}>
-        {Email}
+      <p className={styles.ContactEmail__itemtitle}>{text}</p>
+      <a className={styles.ContactEmail__itememail} href={`mailto: ${email}`}>
+        {email}
       </a>
     </li>
   ));

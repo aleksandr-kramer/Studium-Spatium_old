@@ -1,7 +1,8 @@
 // Стандартные для всех страниц импорты. Меняем при необходимости путь до файла
 // ------------------------------------------
 import MainLayout from "../components/MainLayout/MainLayout";
-import styles from "../styles/pages/Authorization.module.scss";
+import styles from "../styles/pages/Contact.module.scss";
+// import styles from "../styles/pages/Authorization.module.scss";
 import FirstScreenImage from "../components/FirstScreenImage/FirstScreenImage";
 import FirstScreenVideo from "../components/FirstScreenVideo/FirstScreenVideo";
 import FixLinks from "../components/FixLinks/FixLinks";
@@ -11,7 +12,8 @@ import Faq from "../components/Faq/Faq";
 // ------------------------------------------
 // Импорты для конкретных страниц
 // ------------------------------------------
-
+import FeedbackComponent from "../components/feedback/FeedbackComponent";
+import FormChildrenRequestPresentation from "../components/FormChildrenRequestPresentation/FormChildrenRequestPresentation";
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
@@ -85,11 +87,54 @@ export default function Authportfolio({ data }) {
 
       {/* ------------ блоки для конкретной страницы (начало) ------------ */}
 
+      <section className={styles.main__contact}>
+        <div className={styles.main__contact__container}>
+          <FeedbackComponent
+            title={data.servicedata.request[1].title}
+            feedbackcomponenttextdata={data.servicedata.request[1].text}
+            feedbackcomponentabouticondata={
+              data.servicedata.request[1].abouticonspoint
+            }
+          >
+            <FormChildrenRequestPresentation
+              inputformchildrenrequestpresentationdata={
+                data.servicedata.request[1].form.input
+              }
+              textareatrue={
+                data.servicedata.request[1].form.textarea.istextarea
+              }
+              textareaplaceholder={
+                data.servicedata.request[1].form.textarea.placeholder
+              }
+              buttonattachfiletrue={
+                data.servicedata.request[1].form.buttonattachfile
+                  .isbuttonattachfile
+              }
+              buttonattachfiletype={
+                data.servicedata.request[1].form.buttonattachfile.fieldtype
+              }
+              buttonattachfiletext={
+                data.servicedata.request[1].form.buttonattachfile.buttontext
+              }
+              buttonattachfilename={
+                data.servicedata.request[1].form.buttonattachfile.filenametext
+              }
+              buttonsendtype={
+                data.servicedata.request[1].form.buttonsend.fieldtype
+              }
+              buttonsendtext={
+                data.servicedata.request[1].form.buttonsend.buttontext
+              }
+            />
+          </FeedbackComponent>
+        </div>
+      </section>
+
       {/* ------------ блоки для конкретной страницы (конец) ------------ */}
 
       {/* ------------ Обязательные блоки-шаблоны для страниц (начало) ------------ */}
 
-      {data.authportfoliopagedata.landingmonolink.length !== 0 ? (
+      {data.authportfoliopagedata.islandingmonolink ? (
         <section className={styles.main__landingmonolink}>
           <div className={styles.main__landingmonolink__container}>
             <LandingMonoLink
@@ -100,7 +145,7 @@ export default function Authportfolio({ data }) {
         </section>
       ) : null}
 
-      {Object.keys(data.authportfoliopagedata.faq).length !== 0 ? (
+      {data.authportfoliopagedata.isfaq ? (
         <section className={styles.main__faq}>
           <div className={styles.main__faq__container}>
             <Faq
@@ -113,7 +158,7 @@ export default function Authportfolio({ data }) {
         </section>
       ) : null}
 
-      {data.authportfoliopagedata.landingmultilink.length !== 0 ? (
+      {data.authportfoliopagedata.islandingmultilink ? (
         <section className={styles.main__landingmultilink}>
           <div className={styles.main__landingmultilink__container}>
             <LandingMultiLink
@@ -129,7 +174,7 @@ export default function Authportfolio({ data }) {
         </section>
       ) : null}
 
-      {data.authportfoliopagedata.landingmultilink !== 0 ? (
+      {data.authportfoliopagedata.islandingmultilink ? (
         <FixLinks fixlinkdata={data.authportfoliopagedata.landingmultilink} />
       ) : null}
     </MainLayout>

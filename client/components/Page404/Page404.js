@@ -7,9 +7,9 @@ export default function Page404({
   H1Title,
   page404textdata,
 }) {
-  const page404textitems = page404textdata.map(({ id, Paragraph }) => (
+  const page404textitems = page404textdata.map(({ id, paragraph }) => (
     <p key={id} className={styles.Page404__paragraph}>
-      {Paragraph}
+      {paragraph}
     </p>
   ));
   return (
