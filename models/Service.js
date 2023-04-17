@@ -2,6 +2,34 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const serviceSchema = new Schema({
+  pageofservices: {
+    descriptionservice: {
+      modulestitle: String,
+      title: String,
+      text: [
+        {
+          id: Number,
+          paragraph: String,
+        },
+      ],
+    },
+    modulesservice: [
+      {
+        id: String,
+        namemodule: String,
+        textlink: String,
+        urllink: String,
+        generalaboutmodule: [
+          {
+            id: Number,
+            nodetitle: String,
+            nodetext: String,
+          },
+        ],
+      },
+    ],
+  },
+
   servisepage: [
     {
       id: String,
