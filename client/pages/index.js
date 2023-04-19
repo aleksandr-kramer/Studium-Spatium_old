@@ -132,7 +132,7 @@ export default function Index({ data }) {
         <div className={styles.main__thematicpointlist__container}>
           <ThematicPointList
             PointListTitle={
-              data.portfoliodata.portfoliocomponents.portfoliocomponentstitie
+              data.portfoliodata.portfoliocomponents.portfoliocomponentstitle
             }
             ThematicPointlistItems={
               data.portfoliodata.portfoliocomponents.portfoliolist
