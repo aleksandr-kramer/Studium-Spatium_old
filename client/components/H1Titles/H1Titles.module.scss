@@ -3,23 +3,21 @@
 
 .H1Titles {
   color: $font-color-base;
-  width: 640px;
+  max-width: 715px;
   text-align: left;
+  overflow-wrap: break-word;
+
   @include d1440px {
-    width: unset;
     max-width: 508px;
   }
   @include p1150px {
-    width: unset;
     max-width: 380px;
   }
   @include p920px {
-    width: unset;
     max-width: 540px;
     text-align: center;
   }
   @include m680px {
-    width: unset;
     max-width: 320px;
     text-align: center;
   }
