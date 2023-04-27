@@ -31,12 +31,13 @@ export default function Askaquestion({ data }) {
   const sendQuestion = async () => {
     try {
       await axios
-        .post("http://localhost:5000/api/askaquestion", {
+        .post(process.env.NEXT_PUBLIC_AXIOS_URL_SENDQUESTION, {
           yourname,
           email,
           questiontext,
         })
         .then(() => router.push("/thanks"));
+
       console.log({
         yourname,
         email,
