@@ -13,6 +13,16 @@ const Page_es = require("../models/Page_es");
 const Page_ru = require("../models/Page_ru");
 const { Service_en, Service_es, Service_ru } = require("../models/Service");
 
+const postPageAskaquestion = (req, res) => {
+  try {
+    const { yourname, email, questiontext } = req.body;
+    res.json({ yourname, email, questiontext });
+    console.log({ yourname, email, questiontext });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const getPageAskaquestionEn = async (req, res) => {
   try {
     const logodata = await Logo.findOne({ _id: "641859e21127a88a8a58f32d" });
@@ -110,4 +120,5 @@ module.exports = {
   getPageAskaquestionEn,
   getPageAskaquestionEs,
   getPageAskaquestionRu,
+  postPageAskaquestion,
 };

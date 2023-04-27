@@ -12,7 +12,9 @@ import Faq from "../components/Faq/Faq";
 // Импорты для конкретных страниц
 // ------------------------------------------
 import FeedbackComponent from "../components/feedback/FeedbackComponent";
-import FormChildrenRequestPresentation from "../components/FormChildrenRequestPresentation/FormChildrenRequestPresentation";
+import axios from "axios";
+import { useState } from "react";
+import { useRouter } from "next/router";
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
@@ -21,6 +23,30 @@ import { landingmonolinkbgcolorsmoky } from "../constants/stylesconstants";
 // ------------------------------------------
 
 export default function Askaquestion({ data }) {
+  const [yourname, setYourname] = useState("");
+  const [email, setEmail] = useState("");
+  const [questiontext, setQuestiontext] = useState("");
+  const router = useRouter();
+
+  const sendQuestion = async () => {
+    try {
+      await axios
+        .post("http://localhost:5000/api/askaquestion", {
+          yourname,
+          email,
+          questiontext,
+        })
+        .then(() => router.push("/thanks"));
+      console.log({
+        yourname,
+        email,
+        questiontext,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <MainLayout
       // ------------------------------------------
@@ -95,36 +121,48 @@ export default function Askaquestion({ data }) {
               data.servicedata.request[0].abouticonspoint
             }
           >
-            <FormChildrenRequestPresentation
-              inputformchildrenrequestpresentationdata={
-                data.servicedata.request[0].form.input
-              }
-              textareatrue={
-                data.servicedata.request[0].form.textarea.istextarea
-              }
-              textareaplaceholder={
-                data.servicedata.request[0].form.textarea.placeholder
-              }
-              buttonattachfiletrue={
-                data.servicedata.request[0].form.buttonattachfile
-                  .isbuttonattachfile
-              }
-              buttonattachfiletype={
-                data.servicedata.request[0].form.buttonattachfile.fieldtype
-              }
-              buttonattachfiletext={
-                data.servicedata.request[0].form.buttonattachfile.buttontext
-              }
-              buttonattachfilename={
-                data.servicedata.request[0].form.buttonattachfile.filenametext
-              }
-              buttonsendtype={
-                data.servicedata.request[0].form.buttonsend.fieldtype
-              }
-              buttonsendtext={
-                data.servicedata.request[0].form.buttonsend.buttontext
-              }
-            />
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              name="questionform"
+              className={styles.main__formrequest}
+            >
+              <input
+                onChange={(e) => setYourname(e.target.value)}
+                name="yourname"
+                type={data.servicedata.request[0].form.input[0].fieldtype}
+                placeholder={
+                  data.servicedata.request[0].form.input[0].placeholder
+                }
+                className={styles.main__formrequest__input}
+              />
+              <input
+                onChange={(e) => setEmail(e.target.value)}
+                name="email"
+                type={data.servicedata.request[0].form.input[1].fieldtype}
+                placeholder={
+                  data.servicedata.request[0].form.input[1].placeholder
+                }
+                className={styles.main__formrequest__input}
+              />
+
+              <textarea
+                onChange={(e) => setQuestiontext(e.target.value)}
+                name="questiontext"
+                placeholder={
+                  data.servicedata.request[0].form.textarea.placeholder
+                }
+                className={styles.main__formrequest__textarea}
+              />
+
+              <button
+                onClick={sendQuestion}
+                name="questionbutton"
+                type={data.servicedata.request[0].form.buttonsend.fieldtype}
+                className={styles.main__formrequest__sendbutton}
+              >
+                {data.servicedata.request[0].form.buttonsend.buttontext}
+              </button>
+            </form>
           </FeedbackComponent>
         </div>
       </section>

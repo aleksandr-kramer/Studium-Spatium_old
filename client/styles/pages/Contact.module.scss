@@ -15,6 +15,35 @@
   &__firstscreenimage__container {
     @include page-container;
   }
+
+  &__formrequest {
+    @include form-children-direction;
+  }
+
+  &__formrequest__input {
+    @include input-text;
+  }
+
+  &__formrequest__textarea {
+    @include textarea;
+  }
+
+  &__formrequest__attachfile {
+    @include block-attach-file;
+  }
+
+  &__formrequest__attachfilebutton {
+    @include button-attach-file;
+  }
+
+  &__formrequest__attachfilename {
+    @include text-attach-file-name;
+  }
+
+  &__formrequest__sendbutton {
+    @include form-send-button;
+  }
+
   &__contact {
     @include block-margin-bottom;
   }
