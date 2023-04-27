@@ -31,7 +31,7 @@ export default function Askaquestion({ data }) {
   const sendQuestion = async () => {
     try {
       await axios
-        .post("http://localhost:5000/api/askaquestion", {
+        .post("http://studiumspatium.com:5000/api/askaquestion", {
           yourname,
           email,
           questiontext,
