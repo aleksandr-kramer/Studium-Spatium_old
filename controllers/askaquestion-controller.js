@@ -1,3 +1,4 @@
+const mailer = require("../nodemailer");
 require("../models/LandingMonoLink");
 require("../models/LandingMultiLink");
 const Logo = require("../models/Logo");
@@ -18,6 +19,22 @@ const postPageAskaquestion = (req, res) => {
     const { yourname, email, questiontext } = req.body;
     res.json({ yourname, email, questiontext });
     console.log({ yourname, email, questiontext });
+    const message = {
+      to: "<info@studiumspatium.com>",
+      subject: "Вопрос с сайта StudiumSpatium",
+      html: `
+      <h2>Вопрос с сайта studiumspatium:</h2><hr>
+      <br>
+      <i>E-mail:</i><br>
+      ${req.body.email}<br>
+      <br>
+      <i>Имя:</i><br>
+      ${req.body.yourname}<br>
+      <br>
+      <i>Вопрос:</i><br>
+      ${req.body.questiontext}`,
+    };
+    mailer(message);
   } catch (error) {
     console.log(error);
   }
