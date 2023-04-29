@@ -20,6 +20,18 @@
     @include form-children-direction;
   }
 
+  &__formrequest__erroritems {
+    @include list-style-none;
+  }
+
+  &__formrequest__erroritem {
+    color: red;
+    padding-bottom: 8px;
+    &:last-of-type {
+      padding-bottom: 20px;
+    }
+  }
+
   &__formrequest__input {
     @include input-text;
   }

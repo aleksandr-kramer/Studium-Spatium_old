@@ -1,4 +1,5 @@
 const mailer = require("../nodemailer");
+const { validationResult } = require("express-validator");
 require("../models/LandingMonoLink");
 require("../models/LandingMultiLink");
 const Logo = require("../models/Logo");
@@ -16,9 +17,12 @@ const { Service_en, Service_es, Service_ru } = require("../models/Service");
 
 const postPageAskaquestion = (req, res) => {
   try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json(errors.array());
+    }
     const { yourname, email, questiontext } = req.body;
     res.json({ yourname, email, questiontext });
-    console.log({ yourname, email, questiontext });
     const message = {
       to: "<info@studiumspatium.com>",
       subject: "Вопрос с сайта StudiumSpatium",

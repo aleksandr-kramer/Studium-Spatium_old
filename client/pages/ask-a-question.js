@@ -26,25 +26,21 @@ export default function Askaquestion({ data }) {
   const [yourname, setYourname] = useState("");
   const [email, setEmail] = useState("");
   const [questiontext, setQuestiontext] = useState("");
+  const [backenderrors, setBackenderrors] = useState([]);
   const router = useRouter();
 
   const sendQuestion = async () => {
     try {
       await axios
-        .post(process.env.NEXT_PUBLIC_AXIOS_URL_SENDQUESTION, {
+        .post(`${process.env.NEXT_PUBLIC_AXIOS_URL}askaquestion`, {
           yourname,
           email,
           questiontext,
         })
         .then(() => router.push("/thanks"));
-
-      console.log({
-        yourname,
-        email,
-        questiontext,
-      });
     } catch (error) {
       console.log(error);
+      setBackenderrors(error.response.data);
     }
   };
 
@@ -127,6 +123,18 @@ export default function Askaquestion({ data }) {
               name="questionform"
               className={styles.main__formrequest}
             >
+              {backenderrors.length !== 0 ? (
+                <ul className={styles.main__formrequest__erroritems}>
+                  {backenderrors.map((e) => (
+                    <li
+                      className={styles.main__formrequest__erroritem}
+                      key={e.path}
+                    >
+                      {e.msg}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
               <input
                 onChange={(e) => setYourname(e.target.value)}
                 name="yourname"
@@ -136,6 +144,7 @@ export default function Askaquestion({ data }) {
                 }
                 className={styles.main__formrequest__input}
               />
+
               <input
                 onChange={(e) => setEmail(e.target.value)}
                 name="email"
