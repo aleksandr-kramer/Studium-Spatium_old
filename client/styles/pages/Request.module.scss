@@ -21,6 +21,52 @@
     @include page-container;
   }
 
+  &__formrequest {
+    @include form-children-direction;
+  }
+
+  &__formrequest__erroritems {
+    @include list-style-none;
+  }
+
+  &__formrequest__erroritem {
+    @include form-error-message;
+  }
+
+  &__formrequest__input {
+    @include input-text;
+  }
+
+  &__formrequest__textarea {
+    @include textarea;
+  }
+
+  &__formrequest__attachfile {
+    @include block-attach-file;
+  }
+
+  &__formrequest__attachfilebutton {
+    @include button-attach-file;
+  }
+
+  &__formrequest__attachfilename {
+    @include text-attach-file-name;
+  }
+
+  &__formrequest__sendbutton {
+    @include form-send-button;
+  }
+
+  &__formrequest__selectfile_hidden {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    line-height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+  }
+
   &__landingmonolink {
     @include block-margin-bottom;
   }

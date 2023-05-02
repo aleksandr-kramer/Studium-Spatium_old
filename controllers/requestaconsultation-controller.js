@@ -1,3 +1,5 @@
+const mailer = require("../nodemailer");
+const { validationResult } = require("express-validator");
 require("../models/LandingMonoLink");
 require("../models/LandingMultiLink");
 const Logo = require("../models/Logo");
@@ -16,6 +18,41 @@ const {
   Consultation_es,
   Consultation_ru,
 } = require("../models/Consultation");
+
+const postPageRequestaconsultation = (req, res) => {
+  try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json(errors.array());
+    }
+    const { yourname, email, phone, messagetext, data } = req.body;
+    console.log({ yourname, email, phone, messagetext, data });
+    res.json({ yourname, email, phone, messagetext, data });
+    const message = {
+      to: "<info@studiumspatium.com>",
+      subject: "Запрос консультации с сайта StudiumSpatium",
+      html: `
+      <h2>Запрос консультации с сайта studiumspatium:</h2><hr>
+      <br>
+      <i>E-mail:</i><br>
+      ${req.body.email}<br>
+      <br>
+      <i>Имя:</i><br>
+      ${req.body.yourname}<br>
+      <br>
+
+      <i>Телефон/Мессенджер</i><br>
+      ${req.body.phone}<br>
+      <br>
+
+      <i>Сообщение:</i><br>
+      ${req.body.messagetext}`,
+    };
+    mailer(message);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 const getPageRequestaconsultationEn = async (req, res) => {
   try {
@@ -114,4 +151,5 @@ module.exports = {
   getPageRequestaconsultationEn,
   getPageRequestaconsultationEs,
   getPageRequestaconsultationRu,
+  postPageRequestaconsultation,
 };

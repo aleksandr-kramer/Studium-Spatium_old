@@ -4,7 +4,7 @@ const askaquestionValidation = [
   body("yourname", "Your Name is not spelt correctly").isLength({ min: 2 }),
   body("email", "Wrong E-mail address").isEmail(),
   body(
-    "questiontext",
+    "messagetext",
     "The Message must be at least 10 characters long"
   ).isLength({ min: 10 }),
 ];

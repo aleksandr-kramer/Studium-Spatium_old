@@ -395,33 +395,33 @@
 
 @mixin form-send-button {
   border: none;
-    width: fit-content;
-    padding: 15px 30px;
-    background-color: $bg-color-greenish;
-    @include text-style-without-width;
-    font-weight: 700;
-    color: $font-color-white;
-    @include d1440px {
-      padding: 14px 28px;
-    }
-    @include p1150px {
-      padding: 13px 26px;
-    }
-    @include p920px {
-      padding: 12px 23px;
-    }
-    @include m680px {
-      padding: 10px 20px;
-    }
+  width: fit-content;
+  padding: 15px 30px;
+  background-color: $bg-color-greenish;
+  @include text-style-without-width;
+  font-weight: 700;
+  color: $font-color-white;
+  @include d1440px {
+    padding: 14px 28px;
+  }
+  @include p1150px {
+    padding: 13px 26px;
+  }
+  @include p920px {
+    padding: 12px 23px;
+  }
+  @include m680px {
+    padding: 10px 20px;
+  }
 
-    &:hover {
-      box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.18);
-      cursor: pointer;
-    }
-    &:focus {
-      outline: none;
-      box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.18);
-    }
+  &:hover {
+    box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.18);
+    cursor: pointer;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.18);
+  }
 }
 
 @mixin block-attach-file {
@@ -481,6 +481,11 @@
 @mixin text-attach-file-name {
   color: rgba(38, 50, 56, 0.6);
   @include text-style-without-width;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 28ch;
 }
 
 @mixin d1440px {
@@ -504,5 +509,13 @@
 @mixin m680px {
   @media screen and (max-width: 680px) {
     @content;
+  }
+}
+
+@mixin form-error-message {
+  color: red;
+  padding-bottom: 8px;
+  &:last-of-type {
+    padding-bottom: 20px;
   }
 }

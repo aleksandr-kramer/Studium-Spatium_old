@@ -25,17 +25,17 @@ import { landingmonolinkbgcolorsmoky } from "../constants/stylesconstants";
 export default function Askaquestion({ data }) {
   const [yourname, setYourname] = useState("");
   const [email, setEmail] = useState("");
-  const [questiontext, setQuestiontext] = useState("");
+  const [messagetext, setMessagetext] = useState("");
   const [backenderrors, setBackenderrors] = useState([]);
   const router = useRouter();
 
-  const sendQuestion = async () => {
+  const sendRequest = async () => {
     try {
       await axios
         .post(`${process.env.NEXT_PUBLIC_AXIOS_URL}askaquestion`, {
           yourname,
           email,
-          questiontext,
+          messagetext,
         })
         .then(() => router.push("/thanks"));
     } catch (error) {
@@ -120,7 +120,7 @@ export default function Askaquestion({ data }) {
           >
             <form
               onSubmit={(e) => e.preventDefault()}
-              name="questionform"
+              name="requestform"
               className={styles.main__formrequest}
             >
               {backenderrors.length !== 0 ? (
@@ -156,8 +156,8 @@ export default function Askaquestion({ data }) {
               />
 
               <textarea
-                onChange={(e) => setQuestiontext(e.target.value)}
-                name="questiontext"
+                onChange={(e) => setMessagetext(e.target.value)}
+                name="messagetext"
                 placeholder={
                   data.servicedata.request[0].form.textarea.placeholder
                 }
@@ -165,8 +165,8 @@ export default function Askaquestion({ data }) {
               />
 
               <button
-                onClick={sendQuestion}
-                name="questionbutton"
+                onClick={sendRequest}
+                name="requestbutton"
                 type={data.servicedata.request[0].form.buttonsend.fieldtype}
                 className={styles.main__formrequest__sendbutton}
               >

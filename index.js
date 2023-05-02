@@ -3,9 +3,11 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 mongoose.set("strictQuery", false);
 const app = express();
+const path = require("path");
 
 app.use(cors());
 app.use(express.json({ extended: true }));
+app.use("/uploadwork", express.static(path.join(__dirname, "uploadwork")));
 
 const MONGO_URI =
   process.env.MONGO_URI || "mongodb://0.0.0.0:27017/studiumspatium";

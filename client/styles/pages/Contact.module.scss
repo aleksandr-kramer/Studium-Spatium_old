@@ -25,11 +25,7 @@
   }
 
   &__formrequest__erroritem {
-    color: red;
-    padding-bottom: 8px;
-    &:last-of-type {
-      padding-bottom: 20px;
-    }
+    @include form-error-message;
   }
 
   &__formrequest__input {

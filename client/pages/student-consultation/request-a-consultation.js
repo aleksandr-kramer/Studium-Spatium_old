@@ -12,8 +12,9 @@ import Faq from "../../components/Faq/Faq";
 // Импорты для конкретных страниц
 // ------------------------------------------
 import FeedbackComponent from "../../components/feedback/FeedbackComponent";
-import FormChildrenRequestPresentation from "../../components/FormChildrenRequestPresentation/FormChildrenRequestPresentation";
-
+import axios from "axios";
+import { useState, useRef } from "react";
+import { useRouter } from "next/router";
 // ------------------------------------------
 
 // Импорт переменных для стилей блоков. Добавляются/Удаляются при необходимости
@@ -22,6 +23,53 @@ import { landingmonolinkbgcolorsmoky } from "../../constants/stylesconstants";
 // ------------------------------------------
 
 export default function Requestaconsultation({ data }) {
+  const [yourname, setYourname] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [messagetext, setMessagetext] = useState("");
+  const [backenderrors, setBackenderrors] = useState([]);
+
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [uploaded, setUploaded] = useState();
+  const filePicker = useRef(null);
+
+  const router = useRouter();
+
+  const handleChange = (e) => {
+    console.log(e.target.files);
+    setSelectedFile(e.target.files[0]);
+  };
+
+  const sendRequest = async () => {
+    try {
+      const data = new FormData();
+      data.append("work", selectedFile);
+      console.log(data);
+      await axios
+        .post(`${process.env.NEXT_PUBLIC_AXIOS_URL}requestaconsultation`, {
+          yourname,
+          email,
+          phone,
+          messagetext,
+          data,
+        })
+        .then((res) => setUploaded(res.data.path))
+        .then(() => router.push("/thanks"));
+
+      console.log(uploaded);
+      // console.log({
+      //   yourname,
+      //   email,
+      //   phone,
+      //   messagetext,
+      //   data,
+      // });
+    } catch (error) {
+      console.log(error);
+      setBackenderrors(error.response.data);
+    }
+  };
+
   return (
     <MainLayout
       // ------------------------------------------
@@ -110,42 +158,120 @@ export default function Requestaconsultation({ data }) {
               data.consultationdata.requestconsultation.abouticonspoint
             }
           >
-            <FormChildrenRequestPresentation
-              inputformchildrenrequestpresentationdata={
-                data.consultationdata.requestconsultation.form.input
-              }
-              textareatrue={
-                data.consultationdata.requestconsultation.form.textarea
-                  .istextarea
-              }
-              textareaplaceholder={
-                data.consultationdata.requestconsultation.form.textarea
-                  .placeholder
-              }
-              buttonattachfiletrue={
-                data.consultationdata.requestconsultation.form.buttonattachfile
-                  .isbuttonattachfile
-              }
-              buttonattachfiletype={
-                data.consultationdata.requestconsultation.form.buttonattachfile
-                  .type
-              }
-              buttonattachfiletext={
-                data.consultationdata.requestconsultation.form.buttonattachfile
-                  .buttontext
-              }
-              buttonattachfilename={
-                data.consultationdata.requestconsultation.form.buttonattachfile
-                  .filenametext
-              }
-              buttonsendtype={
-                data.consultationdata.requestconsultation.form.buttonsend.type
-              }
-              buttonsendtext={
-                data.consultationdata.requestconsultation.form.buttonsend
-                  .buttontext
-              }
-            />
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              name="requestform"
+              className={styles.main__formrequest}
+            >
+              {backenderrors.length !== 0 ? (
+                <ul className={styles.main__formrequest__erroritems}>
+                  {backenderrors.map((e) => (
+                    <li
+                      className={styles.main__formrequest__erroritem}
+                      key={e.path}
+                    >
+                      {e.msg}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+              <input
+                onChange={(e) => setYourname(e.target.value)}
+                name="yourname"
+                type={
+                  data.consultationdata.requestconsultation.form.input[0]
+                    .fieldtype
+                }
+                placeholder={
+                  data.consultationdata.requestconsultation.form.input[0]
+                    .placeholder
+                }
+                className={styles.main__formrequest__input}
+              />
+
+              <input
+                onChange={(e) => setEmail(e.target.value)}
+                name="email"
+                type={
+                  data.consultationdata.requestconsultation.form.input[1]
+                    .fieldtype
+                }
+                placeholder={
+                  data.consultationdata.requestconsultation.form.input[1]
+                    .placeholder
+                }
+                className={styles.main__formrequest__input}
+              />
+
+              <input
+                onChange={(e) => setPhone(e.target.value)}
+                name="phone"
+                type={
+                  data.consultationdata.requestconsultation.form.input[2]
+                    .fieldtype
+                }
+                placeholder={
+                  data.consultationdata.requestconsultation.form.input[2]
+                    .placeholder
+                }
+                className={styles.main__formrequest__input}
+              />
+
+              <textarea
+                onChange={(e) => setMessagetext(e.target.value)}
+                name="messagetext"
+                placeholder={
+                  data.consultationdata.requestconsultation.form.textarea
+                    .placeholder
+                }
+                className={styles.main__formrequest__textarea}
+              />
+
+              <div className={styles.main__formrequest__attachfile}>
+                <input
+                  onChange={handleChange}
+                  name="selectfile"
+                  type="file"
+                  ref={filePicker}
+                  accept=".pdf, .doc*, .zip, .rar, .7z, .gz"
+                  className={styles.main__formrequest__selectfile_hidden}
+                />
+
+                <button
+                  onClick={() => filePicker.current.click()}
+                  type={
+                    data.consultationdata.requestconsultation.form
+                      .buttonattachfile.fieldtype
+                  }
+                  className={styles.main__formrequest__attachfilebutton}
+                >
+                  {
+                    data.consultationdata.requestconsultation.form
+                      .buttonattachfile.buttontext
+                  }
+                </button>
+                <p className={styles.main__formrequest__attachfilename}>
+                  {selectedFile
+                    ? selectedFile.name
+                    : data.consultationdata.requestconsultation.form
+                        .buttonattachfile.filenametext}
+                </p>
+              </div>
+
+              <button
+                onClick={sendRequest}
+                name="requestbutton"
+                type={
+                  data.consultationdata.requestconsultation.form.buttonsend.type
+                }
+                className={styles.main__formrequest__sendbutton}
+              >
+                {
+                  data.consultationdata.requestconsultation.form.buttonsend
+                    .buttontext
+                }
+              </button>
+            </form>
           </FeedbackComponent>
         </div>
       </section>
