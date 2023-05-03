@@ -25,9 +25,9 @@ const postPageRequestaconsultation = (req, res) => {
     if (!errors.isEmpty()) {
       return res.status(400).json(errors.array());
     }
-    const { yourname, email, phone, messagetext, data } = req.body;
-    console.log({ yourname, email, phone, messagetext, data });
-    res.json({ yourname, email, phone, messagetext, data });
+    const { yourname, email, phone, messagetext } = req.body;
+    console.log({ yourname, email, phone, messagetext });
+    res.json({ yourname, email, phone, messagetext });
     const message = {
       to: "<info@studiumspatium.com>",
       subject: "Запрос консультации с сайта StudiumSpatium",

@@ -36,34 +36,19 @@ export default function Requestaconsultation({ data }) {
   const router = useRouter();
 
   const handleChange = (e) => {
-    console.log(e.target.files);
     setSelectedFile(e.target.files[0]);
   };
 
   const sendRequest = async () => {
     try {
-      const data = new FormData();
-      data.append("work", selectedFile);
-      console.log(data);
       await axios
         .post(`${process.env.NEXT_PUBLIC_AXIOS_URL}requestaconsultation`, {
           yourname,
           email,
           phone,
           messagetext,
-          data,
         })
-        .then((res) => setUploaded(res.data.path))
         .then(() => router.push("/thanks"));
-
-      console.log(uploaded);
-      // console.log({
-      //   yourname,
-      //   email,
-      //   phone,
-      //   messagetext,
-      //   data,
-      // });
     } catch (error) {
       console.log(error);
       setBackenderrors(error.response.data);
