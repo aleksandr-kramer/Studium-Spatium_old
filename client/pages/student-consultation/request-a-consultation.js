@@ -13,7 +13,7 @@ import Faq from "../../components/Faq/Faq";
 // ------------------------------------------
 import FeedbackComponent from "../../components/feedback/FeedbackComponent";
 import axios from "axios";
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback } from "react";
 import { useRouter } from "next/router";
 // ------------------------------------------
 
@@ -30,24 +30,29 @@ export default function Requestaconsultation({ data }) {
   const [backenderrors, setBackenderrors] = useState([]);
 
   const [selectedFile, setSelectedFile] = useState(null);
-  const [uploaded, setUploaded] = useState();
   const filePicker = useRef(null);
 
   const router = useRouter();
 
   const handleChange = (e) => {
+    console.log(e.target.files);
     setSelectedFile(e.target.files[0]);
   };
 
   const sendRequest = async () => {
     try {
+      const data = new FormData();
+      data.append("work", selectedFile);
+      console.log(data);
       await axios
         .post(`${process.env.NEXT_PUBLIC_AXIOS_URL}requestaconsultation`, {
           yourname,
           email,
           phone,
           messagetext,
+          data,
         })
+        .then((res) => setUploaded(res.data.path))
         .then(() => router.push("/thanks"));
     } catch (error) {
       console.log(error);
@@ -214,7 +219,7 @@ export default function Requestaconsultation({ data }) {
 
               <div className={styles.main__formrequest__attachfile}>
                 <input
-                  onChange={handleChange}
+                  onChange={(e) => setSelectedFile(e.target.files[0])}
                   name="selectfile"
                   type="file"
                   ref={filePicker}

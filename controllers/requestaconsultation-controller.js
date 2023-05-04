@@ -47,8 +47,23 @@ const postPageRequestaconsultation = (req, res) => {
 
       <i>Сообщение:</i><br>
       ${req.body.messagetext}`,
+
+      attachments: [
+        req.file
+          ? {
+              filename: req.file.filename,
+              path: req.file.path,
+            }
+          : {
+              filename: "no_file.txt",
+              content: "no file",
+            },
+      ],
     };
-    mailer(message);
+   mailer(message);
+
+   
+      
   } catch (error) {
     console.log(error);
   }

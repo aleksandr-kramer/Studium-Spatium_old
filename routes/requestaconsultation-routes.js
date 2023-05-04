@@ -21,7 +21,15 @@ router.get("/requestaconsultation_ru", getPageRequestaconsultationRu);
 router.post(
   "/requestaconsultation",
   requestaconsultationValidation,
+  requestaconsultationuploadfile.single("work"),
   postPageRequestaconsultation
 );
+
+// router.post(
+//   "/requestaconsultation",
+//   requestaconsultationValidation,
+//   requestaconsultationuploadfile.single("work"),
+//   postPageRequestaconsultation
+// );
 
 module.exports = router;
