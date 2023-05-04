@@ -25,9 +25,8 @@ const postPageRequestaconsultation = (req, res) => {
     if (!errors.isEmpty()) {
       return res.status(400).json(errors.array());
     }
-    const { yourname, email, phone, messagetext, data } = req.body;
-    console.log({ yourname, email, phone, messagetext, data });
-    res.json({ yourname, email, phone, messagetext, data });
+    const { yourname, email, phone, messagetext } = req.body;
+    res.json({ yourname, email, phone, messagetext });
     const message = {
       to: "<info@studiumspatium.com>",
       subject: "Запрос консультации с сайта StudiumSpatium",
@@ -47,8 +46,23 @@ const postPageRequestaconsultation = (req, res) => {
 
       <i>Сообщение:</i><br>
       ${req.body.messagetext}`,
+
+      attachments: [
+        req.file
+          ? {
+              filename: req.file.filename,
+              path: req.file.path,
+            }
+          : {
+              filename: "no_file.txt",
+              content: "no file",
+            },
+      ],
     };
-    mailer(message);
+   mailer(message);
+
+   
+      
   } catch (error) {
     console.log(error);
   }

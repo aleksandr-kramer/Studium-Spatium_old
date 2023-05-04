@@ -5,23 +5,8 @@ const storage = multer.diskStorage({
     cb(null, "uploadwork/");
   },
   filename(req, file, cb) {
-    cb(null, new Date().toISOString() + "-" + file.originalname);
+    cb(null, file.originalname);
   },
 });
-
-// const fileFilter = (req, file, cb) => {
-//   const ext = path.extname(file.originalname);
-//   if (
-//     ext !== ".pdf" &&
-//     ext !== ".doc*" &&
-//     ext !== ".zip" &&
-//     ext !== ".rar" &&
-//     ext !== ".7z" &&
-//     ext !== ".gz"
-//   ) {
-//     return cb(null, false);
-//   }
-//   cb(null, true);
-// };
 
 module.exports = multer({ storage });
